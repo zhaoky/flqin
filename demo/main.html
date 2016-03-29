@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<title>797</title>
+<style type="text/css">
+*{padding:0;margin:0;background:#fff;color:#333;}
+#tt{padding:3px;line-height:1.5;}
+</style>
+</head>
+<body>
+<div id="tt">Loading...</div>
+<script type="text/javascript">
+var s = "";
+s += " 网页正文全文宽："+ document.body.scrollWidth+"<br>";
+s += " 网页正文全文高："+ document.body.scrollHeight+"<br>";
+s += " 网页可见区域宽："+ document.body.clientWidth+"<br>";    
+s += " 网页可见区域高："+ document.body.clientHeight+"<br>";    
+s += " 网页可见区域宽："+ document.body.offsetWidth + " (包括边线和滚动条的宽)"+"<br>";    
+s += " 网页可见区域高："+ document.body.offsetHeight + " (包括边线的宽)"+"<br>";    
+s += " 网页被卷去的高(ff)："+ document.body.scrollTop+"<br>";    
+s += " 网页被卷去的高(ie)："+ document.documentElement.scrollTop+"<br>";    
+s += " 网页被卷去的左："+ document.body.scrollLeft+"<br>";    
+s += " 网页正文部分上："+ window.screenTop+"<br>";    
+s += " 网页正文部分左："+ window.screenLeft+"<br>";    
+s += " 屏幕分辨率的高："+ window.screen.height+"<br>";    
+s += " 屏幕分辨率的宽："+ window.screen.width+"<br>";    
+s += " 屏幕可用工作区高度："+ window.screen.availHeight+"<br>";    
+s += " 屏幕可用工作区宽度："+ window.screen.availWidth+"<br>";    
+s += " 你的屏幕设置是 "+ window.screen.colorDepth +" 位彩色"+"<br>";    
+s += " 你的屏幕设置 "+ window.screen.deviceXDPI +" 像素/英寸"+"<br>";    
+document.getElementById("tt").innerHTML=s;
+</script>
+</body>
+</html>

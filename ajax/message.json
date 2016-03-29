@@ -1,0 +1,67 @@
+﻿{
+	"about_info":[
+		"2014年毕业于四川工商学院，现就职于成都兰途网络科技有限公司",
+		"工作之余喜欢钻研web前端技术，对精美的网页尤为敬佩和喜爱",
+		"日新月异的web前沿技术和层出不穷的框架让我既兴奋又期待",
+		"代码强迫症患者，看漂亮的代码对我而言是一种极致享受"
+	],
+	"skill_info":"IT行业的学习需要持之以恒，知识深度与广度都很重要。而前端开发的重中之重就是原生javascript的理解，一直都在不断琢磨《javascript高级程序设计》这本书来内化自己。另外还在不断学习新的知识，如angular，nodeJs，php等等。",
+	"seo":[
+		"了解baidu搜索引擎算法，内外链接等优化细节",
+		"对SEO有较为深刻认识，能够对网站流量和转化率的提升给出建设性的方案",
+		"微博、微信等新媒体的营销和推广",
+		"熟练操作百度,360等PPC后台，了解百度各产品规则"
+	],
+	"html":[
+		"深刻理解Web标准",
+		"熟练运用html标签",
+		"熟悉xml及xhtml标记语言",
+		"掌握html5如SVG，localstorage新特性"
+	],
+	"css":[
+		"熟练运用css及css3新属性",
+		"注重浏览器兼容性，熟悉常见的css hack（兼容至IE8）",
+		"掌握bootstrap框架及源码的实现",
+		"掌握css预编译器Less及Sass"
+	],
+	"javaScript":[
+		"掌握jQuery库，angular.js",
+		"掌握ajax的运作原理及json数据结构",
+		"注重JavaScript性能优化",
+		"正在不断学习原生JavaScript，了解js闭包等"
+	],
+	"exp_info":"2014年毕业后，在工作之余开始了web前端自学生涯。",
+	"exp_list_left1":[
+		"<dt>四川工商学院</dt>",
+		"<p class='exp_list_time'>2010年9月~2014年6月</p>",
+		"<dd>就读<a href='#' class='md-trigger' data-modal='modal-13'>电子工程系</a></dd>",
+		"<dd>获得<a href='#' class='md-trigger' data-modal='modal-13'>计算机二级c语言证书</a></dd>",
+		"<dd>获得<a href='#' class='md-trigger' data-modal='modal-13'>计算机四级网络工程师证书</a></dd>",
+		"<dd>通过<a href='#' class='md-trigger' data-modal='modal-13'>Cisco Certified Network Associate（CCNA）认证</a></dd>",
+		"<dd>获得<a href='#' class='md-trigger' data-modal='modal-13'>机动车驾驶证c1</a></dd>"
+	],
+	"exp_list_left2":[
+		"<dt>壹零陆文化传播有限责任公司</dt>",
+		"<p class='exp_list_time'>2014年3月~2014年9月</p>",
+		"<dd>（实习）网络部</dd>",
+		"<dd>负责网站后台维护，微博、微信等新媒体创意撰写，营销和推广</dd>",
+		"<dd>负责百度PPC后台调整</dd>",
+		"<dd>获得<a href='#' class='md-trigger' data-modal='modal-13'>最佳新人奖</a></dd>",
+		"<dd>开始了解到web前端这门技术，产生极大的兴趣</dd>"
+	],
+	"exp_list_left3":[
+		"<dt>四川卓煌企业管理有限公司</dt>",
+                "<p class='exp_list_time'>2014年9月~现在</p>",
+                "<dd>管理部</dd>",
+                "<dd>负责官网框架建设，后台维护</dd>",
+                "<dd>负责百度竞价操作及seo优化</dd>",
+                "<dd>同期工作之余开始<a href='#' class='md-trigger' data-modal='modal-13'>系统性的自学web前端各项技术</a></dd>"
+	],
+	"contact_info":[
+		"学习是一个充实愉悦的过程",
+		"前端更贴近用户，这种体验非常美妙",
+		"热爱FE.D，也热爱一切美好的事物",
+		"行路有良友，便是捷径",
+		"带上我吧，一起看到更大的世界"
+	]
+}

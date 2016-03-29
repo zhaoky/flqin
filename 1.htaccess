@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.flqin.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^flqin.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^zhaokeyu.gotoip2.com$ 
+RewriteRule ^(.*)$ http://www.flqin.com/$1 [R=301,L]
+</IfModule>
