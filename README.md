@@ -7,7 +7,7 @@
 有任何疑问和建议请直接在此评论，互相学习，共同进步！喜欢请点个star吧！O(∩_∩)O~
 
 不会用git？
-请学习廖老师的[git教程](http://www.liaoxuefen.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/)
+请学习廖老师的[git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 ##分支说明：
 * master
