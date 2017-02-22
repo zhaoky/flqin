@@ -11,7 +11,8 @@ const
 	minCss   = require("gulp-minify-css"),
 	webpack  = require("webpack-stream"),
 	plumber  = require("gulp-plumber"),
-	imageMin = require("gulp-imagemin");
+	imageMin = require("gulp-imagemin"),
+	shell    = require("shelljs");
 
 const kit = require("./kit");
 
@@ -56,10 +57,6 @@ function buildAll() {
 }
 
 /**
- * html
- */
-
-/**
  * 构建 html of index
  */
 function distIndexHtml() {
@@ -75,12 +72,22 @@ function distIndexHtml() {
 			})
 	});
 }
-
+// Watch Task
+(()=> {
+	gulp.task("watch-index-html", ()=> {
+		gulp
+			.watch("src/index.html", kit.getWatcherConfig())
+			.on("change", (event)=> {
+				console.log("watch index html", event);
+				distIndexHtml();
+			})
+		;
+	});
+})();
 /**
  * 构建 html of basis
  
  */
-
 function distBasisHtml() {
 	return new Promise((resolve, reject) => {
 		gulp
@@ -96,7 +103,18 @@ function distBasisHtml() {
 			});
 	});
 }
-
+// Watch Task
+(()=> {
+	gulp.task("watch-basis-html", ()=> {
+		gulp
+			.watch(SRC.html, kit.getWatcherConfig())
+			.on("change", (event)=> {
+				console.log("watch basis html", event);
+				distBasisHtml();
+			})
+		;
+	});
+})();
 /**
  * 构建 less
  */
@@ -116,6 +134,18 @@ function distCss() {
 			});
 	});
 }
+// Watch Task
+(()=> {
+	gulp.task("watch-css", ()=> {
+		gulp
+			.watch("src/index.less", kit.getWatcherConfig())
+			.on("change", (event)=> {
+				console.log("watch css", event);
+				distCss();
+			})
+		;
+	});
+})();
 /**
  * 构建 js of lib
  *
@@ -141,6 +171,18 @@ function distLibJs() {
 		
 	});
 }
+// Watch Task
+(()=> {
+	gulp.task("watch-lib-js", ()=> {
+		gulp
+			.watch(concatLib, kit.getWatcherConfig())
+			.on("change", (event)=> {
+				console.log("watch lib js", event);
+				distLibJs();
+			})
+		;
+	});
+})();
 /**
  * 构建 js of basis
  *
@@ -182,7 +224,18 @@ function distBasisJs() {
 			});
 	});
 }
-
+// Watch Task
+(()=> {
+	gulp.task("watch-basis-js", ()=> {
+		gulp
+			.watch(SRC.js, kit.getWatcherConfig())
+			.on("change", (event)=> {
+				console.log("watch basis js", event);
+				distBasisJs();
+			})
+		;
+	});
+})();
 /**
  *  构建 image
  *
@@ -223,6 +276,14 @@ function distFavicon() {
 			});
 	});
 }
+/**
+ *  清理产品文件
+ */
+function clean() {
+	shell.exec("rm dist -r -f");
+}
+
 module.exports = {
-	buildAll: buildAll
+	buildAll: buildAll,
+	clean   : clean
 };
