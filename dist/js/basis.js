@@ -46,15 +46,15 @@
 
 	"use strict";
 
-	var _component = __webpack_require__(1);
+	var _cmpt = __webpack_require__(1);
 
-	var _component2 = _interopRequireDefault(_component);
+	var _cmpt2 = _interopRequireDefault(_cmpt);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	angular.module("myResumeM", [_component2.default]); /**
-	                                                     * 入口文件
-	                                                     */
+	angular.module("bootstrap", [_cmpt2.default]); /**
+	                                                * 入口文件
+	                                                */
 
 /***/ },
 /* 1 */
@@ -63,32 +63,32 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
 
-	var _component = __webpack_require__(2);
+	var _cmpt = __webpack_require__(2);
 
-	var _component2 = _interopRequireDefault(_component);
+	var _cmpt2 = _interopRequireDefault(_cmpt);
 
-	var _component3 = __webpack_require__(3);
+	var _cmpt3 = __webpack_require__(3);
 
-	var _component4 = _interopRequireDefault(_component3);
+	var _cmpt4 = _interopRequireDefault(_cmpt3);
 
-	var _component5 = __webpack_require__(4);
+	var _cmpt5 = __webpack_require__(4);
 
-	var _component6 = _interopRequireDefault(_component5);
+	var _cmpt6 = _interopRequireDefault(_cmpt5);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = angular.module("zkyResumeM", [_component2.default, _component4.default, _component6.default]).component("zkyResume", {
-	    templateUrl: "component/+zkyResumeM/main.html",
-	    controllerAs: "zr",
-	    controller: ZkyResumeCtrl
+	exports.default = angular.module("zkyResume", [_cmpt2.default, _cmpt4.default, _cmpt6.default]).component("zkyResume", {
+		templateUrl: "components/zkyResume/cmpt.html",
+		controllerAs: "zr",
+		controller: ZkyResumeCtrl
 	}).name;
 
 
 	function ZkyResumeCtrl() {
-	    console.log("ZkyResumeCtrl");
+		console.log("ZkyResumeCtrl");
 	}
 
 /***/ },
@@ -98,17 +98,17 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
-	exports.default = angular.module("resumeHeaderM", []).component("resumeHeader", {
-	    templateUrl: "",
-	    controllerAs: "rh",
-	    controller: ResumeHeaderCtrl
+	exports.default = angular.module("rHeader", []).component("resumeHeader", {
+		templateUrl: "components/rHeader/cmpt.html",
+		controllerAs: "rh",
+		controller: ResumeHeaderCtrl
 	}).name;
 
 
 	function ResumeHeaderCtrl() {
-	    console.log("Header");
+		console.log("Header");
 	}
 
 /***/ },
@@ -118,17 +118,17 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
-	exports.default = angular.module("resumeFooterM", []).component("resumeFooter", {
-	    templateUrl: "",
-	    controllerAs: "rf",
-	    controller: ResumeFooterCtrl
+	exports.default = angular.module("rFooter", []).component("resumeFooter", {
+		templateUrl: "components/rFooter/cmpt.html",
+		controllerAs: "rf",
+		controller: ResumeFooterCtrl
 	}).name;
 
 
 	function ResumeFooterCtrl() {
-	    console.log("footer");
+		console.log("footer");
 	}
 
 /***/ },
@@ -138,17 +138,17 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
-	exports.default = angular.module("resumeMainM", []).component("resumeMain", {
-	    templateUrl: "",
-	    controllerAs: "rh",
-	    controller: ResumeMainCtrl
+	exports.default = angular.module("rMain", []).component("resumeMain", {
+		templateUrl: "components/rMain/cmpt.html",
+		controllerAs: "rh",
+		controller: ResumeMainCtrl
 	}).name;
 
 
 	function ResumeMainCtrl() {
-	    console.log("Main");
+		console.log("Main");
 	}
 
 /***/ }

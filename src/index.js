@@ -1,8 +1,8 @@
 /**
  * 入口文件
  */
-import zkyResumeM from "./component/+zkyResumeM/component";
+import zkyResume from "./components/zkyResume/cmpt";
 
-angular.module("myResumeM", [
-    zkyResumeM
+angular.module("bootstrap", [
+	zkyResume
 ]);
