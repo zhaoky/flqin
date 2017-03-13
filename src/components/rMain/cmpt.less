@@ -1,3 +1,70 @@
-.b{
-	color:red;
+.page-section{
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #eee;
+	overflow: hidden;
+	display: none;
+}
+.dock-fill{
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #eee;
+	overflow: hidden;
+}
+.prev-page{
+	transform: translateY(-100%);
+	display: block;
+}
+.cur-page{
+	z-index: 10;
+	display: block;
+}
+.touch-page{
+	z-index: 20;
+}
+.next-page{
+	transform: translateY(100%);
+	display: block;
+}
+.active{
+	transition: transform 0.5s ease-in-out;
+	transform: translateY(0) !important;
+	z-index: 100;
+}
+.-arrow{
+	position: absolute;
+	bottom: 20px;
+	width: 20px;
+	height: 35px;
+	left: 50%;
+	z-index: 100;
+	transform: translateX(-50%);
+	background: url(arrow.png) no-repeat center center;
+	background-size: contain;
+	animation: arrowAnimate 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowAnimate {
+	0% {
+		bottom: 10px;
+		opacity: 0.8;
+	}
+	50% {
+		bottom: 20px;
+		opacity: 1;
+	}
+	80% {
+		bottom: 22px;
+		opacity: 0.4;
+	}
+	100% {
+		bottom: 22px;
+		opacity: 0;
+	}
 }
