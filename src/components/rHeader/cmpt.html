@@ -1,10 +1,25 @@
 <div class="-header">
-    <div class="-logo">
-        <div class="-img"></div>
-        <div class="-des">前端工程师</div>
+    <div class="-content">
+        <div class="-logo"></div>
+        <div
+            class="-title"
+            ng-class="{'-rotate':$ctrl.isShowNav}"
+            ng-click="$ctrl.isShowNav = !$ctrl.isShowNav">
+            首页
+        </div>
+        <div class="-language">
+            <span>中</span>
+            <span>英</span>
+        </div>
     </div>
-    <div class="-language">
-        <div class="-cn">中</div>
-        <div class="-en">英</div>
+    <div class="-nav" ng-class="{'-show-nav':$ctrl.isShowNav}">
+        <ul class="-list">
+            <li class="-item">首页</li>
+            <li class="-item">我的信息</li>
+            <li class="-item">我的技能</li>
+            <li class="-item">我的经历</li>
+            <li class="-item">我的作品</li>
+            <li class="-item">联系我</li>
+        </ul>
     </div>
 </div>
