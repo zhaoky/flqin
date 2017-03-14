@@ -1,0 +1,50 @@
+.-outCircle{
+	width: 298px;
+	height: 298px;
+	border: 2px dashed #999;
+	border-radius: 50%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	.-html{
+		width: 20px;
+		height: 20px;
+		background-color: #f66;
+		border-radius: 50%;
+		position: absolute;
+		animation: animX 4s cubic-bezier(0.36,0,0.64,1) -2s infinite alternate, animY 4s cubic-bezier(0.36,0,0.64,1) 0s infinite alternate;
+	}
+}
+.-innerCircle{
+	width: 198px;
+	height: 198px;
+	border: 2px dashed #999;
+	border-radius: 50%;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+	.-angular{
+		width: 20px;
+		height: 20px;
+		background-color: #f66;
+		border-radius: 50%;
+		position: absolute;
+		animation: animX 4s cubic-bezier(0.36,0,0.64,1) -2s infinite alternate, animY 4s cubic-bezier(0.36,0,0.64,1) 0s infinite alternate;
+	}
+}
+@keyframes animX {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 300px;
+	}
+}
+@keyframes animY {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: 300px;
+	}
+}

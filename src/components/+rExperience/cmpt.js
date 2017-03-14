@@ -1,5 +1,9 @@
+import sideBox from "../++sideBox/cmpt";
+
 export default angular
-	.module("rExperience", [])
+	.module("rExperience", [
+		sideBox
+	])
 	.component("resumeExperience", {
 		templateUrl : "components/+rExperience/cmpt.html",
 		controller  : ResumeExperienceCtrl

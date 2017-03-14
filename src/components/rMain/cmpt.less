@@ -1,3 +1,7 @@
+@import "../+rInfo/cmpt.less";
+@import "../+rSkill/cmpt.less";
+@import "../+rExperience/cmpt.less";
+
 .page-section{
 	position: absolute;
 	top:0;
@@ -37,7 +41,7 @@
 	transform: translateY(0) !important;
 	z-index: 100;
 }
-.-arrow{
+.-arrow {
 	position: absolute;
 	bottom: 20px;
 	width: 20px;
@@ -45,9 +49,31 @@
 	left: 50%;
 	z-index: 100;
 	transform: translateX(-50%);
-	background: url(arrow.png) no-repeat center center;
-	background-size: contain;
-	animation: arrowAnimate 1.5s ease-in-out infinite;
+	 animation: arrowAnimate 1.5s ease-in-out infinite;
+	&:before {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		border-bottom: 4px solid #343c99;
+		position: absolute;
+		right: -8px;
+		transform: rotate(135deg);
+	}
+	&:after{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		border-top: 4px solid #343c99;
+		position: absolute;
+		right: 0;
+		transform: rotate(45deg);
+	}
 }
 
 @keyframes arrowAnimate {

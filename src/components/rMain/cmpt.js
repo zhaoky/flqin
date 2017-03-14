@@ -1,19 +1,15 @@
-import rAbout from "../+rAbout/cmpt";
 import rContact from "../+rContact/cmpt";
 import rDefault from "../+rDefault/cmpt";
 import rDemo from "../+rDemo/cmpt";
-import rExpect from "../+rExpect/cmpt";
 import rExperience from "../+rExperience/cmpt";
 import rInfo from "../+rInfo/cmpt";
 import rSkill from "../+rSkill/cmpt";
 
 export default angular
 	.module("rMain", [
-        rAbout,
         rContact,
         rDefault,
         rDemo,
-        rExpect,
         rExperience,
         rInfo,
         rSkill
@@ -46,7 +42,6 @@ export default angular
             return Arrow;
         }
     ])
-
     .service("stopWxDropDown",function(){
 
         this.stop = function(){
@@ -59,7 +54,6 @@ export default angular
 
         }
     })
-
     .directive("resumeMain", [
         "initArrow",
         "stopWxDropDown",
@@ -79,7 +73,7 @@ export default angular
                     arrow;
 
 
-                nodeList = Array.prototype.slice.call(nodeList);
+	            // nodeList = Array.from(nodeList);
 
                 nodeListLen = nodeList.length;
 
@@ -109,6 +103,8 @@ export default angular
                 });
 
                 function startWheelHandler(e) {
+	                
+	                let nodeList = ele[0].querySelectorAll(".page-section");
 
                     if(moving || (e.wheelDelta > 0 && pageIndex == nodeListLen - 1) || (e.wheelDelta < 0 && pageIndex == 0)){
                         return;
@@ -151,7 +147,9 @@ export default angular
                     if ((disY < 0 && pageIndex == nodeListLen - 1) || (disY > 0 && pageIndex == 0)) {
                         return;
                     }
-
+	
+	                let nodeList = ele[0].querySelectorAll(".page-section");
+                    
                     curTouchPageIndex = disY < 0 ? (pageIndex + 1) : (pageIndex - 1);
 
                     nodeList[curTouchPageIndex].classList.add("touch-page");
@@ -172,6 +170,8 @@ export default angular
                     }
 
                     moving = true;
+	
+	                let nodeList = ele[0].querySelectorAll(".page-section");
 
                     if (Math.abs(disY) < 100) {
 
@@ -184,7 +184,7 @@ export default angular
                         nodeList[pageIndex].classList.add("active");
 
                     }
-
+	                
                     nodeList[disY < 0 ? (curTouchPageIndex - 1) : (curTouchPageIndex + 1)].style.transform = Math.abs(disY) < 100? "": (disY < 0 ?"translateY(-100%)":"translateY(100%)");
                     nodeList[disY < 0 ? (curTouchPageIndex - 1) : (curTouchPageIndex + 1)].style.transition = "transform 0.5s ease-in-out";
 
@@ -195,6 +195,9 @@ export default angular
                 function transitionEndHandler() {
 
                     console.log("进入回调");
+	                
+	                let nodeList = ele[0].querySelectorAll(".page-section");
+	                
                     nodeList.forEach(function (item, index) {
 
                         item.classList.remove("prev-page", "active", "next-page", "cur-page", "touch-page");

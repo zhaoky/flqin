@@ -6,6 +6,9 @@ export default angular
 	})
 	.name;
 
-function ResumeDefaultCtrl() {
-	console.log("footer");
+ResumeDefaultCtrl.$inject= ["$scope","$element","$window"];
+
+function ResumeDefaultCtrl($scope,$element,$window) {
+	
+	
 }
