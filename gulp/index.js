@@ -29,4 +29,4 @@ gulp.task("w", ["watch-index-html","watch-basis-html","watch-css","watch-lib-js"
 gulp.task("d", ["dev"], () => server.server());
 
 // 刷新
-gulp.task("dd", ["dev-new", "w"], () => server.server());
+gulp.task("dd", ["dev", "w"], () => server.server());
