@@ -8,6 +8,29 @@ export default angular
 		rFooter,
 		rMain
 	])
+	.service(resumeData,[
+		function(){
+			var data = {
+				cn:{
+					header:{
+						langList:["中","英"],
+						titleList:["首页","我的信息","我的技能","我的经历","我的作品","联系我"]
+					},
+					footer:{},
+					default:{},
+					info:{},
+					skill:{},
+					demo:{},
+					experience:{},
+					contact:{}
+				},
+				en:{
+					
+				}
+				
+			};
+		}
+	])
 	
 	.component("zkyResume", {
 		templateUrl : "components/zkyResume/cmpt.html",

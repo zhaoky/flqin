@@ -1,46 +1,53 @@
 .-experience{
-	.-content{
-		perspective:800px;
-	}
-	.-banner{
-		width: 900px;
-		height: 300px;
-		background: #FFF;
-		margin:0 auto;
-		border: 1px solid #eee;
-		border-radius: 10px;
-		color:#000;
-		transition: transform .3s linear;
-		overflow: hidden;
-		p{
-			transform: translateZ(20px);
+	.-contain{
+		perspective:900px;
+		.-banner{
+			width: 900px;
+			height: 400px;
+			background: #FFF;
+			margin:0 auto;
+			border: 1px solid #eee;
+			border-radius: 10px;
+			color:#000;
+			transition: transform .3s linear;
+			overflow: hidden;
+			.-experience-content{
+				transition: opacity 0.3s;
+				height: 100%;
+				.-left{
+					float: left;
+					height: 100%;
+					position: relative;
+					.-img{
+						background: no-repeat center center;
+						background-size: contain;
+						width: 300px;
+						height: 100%;
+					}
+					&:after{
+						content: "";
+						background: #eee;
+						width: 1px;
+						position: absolute;
+						top: 10%;
+						bottom: 10%;
+						right: 0;
+					}
+				}
+				.-right{
+					padding-left: 50px;
+					float: left;
+					height: 100%;
+					width: 550px;
+					p{
+						transform: translateZ(20px);
+					}
+				}
+			}
 		}
-		.-left{
-			 float: left;
-			 height: 100%;
-			 position: relative;
-			 .-img{
-				 background: url("../img/seo.png") no-repeat center center;
-				 background-size: contain;
-				 width: 300px;
-				 height: 100%;
-			 }
-			 &:after{
-				 content: "";
-				 background: #eee;
-				 width: 1px;
-				 position: absolute;
-				 top: 10%;
-				 bottom: 10%;
-				 right: 0;
-			 }
-		 }
-		.-right{
-			padding-left: 5%;
-			float: left;
-			height: 100%;
-		}
+		
 	}
+	
 	.-shout-cut{
 		width: 200px;
 		margin: 0 auto;

@@ -1,26 +1,24 @@
 <div class="-page -experience">
-    <div class="-content">
-        <div class="-banner" touch-three-d>
-            <div class="-left">
-                <div class="-img"></div>
-            </div>
-            <div class="-right">
-                <h4 class="-title">壹零陆文化传播有限责任公司</h4>
-                <p class="-time">2014年3月~2014年8月</p>
-                <p class="-post">职位：SEO</p>
-                <ul class="-list">
-                    <li class="-item">负责网站后台维护，微博、微信等新媒体创意撰写，营销和推广</li>
-                    <li class="-item">负责百度PPC后台调整</li>
-                    <li class="-item">获得最佳新人奖</li>
-                    <li class="-item">同期工作之余开始系统性的自学web前端各项技术</li>
-                </ul>
+    <div class="-contain">
+        <div class="-banner" touch-three-d >
+            <div class="-experience-content">
+                <div class="-left">
+                    <div class="-img" style="background-image: url({{$ctrl.exp.imgUrl}})"></div>
+                </div>
+                <div class="-right">
+                    <h4 class="-title">{{$ctrl.exp.title}}</h4>
+                    <p class="-time">{{$ctrl.exp.time}}</p>
+                    <p class="-post">{{$ctrl.exp.post}}</p>
+                    <p class="-tech">{{$ctrl.exp.tech}}</p>
+                    <ul class="-list">
+                        <li class="-item" ng-repeat="item in $ctrl.exp.contentList track by $index">{{item}}</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="-shout-cut">
-            <ul class="-cut-list">
-                <li class="-item"></li>
-                <li class="-item"></li>
-                <li class="-item"></li>
+            <ul class="-cut-list" switch-exp>
+                <li class="-item" data-index="{{$index}}" ng-repeat="item in $ctrl.cutList track by $index"></li>
             </ul>
         </div>
     </div>
