@@ -4,11 +4,9 @@
             <div class="-photo"></div>
         </div>
         <div class="-des">
-            <p>生活是一种绵延不绝的渴望，渴望不断上升，变得更伟大而高贵。</p>
+            <p class="-quote">{{$ctrl.quote}}</p>
             <div>
-                <p>我叫赵柯宇</p>
-                <p>一名前端研发工程师</p>
-                <p>zhaoky2016@163.com</p>
+                <p ng-repeat="item in $ctrl.desList track by $index">{{item}}</p>
             </div>
         </div>
     </div>

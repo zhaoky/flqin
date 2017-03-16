@@ -2,32 +2,16 @@
     <div>
         <div>
             <ul class="-info-list">
-                <li class="-info-item">
+                <li class="-info-item" ng-repeat="item in $ctrl.infoList track by $index">
                     <div>
-                        学历/本科
-                    </div>
-                </li>
-                <li class="-info-item">
-                    <div>
-                        坐标/成都
-                    </div>
-                </li>
-                <li class="-info-item">
-                    <div>
-                        状态/在职
-                    </div>
-                </li>
-                <li class="-info-item">
-                    <div>
-                        年龄/26岁
+                        <div></div>
+                        <div>{{item.key}}{{item.value}}</div>
                     </div>
                 </li>
             </ul>
         </div>
         <div class="-info-des">
-            <p>11111111111</p>
-            <p>11111111111</p>
-            <p>11111111111</p>
+            <p ng-repeat="item in $ctrl.desList track by $index">{{item}}</p>
         </div>
     </div>
 </div>

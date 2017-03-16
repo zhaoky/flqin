@@ -5,21 +5,21 @@
             class="-title"
             ng-class="{'-rotate':$ctrl.isShowNav}"
             ng-click="$ctrl.isShowNav = !$ctrl.isShowNav">
-            首页
+            {{$ctrl.titleList[$ctrl.pageIndex]}}
         </div>
         <div class="-language">
-            <span>中</span>
-            <span>英</span>
+            <span ng-repeat="item in $ctrl.langList">{{item}}</span>
         </div>
     </div>
-    <div class="-nav" ng-class="{'-show-nav':$ctrl.isShowNav}">
-        <ul class="-list">
-            <li class="-item">首页</li>
-            <li class="-item">我的信息</li>
-            <li class="-item">我的技能</li>
-            <li class="-item">我的经历</li>
-            <li class="-item">我的作品</li>
-            <li class="-item">联系我</li>
+    <div class="-header-nav" ng-class="{'-show-nav':$ctrl.isShowNav}" opacity-callback>
+        <ul class="-list" selected-nav-item>
+            <li
+                class="-item"
+                data-index="{{$index}}"
+                ng-class="{'-cur-index':$ctrl.pageIndex == $index}"
+                ng-repeat="item in $ctrl.titleList track by $index">
+                {{item}}
+            </li>
         </ul>
     </div>
 </div>

@@ -3,29 +3,17 @@
         <div class="-skill-circle">
             <div>
                 <ul class="-outCircle">
-                    <li class="-out">git</li>
-                    <li class="-out">webpack</li>
-                    <li class="-out">gulp</li>
-                    <li class="-out">less</li>
-                    <li class="-out">cordova</li>
-                    <li class="-out">angular</li>
-                    <li class="-out">nodejs</li>
-                    <li class="-out">react</li>
+                    <li class="-out" ng-repeat="item in $ctrl.outCircleList track by $index">{{item}}</li>
                 </ul>
             </div>
             <div>
                 <ul class="-innerCircle">
-                    <li class="-inner">es6</li>
-                    <li class="-inner">vue</li>
-                    <li class="-inner">ng2</li>
-                    <li class="-inner">fp</li>
+                    <li class="-inner" ng-repeat="item in $ctrl.innerCircleList track by $index">{{item}}</li>
                 </ul>
             </div>
         </div>
         <div class="-des">
-            <p>123</p>
-            <p>123</p>
-            <p>123</p>
+            <p ng-repeat="item in $ctrl.desList track by $index">{{item}}</p>
         </div>
     </div>
 </div>
