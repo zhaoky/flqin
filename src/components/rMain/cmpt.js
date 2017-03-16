@@ -58,7 +58,8 @@ export default angular
 	.directive("resumeMain", [
 		"initArrow",
 		"stopWxDropDown",
-		function (initArrow, stopWxDropDown) {
+		"$timeout",
+		function (initArrow, stopWxDropDown,$timeout) {
 			
 			function link($scope, ele) {
 				
@@ -94,7 +95,31 @@ export default angular
 				
 				ele[0].addEventListener("touchstart", touchStartHandler);
 				ele[0].addEventListener("mousewheel", startWheelHandler);
-				
+
+				$scope.$watch("pageIndex",function(newV){
+
+                    let nodeList = ele[0].querySelectorAll(".page-section");
+
+					if(moving || !newV || newV == pageIndex){
+						return;
+					}
+                    moving = true;
+
+					 let newPage = Number(newV);
+
+                    nodeList[newPage].style.transform = pageIndex < newPage ? "translateY(100%)" : "translateY(-100%)";
+
+                    $timeout(function(){
+                        nodeList[newPage].classList.add("active");
+                    },2000);
+
+                    // nodeList[pageIndex > newPage ? pageIndex : newPage].style.transform = pageIndex < newPage ? "translateY(100%)" : "translateY(-100%)";
+                    // nodeList[pageIndex > newPage ? pageIndex : newPage].style.transition = "transform 0.5s ease-in-out";
+
+                    nodeList[newPage].addEventListener("webkitTransitionEnd", transitionEndHandler);
+
+				});
+
 				$scope.$on("$destroy", function () {
 					
 					arrow.destroy();
@@ -102,6 +127,7 @@ export default angular
 					ele[0].removeEventListener("mousewheel", startWheelHandler);
 					
 				});
+
 				
 				function startWheelHandler(e) {
 					
@@ -230,18 +256,12 @@ export default angular
 				
 			}
 			
-			function Controller(){
-				
-			}
-			
 			return {
 				restrict  : "E",
 				link      : link,
 				template  : "<div ng-transclude></div>",
 				transclude: true,
 				replace   : true,
-				controller: Controller,
-				controllerAs:"aaa",
 				scope     : {
 					pageIndex: "="
 				}
