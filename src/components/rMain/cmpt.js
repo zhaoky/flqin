@@ -68,85 +68,86 @@ export default angular
 					moving,
 					startTouchY,
 					disY,
-					curTouchPageIndex,
-					offsetHeight,
+					curTouchIndex,
 					nodeList  = ele[0].querySelectorAll(".page-section"),
-					nodeListLen,
-					arrow;
+					nodeListLen = nodeList.length,
+					arrow = new initArrow();
 				
+				init();
 				
-				// nodeList = Array.from(nodeList);
-				
-				nodeListLen = nodeList.length;
-				
-				ele[0].classList.add("dock-fill");
-				
-				nodeList[0].classList.add("cur-page");
-				
-				nodeList[pageIndex + 1].classList.add("next-page");
-				
-				offsetHeight = ele[0].offsetHeight;
-				
-				arrow = new initArrow();
-				
-				arrow.init();
-				
-				stopWxDropDown.stop();
-				
-				ele[0].addEventListener("touchstart", touchStartHandler);
-				ele[0].addEventListener("mousewheel", startWheelHandler);
-
-				$scope.$watch("pageIndex",function(newV){
-
-                    let nodeList = ele[0].querySelectorAll(".page-section");
-
-					if(moving || !newV || newV == pageIndex){
+				$scope.$watch("pageIndex", function (newV, oldV) {
+					
+					let nodeList = ele[0].querySelectorAll(".page-section");
+					
+					if (moving || typeof newV === 'undefined') {
 						return;
 					}
-                    moving = true;
-
-					 let newPage = Number(newV);
-
-                    nodeList[newPage].style.transform = pageIndex < newPage ? "translateY(100%)" : "translateY(-100%)";
-
-                    $timeout(function(){
-                        nodeList[newPage].classList.add("active");
-                    },2000);
-
-                    // nodeList[pageIndex > newPage ? pageIndex : newPage].style.transform = pageIndex < newPage ? "translateY(100%)" : "translateY(-100%)";
-                    // nodeList[pageIndex > newPage ? pageIndex : newPage].style.transition = "transform 0.5s ease-in-out";
-
-                    nodeList[newPage].addEventListener("webkitTransitionEnd", transitionEndHandler);
-
-				});
-
-				$scope.$on("$destroy", function () {
 					
+					let newIndex = +newV;
+					
+					moving = (typeof oldV !== 'undefined');
+					
+					if(Math.abs(newIndex-oldV) > 1){
+						var promise = new Promise(function(resolve){
+							nodeList[newIndex].style.display = "block";
+							nodeList[newIndex].style.transform  = newIndex > oldV ?  "translateY(100%)" : "translateY(-100%)";
+							$timeout(function(){
+								resolve();
+							},200);
+						});
+						promise.then(function(){
+							nodeList[newIndex].classList.add("active");
+							nodeList[newIndex].style.display = "";
+							if(typeof oldV !== 'undefined'){
+								nodeList[oldV].style.transform = newIndex > oldV ?  "translateY(-100%)" : "translateY(100%)";
+								nodeList[oldV].style.transition = "transform 0.5s ease-in-out";
+							}
+						});
+					}else if(Math.abs(newIndex-oldV) == 1){
+						nodeList[newIndex].classList.add("active");
+						if(typeof oldV !== 'undefined'){
+							nodeList[oldV].style.transform = newIndex > oldV ?  "translateY(-100%)" : "translateY(100%)";
+							nodeList[oldV].style.transition = "transform 0.5s ease-in-out";
+						}
+					}
+					
+					pageIndex = newIndex;
+					
+					nodeList[newIndex].addEventListener("webkitTransitionEnd", transitionEndHandler);
+					
+				});
+				
+				$scope.$on("$destroy", function () {
 					arrow.destroy();
 					ele[0].removeEventListener("touchstart", touchStartHandler);
 					ele[0].removeEventListener("mousewheel", startWheelHandler);
-					
 				});
-
-				
-				function startWheelHandler(e) {
+				//初始化
+				function init(){
+					// nodeList = Array.from(nodeList);
 					
-					let nodeList = ele[0].querySelectorAll(".page-section");
+					ele[0].classList.add("dock-fill");
+					
+					nodeList[0].classList.add("cur-page");
+					
+					nodeList[pageIndex + 1].classList.add("next-page");
+					
+					arrow.init();
+					
+					stopWxDropDown.stop();
+					
+					ele[0].addEventListener("touchstart", touchStartHandler);
+					ele[0].addEventListener("mousewheel", startWheelHandler);
+				}
+				//滚轮事件
+				function startWheelHandler(e) {
 					
 					if (moving || (e.wheelDelta > 0 && pageIndex == nodeListLen - 1) || (e.wheelDelta < 0 && pageIndex == 0)) {
 						return;
 					}
-					
-					moving = true;
-					
 					e.wheelDelta > 0 ? pageIndex++ : pageIndex--;
 					
-					nodeList[pageIndex].classList.add("active");
-					
-					nodeList[e.wheelDelta > 0 ? (pageIndex - 1) : (pageIndex + 1)].style.transform = e.wheelDelta < 0 ? "translateY(100%)" : "translateY(-100%)";
-					nodeList[e.wheelDelta > 0 ? (pageIndex - 1) : (pageIndex + 1)].style.transition = "transform 0.5s ease-in-out";
-					
-					nodeList[pageIndex].addEventListener("webkitTransitionEnd", transitionEndHandler);
+					applyPageIndex(pageIndex);
 					
 				}
 				
@@ -175,15 +176,7 @@ export default angular
 						return;
 					}
 					
-					let nodeList = ele[0].querySelectorAll(".page-section");
-					
-					curTouchPageIndex = disY < 0 ? (pageIndex + 1) : (pageIndex - 1);
-					
-					nodeList[curTouchPageIndex].classList.add("touch-page");
-					
-					nodeList[curTouchPageIndex].style.transform = disY < 0 ? "translateY(" + (offsetHeight + disY) + "px)" : "translateY(" + (-offsetHeight + disY) + "px)";
-					
-					nodeList[disY < 0 ? (curTouchPageIndex - 1) : (curTouchPageIndex + 1)].style.transform = "translateY(" + (disY) + "px)";
+					setTouchMovePageAttr();
 					
 					ele[0].addEventListener("touchend", touchEndHandler);
 				}
@@ -196,32 +189,58 @@ export default angular
 						return;
 					}
 					
-					moving = true;
-					
-					let nodeList = ele[0].querySelectorAll(".page-section");
-					
-					if (Math.abs(disY) < 100) {
-						
-						nodeList[curTouchPageIndex].style.transform = "";
-						nodeList[curTouchPageIndex].style.transition = "transform 0.5s ease-in-out";
-						
-					} else {
-						
-						pageIndex = curTouchPageIndex;
-						nodeList[pageIndex].classList.add("active");
-						
-					}
-					
-					nodeList[disY < 0 ? (curTouchPageIndex - 1) : (curTouchPageIndex + 1)].style.transform = Math.abs(disY) < 100 ? "" : (disY < 0 ? "translateY(-100%)" : "translateY(100%)");
-					nodeList[disY < 0 ? (curTouchPageIndex - 1) : (curTouchPageIndex + 1)].style.transition = "transform 0.5s ease-in-out";
-					
-					nodeList[curTouchPageIndex].addEventListener("webkitTransitionEnd", transitionEndHandler);
-					
+					Math.abs(disY) < 100 ? littleBounce() : applyPageIndex(curTouchIndex);
 				}
 				
 				function transitionEndHandler() {
 					
 					console.log("进入回调");
+					
+					moving = false;
+					
+					setTouchEndAttr();
+					
+					ele[0].removeEventListener("touchmove", touchMoveHandler);
+					ele[0].removeEventListener("touchend", touchEndHandler);
+					
+				}
+				
+				function littleBounce(){
+					
+					let nodeList = ele[0].querySelectorAll(".page-section");
+					
+					nodeList[curTouchIndex].style.transform = "";
+					nodeList[curTouchIndex].style.transition = "transform 0.5s ease-in-out";
+					
+					nodeList[disY < 0 ? (curTouchIndex - 1) : (curTouchIndex + 1)].style.transform =  "";
+					nodeList[disY < 0 ? (curTouchIndex - 1) : (curTouchIndex + 1)].style.transition = "transform 0.5s ease-in-out";
+					
+					nodeList[curTouchIndex].addEventListener("webkitTransitionEnd", transitionEndHandler);
+				}
+				//脏检查
+				function applyPageIndex(index) {
+					
+					$scope.$apply(function () {
+						$scope.pageIndex = index;
+					});
+					
+				}
+				
+				function setTouchMovePageAttr(){
+					
+					let nodeList = ele[0].querySelectorAll(".page-section");
+					
+					curTouchIndex = disY < 0 ? (pageIndex + 1) : (pageIndex - 1);
+					
+					nodeList[curTouchIndex].classList.add("touch-page");
+					
+					nodeList[curTouchIndex].style.transform = disY < 0 ? "translateY(" + (ele[0].offsetHeight + disY) + "px)" : "translateY(" + (-ele[0].offsetHeight + disY) + "px)";
+					
+					nodeList[disY < 0 ? (curTouchIndex - 1) : (curTouchIndex + 1)].style.transform = "translateY(" + (disY) + "px)";
+					
+				}
+				
+				function setTouchEndAttr(){
 					
 					let nodeList = ele[0].querySelectorAll(".page-section");
 					
@@ -243,14 +262,6 @@ export default angular
 					});
 					
 					ele[0].querySelectorAll(".-arrow")[0].style.display = (pageIndex == nodeListLen - 1) ? "none" : "block";
-					
-					moving = false;
-					
-					$scope.$apply(function(){
-						$scope.pageIndex = pageIndex;
-					});
-					ele[0].removeEventListener("touchmove", touchMoveHandler);
-					ele[0].removeEventListener("touchend", touchEndHandler);
 					
 				}
 				
