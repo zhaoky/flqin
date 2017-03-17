@@ -6,9 +6,9 @@ export default angular
 	})
 	.name;
 
-ResumeDefaultCtrl.$inject= ["$scope","$element","$window"];
+ResumeDefaultCtrl.$inject = ["resumeData"];
 
-function ResumeDefaultCtrl($scope,$element,$window) {
-	
-	
+function ResumeDefaultCtrl(resumeData) {
+	let vm = this;
+	resumeData.extend(vm, resumeData.data.default);
 }

@@ -8,7 +8,7 @@
             {{$ctrl.titleList[$ctrl.pageIndex]}}
         </div>
         <div class="-language">
-            <span ng-repeat="item in $ctrl.langList">{{item}}</span>
+            <span ng-repeat="item in $ctrl.langList track by $index" ng-click="$ctrl.switchLang($index)">{{item}}</span>
         </div>
     </div>
     <div class="-header-nav" ng-class="{'-show-nav':$ctrl.isShowNav}" opacity-callback>

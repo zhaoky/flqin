@@ -49,16 +49,25 @@ export default angular
     ])
     .name;
 
-ResumeHeaderCtrl.$inject = ["resumeData","$scope"];
+ResumeHeaderCtrl.$inject = ["resumeData","$window"];
 
-function ResumeHeaderCtrl(resumeData) {
+function ResumeHeaderCtrl(resumeData,$window) {
 
     let vm = this;
 
     console.log(vm);
 
-    resumeData.extend(vm, resumeData.data.cn.header);
+    resumeData.extend(vm, resumeData.data.header);
 
     vm.pageIndex = 0;
+    
+    vm.switchLang = switchLang;
+    
+    function switchLang(index){
+    
+        $window.localStorage.setItem("storageLang",index+1);
+    
+        $window.location.reload();
+    }
 
 }

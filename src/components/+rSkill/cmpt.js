@@ -7,6 +7,9 @@ export default angular
 	})
 	.name;
 
-function ResumeSkillCtrl() {
-	console.log("footer");
+ResumeSkillCtrl.$inject = ["resumeData"];
+
+function ResumeSkillCtrl(resumeData) {
+	let vm = this;
+	resumeData.extend(vm, resumeData.data.skill);
 }

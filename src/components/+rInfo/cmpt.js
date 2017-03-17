@@ -6,6 +6,9 @@ export default angular
 	})
 	.name;
 
-function ResumeInfoCtrl() {
-	console.log("footer");
+ResumeInfoCtrl.$inject = ["resumeData"];
+
+function ResumeInfoCtrl(resumeData) {
+	let vm = this;
+	resumeData.extend(vm, resumeData.data.info);
 }

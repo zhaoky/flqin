@@ -279,5 +279,16 @@ export default angular
 			}
 		}
 	])
+	.directive("setTitle",[
+		function(){
+			return{
+				restrict:"E",
+				scope:{
+					title:"="
+				},
+				template:'<div><div class="-title">{{$scope.title}}</div></div>'
+			}
+		}
+	])
 	
 	.name;
