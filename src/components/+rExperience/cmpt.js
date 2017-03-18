@@ -19,7 +19,7 @@ export default angular
 				    offsetLeft,
 					offsetTop;
 				$scope.$watch("$ctrl.pageIndex",function(newV){
-					if(newV !== 4){
+					if(Number(newV) !== 3){
 						return;
 					}
 					bannerWidth = ele[0].offsetWidth;
@@ -37,11 +37,11 @@ export default angular
                         pageY = evt.pageY,
                         x = pageX - offsetLeft - bannerWidth/2,
                         y = bannerHeight/2-pageY + offsetTop+140;
-                    ele[0].style.transform = "rotateY(" + x/50 + "deg) rotateX(" + y/50 + "deg)";
+                    	ele[0].style.transform = "rotateY(" + x/50 + "deg) rotateX(" + y/50 + "deg)";
                 }
 
                 function mouseoutHandler(evt){
-                    ele[0].style.transform = "rotateY(0deg) rotateX(0deg)";
+                    	ele[0].style.transform = "rotateY(0deg) rotateX(0deg)";
                 }
 
                 $window.onresize= onResize;
@@ -59,15 +59,15 @@ export default angular
 		}
 	])
 	.directive("switchExp",[
-		"expList",
-		function(expList){
+		function(){
 			function link($scope,ele){
 				
 				let
 					vm = $scope.$ctrl,
-					index = 0,
 					contentNode = document.body.querySelectorAll(".-experience-content")[0];
-				
+
+				vm.cutList = new Array(3);
+
 				ele[0].addEventListener("click",switchExpList);
 				
 				function switchExpList(evt){
@@ -75,8 +75,8 @@ export default angular
 						return;
 					}
 					
-					if(evt.target.dataset.index !== index){
-						index = evt.target.dataset.index;
+					if(evt.target.dataset.index !== vm.curIndex){
+                        vm.curIndex = evt.target.dataset.index;
 						contentNode.style.opacity = "0";
 						contentNode.addEventListener("webkitTransitionEnd",transitionEndHandler);
 					}
@@ -84,7 +84,7 @@ export default angular
 				function transitionEndHandler(){
 					contentNode.style.opacity = "1";
 					$scope.$apply(function(){
-						vm.exp = expList[index];
+						vm.exp = vm.expList[vm.curIndex];
 					});
 					contentNode.removeEventListener("webkitTransitionEnd",transitionEndHandler);
 				}
@@ -96,14 +96,23 @@ export default angular
 	])
 	.name;
 
-ResumeExperienceCtrl.$inject = ["resumeData"];
+ResumeExperienceCtrl.$inject = ["resumeData","$rootScope"];
 
-function ResumeExperienceCtrl(resumeData) {
-	
-	var vm = this;
-	
-	resumeData.extend(vm, resumeData.data.experience);
-	
-	vm.exp = vm.expList[0];
-	
+function ResumeExperienceCtrl(resumeData,$rootScope) {
+    let vm = this;
+
+    resumeData.extend(vm, resumeData.data.cn.experience);
+
+    vm.curIndex = 0;
+
+    vm.exp = vm.expList[vm.curIndex];
+
+    $rootScope.$broadcast("switchLang",function(evt,data){
+
+        let extendData = Number(data) == 2?resumeData.data.en.experience:resumeData.data.cn.experience;
+
+        resumeData.extend(vm, extendData);
+
+        vm.exp = vm.expList[0];
+    });
 }

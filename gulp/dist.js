@@ -22,7 +22,8 @@ const
 			"src/components/**/*.html"
 		],
 		js     : [
-			"src/index.js"
+			"src/index.js",
+			"components/**/*.js"
 		],
 		img    : [
 			"src/img/**"
@@ -138,7 +139,7 @@ function distCss() {
 (()=> {
 	gulp.task("watch-css", ()=> {
 		gulp
-			.watch("src/index.less", kit.getWatcherConfig())
+			.watch(["src/index.less","src/components/**/*.less"], kit.getWatcherConfig())
 			.on("change", (event)=> {
 				console.log("watch css", event);
 				distCss();

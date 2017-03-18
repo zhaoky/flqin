@@ -11,7 +11,7 @@ function devServer() {
         root: "dist",
         host: "localhost",
         port: 8888,
-        livereload: true
+        // livereload: true
     });
 
     let platform = os.platform();

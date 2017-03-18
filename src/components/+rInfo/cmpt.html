@@ -1,12 +1,14 @@
 <div class="-info">
-    <set-title title="$ctrl.title"></set-title>
+    <div class="-title">关于我</div>
     <div class="-content">
         <div>
             <ul class="-info-list">
                 <li class="-info-item" ng-repeat="item in $ctrl.infoList track by $index">
-                    <div>
-                        <div></div>
-                        <div>{{item.key}}{{item.value}}</div>
+                    <div class="-cont">
+                        <div class="-img">
+                            <img ng-src="{{item.icon}}" alt="">
+                        </div>
+                        <div class="-intro">{{item.key}}/{{item.value}}</div>
                     </div>
                 </li>
             </ul>

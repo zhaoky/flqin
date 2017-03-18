@@ -25,17 +25,19 @@ export default angular
         }
     ])
     .directive("selectedNavItem", [
-        function () {
+        "resumeData",
+        function (resumeData) {
 
             function link($scope, ele) {
                 let vm = $scope.$ctrl;
 
                 ele[0].addEventListener("click", clickHandler);
                 function clickHandler(evt) {
-                    if (evt.target.nodeName != "LI") {
+                    if (evt.target.nodeName != "EM") {
                         return;
                     }
-                    (evt.target.dataset.index !== vm.pageIndex) && (vm.pageIndex = evt.target.dataset.index);
+
+                    (+evt.target.dataset.index !== vm.pageIndex) &&(!resumeData.moving)&& (vm.pageIndex = +evt.target.dataset.index);
                     vm.isShowNav = false;
                     $scope.$apply();
                 }
@@ -49,25 +51,36 @@ export default angular
     ])
     .name;
 
-ResumeHeaderCtrl.$inject = ["resumeData","$window"];
+ResumeHeaderCtrl.$inject = ["resumeData","$rootScope"];
 
-function ResumeHeaderCtrl(resumeData,$window) {
+function ResumeHeaderCtrl(resumeData,$rootScope) {
 
     let vm = this;
 
     console.log(vm);
 
-    resumeData.extend(vm, resumeData.data.header);
+    resumeData.extend(vm, resumeData.data.cn.header);
 
     vm.pageIndex = 0;
+
+    vm.selected = 1;
     
     vm.switchLang = switchLang;
-    
+
+    $rootScope.$on("switchLang",function(evt,data){
+
+        let extendData = Number(data) == 2?resumeData.data.en.header:resumeData.data.cn.header;
+
+        resumeData.extend(vm, extendData);
+
+    });
+
     function switchLang(index){
-    
-        $window.localStorage.setItem("storageLang",index+1);
-    
-        $window.location.reload();
+
+        vm.selected = index+1;
+
+        $rootScope.$broadcast("switchLang",index+1);
+
     }
 
 }

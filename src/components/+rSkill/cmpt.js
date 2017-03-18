@@ -7,9 +7,17 @@ export default angular
 	})
 	.name;
 
-ResumeSkillCtrl.$inject = ["resumeData"];
+ResumeSkillCtrl.$inject = ["resumeData","$rootScope"];
 
-function ResumeSkillCtrl(resumeData) {
-	let vm = this;
-	resumeData.extend(vm, resumeData.data.skill);
+function ResumeSkillCtrl(resumeData,$rootScope) {
+    let vm = this;
+
+    resumeData.extend(vm, resumeData.data.cn.skill);
+
+    $rootScope.$broadcast("switchLang",function(evt,data){
+
+        let extendData = Number(data) == 2?resumeData.data.en.skill:resumeData.data.cn.skill;
+
+        resumeData.extend(vm, extendData);
+    });
 }

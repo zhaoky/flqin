@@ -1,19 +1,31 @@
 <div class="-skill">
+    <div class="-title">技能栈</div>
     <div class="-content">
-        <div class="-skill-circle">
-            <div>
-                <ul class="-outCircle">
-                    <li class="-out" ng-repeat="item in $ctrl.outCircleList track by $index">{{item}}</li>
-                </ul>
+        <div class="-contain">
+            <div class="-skill-circle">
+                <div>
+                    <ul class="-outCircle">
+                        <li class="-out"
+                            style="background-color:{{item.color}}"
+                            ng-repeat="item in $ctrl.outCircleList track by $index">
+                            {{item.name}}
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="-innerCircle">
+                        <li class="-inner"
+                            style="background-color:{{item.color}}"
+                            ng-repeat="item in $ctrl.innerCircleList track by $index">
+                            {{item.name}}
+</li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <ul class="-innerCircle">
-                    <li class="-inner" ng-repeat="item in $ctrl.innerCircleList track by $index">{{item}}</li>
-                </ul>
+            <div class="-des">
+                <p ng-repeat="item in $ctrl.desList track by $index">{{item}}</p>
             </div>
         </div>
-        <div class="-des">
-            <p ng-repeat="item in $ctrl.desList track by $index">{{item}}</p>
-        </div>
+
     </div>
 </div>

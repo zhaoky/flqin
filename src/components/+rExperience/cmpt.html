@@ -1,15 +1,16 @@
 <div class="-experience">
+    <div class="-title">经历</div>
     <div class="-content -contain">
-        <div class="-banner" touch-three-d >
+        <div class="-banner" touch-three-d>
             <div class="-experience-content">
                 <div class="-left">
                     <div class="-img" style="background-image: url({{$ctrl.exp.imgUrl}})"></div>
                 </div>
                 <div class="-right">
-                    <h4 class="-title">{{$ctrl.exp.title}}</h4>
+                    <h4>{{$ctrl.exp.title}}</h4>
                     <p class="-time">{{$ctrl.exp.time}}</p>
-                    <p class="-post">{{$ctrl.exp.post}}</p>
-                    <p class="-tech">{{$ctrl.exp.tech}}</p>
+                    <p class="-post">职位：<span>{{$ctrl.exp.post}}</span></p>
+                    <p class="-tech">技术栈：<span>{{$ctrl.exp.tech}}</span></p>
                     <ul class="-list">
                         <li class="-item" ng-repeat="item in $ctrl.exp.contentList track by $index">{{item}}</li>
                     </ul>
@@ -18,7 +19,10 @@
         </div>
         <div class="-shout-cut">
             <ul class="-cut-list" switch-exp>
-                <li class="-item" data-index="{{$index}}" ng-repeat="item in $ctrl.cutList track by $index"></li>
+                <li class="-item"
+                    ng-class="{'-selected':$index == $ctrl.curIndex}"
+                    data-index="{{$index}}"
+                    ng-repeat="item in $ctrl.cutList track by $index"></li>
             </ul>
         </div>
     </div>

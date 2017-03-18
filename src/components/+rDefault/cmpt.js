@@ -6,9 +6,17 @@ export default angular
 	})
 	.name;
 
-ResumeDefaultCtrl.$inject = ["resumeData"];
+ResumeDefaultCtrl.$inject = ["resumeData","$rootScope"];
 
-function ResumeDefaultCtrl(resumeData) {
+function ResumeDefaultCtrl(resumeData,$rootScope) {
 	let vm = this;
-	resumeData.extend(vm, resumeData.data.default);
+
+    resumeData.extend(vm, resumeData.data.cn.default);
+
+    $rootScope.$broadcast("switchLang",function(evt,data){
+
+        let extendData = Number(data) == 2?resumeData.data.en.default:resumeData.data.cn.default;
+
+        resumeData.extend(vm, extendData);
+    });
 }

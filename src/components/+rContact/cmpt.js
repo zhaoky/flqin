@@ -5,7 +5,17 @@ export default angular
 		controller  : ResumeContactCtrl
 	})
 	.name;
+ResumeContactCtrl.$inject = ["resumeData","$rootScope"];
 
-function ResumeContactCtrl() {
-	console.log("footer");
+function ResumeContactCtrl(resumeData,$rootScope) {
+    let vm = this;
+
+    resumeData.extend(vm, resumeData.data.cn.contact);
+
+    $rootScope.$broadcast("switchLang",function(evt,data){
+
+        let extendData = Number(data) == 2?resumeData.data.en.contact:resumeData.data.cn.contact;
+
+        resumeData.extend(vm, extendData);
+    });
 }

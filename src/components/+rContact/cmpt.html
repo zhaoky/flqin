@@ -1,17 +1,23 @@
 <div class="-contact">
+    <div class="-title">联系我</div>
     <div class="-content">
-        <div id="contact_head">
-            <div id="contact_head1">灵感 代码 梦想 未来</div>
-            <div id="contact_head2">
-                <span>inspiration</span>
-                <span>code</span>
-                <span>dream</span>
-                <span>future</span>
+        <div class="-contact-des1">
+            <span ng-repeat="item in $ctrl.desList1 track by $index">{{item}}</span>
+        </div>
+        <div class="-contact-des2">
+            <p ng-repeat="item in $ctrl.desList2 track by $index">{{item}}</p>
+        </div>
+        <div class="-contact-download">
+            <div class="-download-title">{{$ctrl.download}}</div>
+            <div class="-download-list">
+                <span>WORD版</span>
+                <span>PDF版</span>
             </div>
         </div>
-        <div id="contact_info" class="contact_scale">
-            <ul></ul>
+        <div class="-contact-type">
+            <span class="-item" ng-repeat="item in $ctrl.typeList track by $index">
+                <img ng-src="{{item}}" alt="">
+            </span>
         </div>
-
     </div>
 </div>

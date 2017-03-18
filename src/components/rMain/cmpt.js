@@ -59,7 +59,8 @@ export default angular
 		"initArrow",
 		"stopWxDropDown",
 		"$timeout",
-		function (initArrow, stopWxDropDown,$timeout) {
+		"resumeData",
+		function (initArrow, stopWxDropDown,$timeout,resumeData) {
 			
 			function link($scope, ele) {
 				
@@ -86,6 +87,8 @@ export default angular
 					let newIndex = +newV;
 					
 					moving = (typeof oldV !== 'undefined');
+
+                    resumeData.moving = moving;
 					
 					if(Math.abs(newIndex-oldV) > 1){
 						var promise = new Promise(function(resolve){
@@ -197,6 +200,8 @@ export default angular
 					console.log("进入回调");
 					
 					moving = false;
+
+                    resumeData.moving = moving;
 					
 					setTouchEndAttr();
 					
@@ -279,16 +284,4 @@ export default angular
 			}
 		}
 	])
-	.directive("setTitle",[
-		function(){
-			return{
-				restrict:"E",
-				scope:{
-					title:"="
-				},
-				template:'<div><div class="-title">{{$scope.title}}</div></div>'
-			}
-		}
-	])
-	
 	.name;
