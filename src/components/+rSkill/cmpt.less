@@ -2,9 +2,11 @@
 	.-contain{
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		align-items: center;
 		width: 50%;
 		margin: 0 auto;
+		min-width: 750px;
 		.-skill-circle{
 			padding: 5px;
 			position: relative;
@@ -108,4 +110,21 @@
 @keyframes innerY {
 	0% {  top: 122px;  }
 	100% {  top: -22px;  }
+}
+
+@media screen and (max-width: 600px){
+	.-skill{
+		.-contain{
+			min-width: 0;
+			width: 90%;
+			.-skill-circle{
+				margin: 0 auto;
+			}
+			.-des{
+				padding-top: 10px;
+				font-size: 14px;
+				line-height: 16px;
+			}
+		}
+	}
 }

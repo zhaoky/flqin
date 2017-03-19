@@ -2,7 +2,7 @@
 	.-contain{
 		perspective:3000px;
 		.-banner{
-			width: 900px;
+			width: 750px;
 			height: 350px;
 			background: #F2F4F5;
 			margin:0 auto;
@@ -25,7 +25,7 @@
 					.-img{
 						background: no-repeat center center;
 						background-size: 55%;
-						width: 300px;
+						width: 150px;
 						height: 100%;
 						transform: translateZ(50px);
 					}
@@ -112,4 +112,46 @@
 		}
 	}
 
+}
+
+@media screen and (max-width: 600px){
+	.-experience{
+		.-contain{
+			.-banner{
+				width: 90%;
+				.-experience-content{
+					.-left{
+						display: none;
+					}
+					.-right{
+						width: 90%;
+						margin: 0 auto;
+						padding: 0;
+						float: none;
+						h4{
+							font-size: 16px;
+							margin: 10px 0;
+						}
+						p{
+							font-size: 12px;
+							margin: 10px 0;
+						}
+						.-time{
+							font-size: 12px;
+						}
+						.-list{
+							.-item{
+								font-size: 12px;
+								line-height: 16px;
+								margin: 12px 0;
+							}
+						}
+					}
+				}
+			}
+			.-shout-cut{
+				padding-top: 35px;
+			}
+		}
+	}
 }

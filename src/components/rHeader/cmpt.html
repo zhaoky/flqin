@@ -8,7 +8,7 @@
                 class="-header-title"
                 ng-class="{'-rotate':$ctrl.isShowNav}"
                 ng-click="$ctrl.isShowNav = !$ctrl.isShowNav">
-                {{$ctrl.titleList[$ctrl.pageIndex]}}
+                {{$ctrl.titleList[$ctrl.pageIndex].title}}
             </div>
             <div class="-language">
                 <div class="-language-c" ng-class="{'-selectEn':$ctrl.selected==2}">
@@ -27,10 +27,9 @@
         <ul class="-list" selected-nav-item>
             <li
                 class="-item"
-                data-index="{{$index}}"
                 ng-class="{'-cur-index':$ctrl.pageIndex == $index}"
                 ng-repeat="item in $ctrl.titleList track by $index">
-                <em>{{item.title}}</em>
+                <em data-index="{{$index}}">{{item.title}}</em>
             </li>
         </ul>
     </div>

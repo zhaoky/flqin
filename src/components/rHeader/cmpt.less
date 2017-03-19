@@ -13,6 +13,9 @@
 		z-index: -1;
 		.-header-c{
 			padding: 0 3%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 			.-logo{
 				float: left;
 				height: 60px;
@@ -29,6 +32,7 @@
 			.-header-title{
 				display: none;
 				position: relative;
+				color: #FFF;
 				&:after {
 					content: "";
 					position: absolute;
@@ -103,6 +107,9 @@
 			align-items: center;
 			display: flex;
 			height: 50px;
+			em{
+				font-style: normal;
+			}
 			.-cur-index{
 				color:#38BCFF;
 			}
@@ -192,4 +199,19 @@
 				}
 			}
 		}
+}
+
+@media screen and (max-width: 600px){
+	.-header{
+		.-header-head{
+			.-header-c{
+				.-header-title{
+					display: block;
+				}
+			}
+		}
+		.-header-nav-dot{
+			display: none;
+		}
+	}
 }

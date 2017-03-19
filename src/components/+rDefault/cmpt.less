@@ -1,4 +1,7 @@
 .-default{
+	.-content{
+		top: 200px;
+	}
 	.-photo{
 		width: 150px;
 		height: 150px;
@@ -15,6 +18,7 @@
 		text-align: center;
 		max-width: 90%;
 		margin: 0 auto;
+		color: #FFF;
 		.-quote{
 			font-size: 20px;
 			position: relative;
@@ -26,7 +30,7 @@
 				right: 10%;
 				bottom: 0;
 				height: 1px;
-				background-color: #999999;
+				background-color: rgba(255,255,255,0.6);
 			}
 		}
 		.-des-list{
@@ -37,5 +41,26 @@
 				margin: 20px 0;
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 600px){
+	.-default {
+		.-content {
+			top: 120px;
+		}
+		.-des{
+			.-quote{
+				font-size: 16px;
+			}
+			.-des-list{
+				padding: 0;
+				line-height: 16px;
+				font-size: 14px;
+			}
+		}
+	}
+	.-title{
+		display: none;
 	}
 }
