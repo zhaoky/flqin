@@ -1,17 +1,19 @@
 <div class="-work">
     <div class="-title">作品集</div>
     <div class="-content">
-        <div class="-work-content">
-            <ul class="-work-list">
-                <li class="-work-item" ng-repeat="item in $ctrl.demoList track by $index">
-                    <h4 class="-work-title">{{item.title}}</h4>
-                    <p class="-work-tech">{{item.tech}}</p>
-                    <p class="-work-des">{{item.des}}</p>
-                </li>
-            </ul>
-            <div class="-work-more">
-                <a href="https://github.com/zhaoky/demos" target="_blank">点击进入我的github Demo站！</a>
-            </div>
+        <ul class="-work-list">
+            <li class="-work-item" ng-repeat="item in $ctrl.demoList track by $index">
+                <h4 class="-work-title">{{item.title}}</h4>
+                <p class="-work-tech">{{item.tech}}</p>
+                <p class="-work-des">{{item.des}}</p>
+            </li>
+        </ul>
+        <div class="-work-more">
+            <a href="https://github.com/zhaoky/demos" target="_blank">点击进入我的github Demo站！</a>
+        </div>
+        <div class="-work-switch" switch-work>
+            <i class="-left"></i>
+            <i class="-right"></i>
         </div>
     </div>
 </div>

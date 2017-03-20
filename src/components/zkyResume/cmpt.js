@@ -106,7 +106,7 @@ export default angular
                                 title:"兰途网络科技有限公司",
                                 time:"2015年6月~至今",
                                 post:"web前端研发工程师",
-                                imgUrl:"img/js.png",
+                                imgUrl:"img/js.svg",
                                 tech:"less gulp angular1.x cordova git 原生javascript及若干类库",
                                 contentList:[
                                     "负责快速构建高质量移动APP/PC/微信页面，",
@@ -120,7 +120,7 @@ export default angular
                                 title:"卓煌企业管理有限公司",
                                 time:"2014年8月~2015年6月",
                                 post:"网页开发兼SEO优化",
-                                imgUrl:"img/h5.png",
+                                imgUrl:"img/h5.svg",
                                 tech:"html5,css3,javascript,jquery,bootstrap,underscore等",
                                 contentList:[
                                     "负责企业站静态页开发",
@@ -133,7 +133,7 @@ export default angular
                                 title:"壹零陆文化传播有限责任公司",
                                 time:"2014年3月~2014年8月",
                                 post:"SEO",
-                                imgUrl:"img/seo.png",
+                                imgUrl:"img/seo.svg",
                                 tech:"SEO,SEM,百度（360，搜狗）竞价，百度（360,搜狗）推广等",
                                 contentList:[
                                     "负责网站后台维护，微博、微信等新媒体创意撰写，营销和推广",

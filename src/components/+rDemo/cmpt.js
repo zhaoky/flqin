@@ -4,6 +4,19 @@ export default angular
 		templateUrl : "components/+rDemo/cmpt.html",
 		controller  : ResumeDemoCtrl
 	})
+	.directive("switchWork",[
+		function(){
+			function link($scope,ele,attr) {
+				let worksContain = document.body.querySelector(".-work-list");
+				let worksItemList = worksContain.querySelectorAll(".-work-item");
+				let iWidth = document.body.offsetWidth*0.9;
+				console.log(worksItemList);
+			}
+			return{
+				link:link
+			}
+		}
+	])
 	.name;
 
 ResumeDemoCtrl.$inject = ["resumeData","$rootScope"];
