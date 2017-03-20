@@ -50,20 +50,91 @@
         bottom: 10%;
         height:30px;
         z-index: 1;
-        .-left{
+        .-left,.-right{
           border-radius: 50%;
           border:1px solid #FFF;
           height:30px;
           width: 30px;
+          position: relative;
+          &:before{
+            content: '';
+            display: block;
+            width: 35%;
+            height: 100%;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
+            border-bottom: 2px solid #FFF;
+            position: absolute;
+            right: 2px;
+            top: 10px;
+            transform: rotate(135deg);
+          }
+          &:after{
+            content: '';
+            display: block;
+            width: 35%;
+            height: 100%;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
+            border-top: 2px solid #FFF;
+            position: absolute;
+            right: 13px;
+            top: 10px;
+            transform: rotate(45deg);
+          }
+        }
+        .-left{
           float: left;
+          transform: rotate(-90deg);
         }
         .-right{
-          border-radius: 50%;
-          border:1px solid #FFF;
-          height:30px;
-          width: 30px;
           float: right;
+          transform: rotate(90deg);
+          &:after{
+            right: 15px;
+          }
         }
       }
     }
+}
+
+@media screen and (max-width: 600px){
+  .-work {
+    .-content{
+      perspective: 2000px;
+      .-work-list{
+        transform-style: preserve-3d;
+        width: 280px;
+        height: 60%;
+        overflow: visible;
+        padding: 0;
+        transition: transform 2s;
+        .-work-item:nth-child(1){
+          transform: translateZ(140px);
+        }
+        .-work-item:nth-child(2){
+          transform: translateZ(-140px) rotateY(180deg);
+        }
+        .-work-item:nth-child(3){
+          transform: translateX(-140px) rotateY(-90deg);
+        }
+        .-work-item:nth-child(4){
+          transform: translateX(140px) rotateY(90deg);
+        }
+        .-work-item{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          border-radius:0;
+        }
+
+      }
+      .-work-more{
+        margin-top: 15%;
+      }
+    }
+  }
+  .-title{
+    display: none;
+  }
 }

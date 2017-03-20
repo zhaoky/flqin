@@ -282,6 +282,25 @@ export default angular
 			}
 		}
 	])
+    .service("actionEvent", [
+        "$window",
+        function($window){
+            let
+                isSupportTouch = "ontouchend" in $window.document,
+                actionEvent
+                ;
+
+            actionEvent = {
+                start: isSupportTouch ? "touchstart" : "mousedown",
+                move : isSupportTouch ? "touchmove" : "mousemove",
+                end  : isSupportTouch ? "touchend" : "mouseup"
+            };
+
+            this.actionEvent = actionEvent;
+            this.isSupportTouch = isSupportTouch;
+
+        }
+    ])
 	.component("zkyResume", {
 		templateUrl : "components/zkyResume/cmpt.html",
 		controllerAs: "zr",

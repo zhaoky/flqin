@@ -5,12 +5,24 @@ export default angular
 		controller  : ResumeDemoCtrl
 	})
 	.directive("switchWork",[
-		function(){
+		"actionEvent",
+		function(actionEvent){
 			function link($scope,ele,attr) {
 				let worksContain = document.body.querySelector(".-work-list");
-				let worksItemList = worksContain.querySelectorAll(".-work-item");
-				let iWidth = document.body.offsetWidth*0.9;
-				console.log(worksItemList);
+                let rotate = 0;
+                ele[0].addEventListener(actionEvent.start,switchWorkHandler);
+
+                function switchWorkHandler(evt){
+                	console.log(evt);
+                	if(evt.target.nodeName !== "I"){
+                		return;
+					}
+
+					rotate += evt.target.className == "-left"?90:-90;
+
+                    worksContain.style.transform ="rotateY("+rotate+"deg)";
+				}
+
 			}
 			return{
 				link:link

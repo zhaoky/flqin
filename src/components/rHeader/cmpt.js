@@ -26,12 +26,13 @@ export default angular
     ])
     .directive("selectedNavItem", [
         "resumeData",
-        function (resumeData) {
+        "actionEvent",
+        function (resumeData,actionEvent) {
 
             function link($scope, ele) {
                 let vm = $scope.$ctrl;
 
-                ele[0].addEventListener("click", clickHandler);
+                ele[0].addEventListener(actionEvent.start, clickHandler);
                 function clickHandler(evt) {
                     if (evt.target.nodeName != "EM") {
                         return;

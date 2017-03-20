@@ -10,7 +10,8 @@ export default angular
 	})
 	.directive("touchThreeD",[
 		"$window",
-		function($window){
+		"actionEvent",
+		function($window,actionEvent){
 			function link($scope,ele){
 				
 				let
@@ -28,7 +29,7 @@ export default angular
 					offsetTop = ele[0].offsetTop;
 				});
 				
-				ele[0].addEventListener("mousemove",mousemoveHandler);
+				ele[0].addEventListener(actionEvent.move,mousemoveHandler);
 				ele[0].addEventListener("mouseout",mouseoutHandler);
 
 				function mousemoveHandler(evt){
@@ -59,7 +60,8 @@ export default angular
 		}
 	])
 	.directive("switchExp",[
-		function(){
+		"actionEvent",
+		function(actionEvent){
 			function link($scope,ele){
 				
 				let
@@ -68,7 +70,7 @@ export default angular
 
 				vm.cutList = new Array(3);
 
-				ele[0].addEventListener("click",switchExpList);
+				ele[0].addEventListener(actionEvent.start,switchExpList);
 				
 				function switchExpList(evt){
 					if(evt.target.nodeName != "LI"){

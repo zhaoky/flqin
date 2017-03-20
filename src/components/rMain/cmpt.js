@@ -43,25 +43,29 @@ export default angular
 			return Arrow;
 		}
 	])
-	.service("stopWxDropDown", function () {
-		
-		this.stop = function () {
-			
-			document.querySelector("body").addEventListener('touchstart', function (ev) {
-				
-				ev.preventDefault();
-				
-			});
-			
+	.service("stopWxDropDown", [
+		"actionEvent",
+		function (actionEvent) {
+
+			this.stop = function () {
+
+				document.querySelector("body").addEventListener(actionEvent.start, function (ev) {
+
+					ev.preventDefault();
+
+				});
+
+			}
 		}
-	})
+	])
 	.directive("resumeMain", [
 		"initArrow",
 		"stopWxDropDown",
 		"$timeout",
 		"resumeData",
-		function (initArrow, stopWxDropDown,$timeout,resumeData) {
-			
+		"actionEvent",
+		function (initArrow, stopWxDropDown,$timeout,resumeData,actionEvent) {
+
 			function link($scope, ele) {
 				
 				let
@@ -103,14 +107,14 @@ export default angular
 							nodeList[newIndex].style.display = "";
 							if(typeof oldV !== 'undefined'){
 								nodeList[oldV].style.transform = newIndex > oldV ?  "translateY(-100%)" : "translateY(100%)";
-								nodeList[oldV].style.transition = "transform 0.5s ease-in-out";
+								nodeList[oldV].style.transition = "transform 0.5s";
 							}
 						});
 					}else if(Math.abs(newIndex-oldV) == 1){
 						nodeList[newIndex].classList.add("active");
 						if(typeof oldV !== 'undefined'){
 							nodeList[oldV].style.transform = newIndex > oldV ?  "translateY(-100%)" : "translateY(100%)";
-							nodeList[oldV].style.transition = "transform 0.5s ease-in-out";
+							nodeList[oldV].style.transition = "transform 0.5s";
 						}
 					}
 					
@@ -139,7 +143,7 @@ export default angular
 					
 					stopWxDropDown.stop();
 					
-					ele[0].addEventListener("touchstart", touchStartHandler);
+					ele[0].addEventListener(actionEvent.start, touchStartHandler);
 					ele[0].addEventListener("mousewheel", startWheelHandler);
 				}
 				//滚轮事件
@@ -163,7 +167,7 @@ export default angular
 					
 					startTouchY = e.changedTouches[0].pageY;
 					
-					ele[0].addEventListener("touchmove", touchMoveHandler);
+					ele[0].addEventListener(actionEvent.move, touchMoveHandler);
 				}
 				
 				function touchMoveHandler(e) {
@@ -181,7 +185,7 @@ export default angular
 					
 					setTouchMovePageAttr();
 					
-					ele[0].addEventListener("touchend", touchEndHandler);
+					ele[0].addEventListener(actionEvent.end, touchEndHandler);
 				}
 				
 				function touchEndHandler() {
@@ -215,10 +219,10 @@ export default angular
 					let nodeList = ele[0].querySelectorAll(".page-section");
 					
 					nodeList[curTouchIndex].style.transform = "";
-					nodeList[curTouchIndex].style.transition = "transform 0.5s ease-in-out";
+					nodeList[curTouchIndex].style.transition = "transform 0.5s";
 					
 					nodeList[disY < 0 ? (curTouchIndex - 1) : (curTouchIndex + 1)].style.transform =  "";
-					nodeList[disY < 0 ? (curTouchIndex - 1) : (curTouchIndex + 1)].style.transition = "transform 0.5s ease-in-out";
+					nodeList[disY < 0 ? (curTouchIndex - 1) : (curTouchIndex + 1)].style.transition = "transform 0.5s";
 					
 					nodeList[curTouchIndex].addEventListener("webkitTransitionEnd", transitionEndHandler);
 				}
