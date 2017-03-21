@@ -111,8 +111,7 @@ export default angular
                                 contentList:[
                                     "负责快速构建高质量移动APP/PC/微信页面，",
                                     "git版本控制，less预编译，gulp自动化构建，cordova打包",
-                                    "使用原生JS+angularJS进行前端开发",
-                                    "采用组件化,模块化，保证面向未来的单向数据流思想",
+                                    "重度组件化,模块化，使用原生JS+angularJS进行前端开发",
                                     "同期学习ES6及当下热门的vue,react,ng2,并思索设计模式及函数式编程思想"
                                 ]
                             },
@@ -296,7 +295,7 @@ export default angular
                 end  : isSupportTouch ? "touchend" : "mouseup"
             };
 
-            this.actionEvent = actionEvent;
+            this.event = actionEvent;
             this.isSupportTouch = isSupportTouch;
 
         }

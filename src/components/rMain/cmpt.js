@@ -143,7 +143,7 @@ export default angular
 					
 					stopWxDropDown.stop();
 					
-					ele[0].addEventListener(actionEvent.start, touchStartHandler);
+					ele[0].addEventListener(actionEvent.event.start, touchStartHandler);
 					ele[0].addEventListener("mousewheel", startWheelHandler);
 				}
 				//滚轮事件
@@ -167,7 +167,7 @@ export default angular
 					
 					startTouchY = e.changedTouches[0].pageY;
 					
-					ele[0].addEventListener(actionEvent.move, touchMoveHandler);
+					ele[0].addEventListener(actionEvent.event.move, touchMoveHandler);
 				}
 				
 				function touchMoveHandler(e) {
@@ -185,7 +185,7 @@ export default angular
 					
 					setTouchMovePageAttr();
 					
-					ele[0].addEventListener(actionEvent.end, touchEndHandler);
+					ele[0].addEventListener(actionEvent.event.end, touchEndHandler);
 				}
 				
 				function touchEndHandler() {

@@ -10,7 +10,7 @@ export default angular
 			function link($scope,ele,attr) {
 				let worksContain = document.body.querySelector(".-work-list");
                 let rotate = 0;
-                ele[0].addEventListener(actionEvent.start,switchWorkHandler);
+                ele[0].addEventListener(actionEvent.event.start,switchWorkHandler);
 
                 function switchWorkHandler(evt){
                 	console.log(evt);

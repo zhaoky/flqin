@@ -61,7 +61,7 @@
 		height: 100%;
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
-		border-bottom: 4px solid #343c99;
+		border-bottom: 4px solid #FFF;
 		position: absolute;
 		right: -8px;
 		transform: rotate(135deg);
@@ -73,7 +73,7 @@
 		height: 100%;
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
-		border-top: 4px solid #343c99;
+		border-top: 4px solid #FFF;
 		position: absolute;
 		right: 0;
 		transform: rotate(45deg);
@@ -96,5 +96,17 @@
 	100% {
 		bottom: 22px;
 		opacity: 0;
+	}
+}
+@media screen and (max-width: 600px){
+	.-arrow{
+		width: 15px;
+		&:before {
+			border-width: 2px;
+			right: -12px;
+		}
+		&:after{
+			border-width: 2px;
+		}
 	}
 }

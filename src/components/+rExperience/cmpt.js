@@ -29,7 +29,7 @@ export default angular
 					offsetTop = ele[0].offsetTop;
 				});
 				
-				ele[0].addEventListener(actionEvent.move,mousemoveHandler);
+				ele[0].addEventListener(actionEvent.event.move,mousemoveHandler);
 				ele[0].addEventListener("mouseout",mouseoutHandler);
 
 				function mousemoveHandler(evt){
@@ -70,7 +70,7 @@ export default angular
 
 				vm.cutList = new Array(3);
 
-				ele[0].addEventListener(actionEvent.start,switchExpList);
+				ele[0].addEventListener(actionEvent.event.start,switchExpList);
 				
 				function switchExpList(evt){
 					if(evt.target.nodeName != "LI"){
