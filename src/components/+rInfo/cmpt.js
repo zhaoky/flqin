@@ -13,7 +13,7 @@ function ResumeInfoCtrl(resumeData,$rootScope) {
 
     resumeData.extend(vm, resumeData.data.cn.info);
 
-    $rootScope.$broadcast("switchLang",function(evt,data){
+    $rootScope.$on("switchLang",function(evt,data){
 
         let extendData = Number(data) == 2?resumeData.data.en.info:resumeData.data.cn.info;
 

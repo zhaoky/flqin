@@ -1,4 +1,5 @@
 .-experience{
+	background-color: rgb(148, 92, 76);
 	.-contain{
 		perspective:3000px;
 		.-banner{
@@ -98,6 +99,15 @@
 					background-color: #623C32;
 					cursor:pointer;
 					transition: background-color .3s linear;
+					position: relative;
+					&:before{
+						content: '';
+						position: absolute;
+						top: -10px;
+						right: -10px;
+						left: -10px;
+						bottom: -10px;
+					}
 				}
 				.-selected{
 					background-color: #AF7164;

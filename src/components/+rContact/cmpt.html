@@ -10,8 +10,7 @@
         <div class="-contact-download">
             <div class="-download-title">{{$ctrl.download}}</div>
             <div class="-download-list">
-                <span>WORD版</span>
-                <span>PDF版</span>
+                <a href="{{item.url}}" target="_blank" ng-repeat="item in $ctrl.fileList track by $index">{{item.title}}</a>
             </div>
         </div>
         <div class="-contact-type">

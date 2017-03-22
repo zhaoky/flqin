@@ -43,7 +43,7 @@ export default angular
 			return Arrow;
 		}
 	])
-	.service("stopWxDropDown", [
+	.service("stopIosDropDown", [
 		"actionEvent",
 		function (actionEvent) {
 
@@ -60,11 +60,11 @@ export default angular
 	])
 	.directive("resumeMain", [
 		"initArrow",
-		"stopWxDropDown",
+		"stopIosDropDown",
 		"$timeout",
 		"resumeData",
 		"actionEvent",
-		function (initArrow, stopWxDropDown,$timeout,resumeData,actionEvent) {
+		function (initArrow, stopIosDropDown,$timeout,resumeData,actionEvent) {
 
 			function link($scope, ele) {
 				
@@ -141,7 +141,7 @@ export default angular
 					
 					arrow.init();
 					
-					stopWxDropDown.stop();
+					stopIosDropDown.stop();
 					
 					ele[0].addEventListener(actionEvent.event.start, touchStartHandler);
 					ele[0].addEventListener("mousewheel", startWheelHandler);

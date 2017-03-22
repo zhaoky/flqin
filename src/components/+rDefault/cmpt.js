@@ -13,7 +13,7 @@ function ResumeDefaultCtrl(resumeData,$rootScope) {
 
     resumeData.extend(vm, resumeData.data.cn.default);
 
-    $rootScope.$broadcast("switchLang",function(evt,data){
+    $rootScope.$on("switchLang",function(evt,data){
 
         let extendData = Number(data) == 2?resumeData.data.en.default:resumeData.data.cn.default;
 

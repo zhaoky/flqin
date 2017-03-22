@@ -14,7 +14,7 @@ function ResumeSkillCtrl(resumeData,$rootScope) {
 
     resumeData.extend(vm, resumeData.data.cn.skill);
 
-    $rootScope.$broadcast("switchLang",function(evt,data){
+    $rootScope.$on("switchLang",function(evt,data){
 
         let extendData = Number(data) == 2?resumeData.data.en.skill:resumeData.data.cn.skill;
 

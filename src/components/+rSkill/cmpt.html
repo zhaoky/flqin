@@ -3,24 +3,20 @@
     <div class="-content">
         <div class="-contain">
             <div class="-skill-circle">
-                <div>
-                    <ul class="-outCircle">
-                        <li class="-out"
-                            style="background-color:{{item.color}}"
-                            ng-repeat="item in $ctrl.outCircleList track by $index">
-                            {{item.name}}
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="-innerCircle">
-                        <li class="-inner"
-                            style="background-color:{{item.color}}"
-                            ng-repeat="item in $ctrl.innerCircleList track by $index">
-                            {{item.name}}
-</li>
-                    </ul>
-                </div>
+                <ul class="-outCircle">
+                    <li class="-out"
+                        style="background-color:{{item.color}}"
+                        ng-repeat="item in $ctrl.outCircleList track by $index">
+                        {{item.name}}
+                    </li>
+                </ul>
+                <ul class="-innerCircle">
+                    <li class="-inner"
+                        style="background-color:{{item.color}}"
+                        ng-repeat="item in $ctrl.innerCircleList track by $index">
+                        {{item.name}}
+                    </li>
+                </ul>
             </div>
             <div class="-des">
                 <p ng-repeat="item in $ctrl.desList track by $index">{{item}}</p>

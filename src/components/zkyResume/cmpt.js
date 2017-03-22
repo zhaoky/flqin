@@ -42,8 +42,8 @@ export default angular
                         ],
                         desList:[
                             "三年互联网经验,两年半全职前端开发经验",
-                            "熟悉MVC开发,深谙组件化,模块化开发之道",
-                            "高效的自学能力,独立分析解决问题能力",
+                            "熟悉MV*开发,深谙自动化,模块化开发之道",
+                            "高效的自学能力,具备独立分析解决问题能力",
                             "强烈的自我驱动力,代码强迫症患者"
                         ]
                     },
@@ -66,7 +66,7 @@ export default angular
                         ],
                         desList:[
                             "熟练使用angularJs1.x及各种类库的指令封装",
-                            "常驻PC/APP/微信号三平台前端研发，自动化构建项目工程",
+                            "常驻PC/APP/微信三平台前端研发",
                             "擅长组件/插件开发，能脱离库书写JS代码",
                             "编码常思其健壮性，扩展性，维护性"
                         ]
@@ -75,26 +75,23 @@ export default angular
                         demoList:[
                             {
                                 title:"web前端工程师简历",
-                                tech:"angularJS",
-                                des:"web前端工程师简历web前端工程师简历web前端工程师简历web前端工程师简历web前端工程师简历",
+                                des:"上线一个月，百度关键词“web前端工程师简历”即排名前三，截止今日依旧排在前五，深受广大初学者好评，以至于该关键词前10页都处处能见该简历影子。",
+                                url:"www.baidu.com",
                                 bg:"img/tech.png"
                             },
                             {
-                                title:"web前端工程师简历",
-                                tech:"angularJS",
-                                des:"web前端工程师简历web前端工程师简历web前端工程师简历web前端工程师简历web前端工程师简历",
+                                title:"移动校园APP",
+                                des:"一站式、全生命周期的校园官方移动服务平台，涵盖PC、安卓、IOS、微信平台，上线学校包括中央财经大学，北京交通大学，中国戏曲学院，辽宁大学，西南财经大学等等，下载量数十万，深受学生老师喜爱。",
                                 bg:"img/tech.png"
                             },
                             {
-                                title:"web前端工程师简历",
-                                tech:"angularJS",
-                                des:"web前端工程师简历web前端工程师简历web前端工程师简历web前端工程师简历web前端工程师简历",
+                                title:"移动校园管理系统",
+                                des:"针对校园APP的后台管理系统，包括人员架构，权限设置，H5生产机，数据交换平台，各个模块的数据管理，反馈设置等等",
                                 bg:"img/tech.png"
                             },
                             {
-                                title:"web前端工程师简历",
-                                tech:"angularJS",
-                                des:"web前端工程师简历web前端工程师简历web前端工程师简历web前端工程师简历web前端工程师简历",
+                                title:"企业官网",
+                                des:"一般性企业站开发，兼容IE8+,适配全移动机型",
                                 bg:"img/tech.png"
                             }
                         ],
@@ -107,12 +104,12 @@ export default angular
                                 time:"2015年6月~至今",
                                 post:"web前端研发工程师",
                                 imgUrl:"img/js.svg",
-                                tech:"less gulp angular1.x cordova git 原生javascript及若干类库",
+                                tech:"less gulp angular1.x cordova 原生js及若干类库",
                                 contentList:[
-                                    "负责快速构建高质量移动APP/PC/微信页面，",
-                                    "git版本控制，less预编译，gulp自动化构建，cordova打包",
-                                    "重度组件化,模块化，使用原生JS+angularJS进行前端开发",
-                                    "同期学习ES6及当下热门的vue,react,ng2,并思索设计模式及函数式编程思想"
+                                    "负责快速构建高质量移动APP/PC/微信页面",
+                                    "根据业务需求设计合适的工程项目",
+                                    "高度组件化、模块化思维，拥有各平台调试能力",
+                                    "同期学习ES6及vue,react,ng2,体会函数式编程思想"
                                 ]
                             },
                             {
@@ -120,7 +117,7 @@ export default angular
                                 time:"2014年8月~2015年6月",
                                 post:"网页开发兼SEO优化",
                                 imgUrl:"img/h5.svg",
-                                tech:"html5,css3,javascript,jquery,bootstrap,underscore等",
+                                tech:"html5,css3,javascript,jquery,bootstrap等",
                                 contentList:[
                                     "负责企业站静态页开发",
                                     "负责网站后台维护",
@@ -133,9 +130,9 @@ export default angular
                                 time:"2014年3月~2014年8月",
                                 post:"SEO",
                                 imgUrl:"img/seo.svg",
-                                tech:"SEO,SEM,百度（360，搜狗）竞价，百度（360,搜狗）推广等",
+                                tech:"SEO,SEM,百度（360，搜狗）竞价、推广等",
                                 contentList:[
-                                    "负责网站后台维护，微博、微信等新媒体创意撰写，营销和推广",
+                                    "负责网站后台维护，微博、微信等新媒体营销和推广",
                                     "负责百度PPC后台调整",
                                     "获得最佳新人奖",
                                     "同期工作之余开始系统性的自学web前端各项技术",
@@ -154,6 +151,10 @@ export default angular
                             "带上我吧，一起看到更大的世界",
                         ],
                         download:"下载简历",
+                        fileList:[
+                            {title:"HTML版",url:"www.baidu.com"},
+                            {title:"PDF版",url:"www.baidu.com"},
+                        ],
                         typeList:[
                             "img/github.png",
                             "img/sf.png",

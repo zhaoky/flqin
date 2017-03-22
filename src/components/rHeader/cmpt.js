@@ -7,6 +7,48 @@ export default angular
             pageIndex: "="
         }
     })
+    .directive("showNav", [
+        "actionEvent",
+        function (actionEvent) {
+            function link($scope, ele) {
+                let vm = $scope.$ctrl;
+                ele[0].addEventListener(actionEvent.event.start, clickHandler);
+                function clickHandler() {
+                    vm.isShowNav = !vm.isShowNav;
+                    $scope.$apply();
+                }
+            }
+            return {
+                restrict: "A",
+                link: link
+            }
+        }
+    ])
+    .directive("switchLang", [
+        "actionEvent",
+        "$rootScope",
+        function (actionEvent,$rootScope) {
+            function link($scope, ele) {
+                let vm = $scope.$ctrl;
+                ele[0].addEventListener(actionEvent.event.start, clickHandler);
+                function clickHandler(ev) {
+                    if(ev.target.nodeName !== "SPAN"){
+                        return;
+                    }
+                    vm.selected = Number(ev.target.dataset.index)+1;
+    
+                    $scope.$apply();
+    
+                    $rootScope.$broadcast("switchLang",vm.selected);
+                    
+                }
+            }
+            return {
+                restrict: "A",
+                link: link
+            }
+        }
+    ])
     .directive("opacityCallback", [
         function () {
             function link($scope, ele) {
@@ -32,7 +74,7 @@ export default angular
             function link($scope, ele) {
                 let vm = $scope.$ctrl;
 
-                ele[0].addEventListener(actionEvent.start, clickHandler);
+                ele[0].addEventListener(actionEvent.event.start, clickHandler);
                 function clickHandler(evt) {
                     if (evt.target.nodeName != "EM") {
                         return;
@@ -52,36 +94,26 @@ export default angular
     ])
     .name;
 
-ResumeHeaderCtrl.$inject = ["resumeData","$rootScope"];
+ResumeHeaderCtrl.$inject = ["resumeData","$rootScope","$scope"];
 
-function ResumeHeaderCtrl(resumeData,$rootScope) {
+function ResumeHeaderCtrl(resumeData,$rootScope,$scope) {
 
     let vm = this;
-
-    console.log(vm);
-
+    
     resumeData.extend(vm, resumeData.data.cn.header);
 
     vm.pageIndex = 0;
 
     vm.selected = 1;
-    
-    vm.switchLang = switchLang;
 
     $rootScope.$on("switchLang",function(evt,data){
 
         let extendData = Number(data) == 2?resumeData.data.en.header:resumeData.data.cn.header;
 
         resumeData.extend(vm, extendData);
+        
+        $scope.$apply();
 
     });
-
-    function switchLang(index){
-
-        vm.selected = index+1;
-
-        $rootScope.$broadcast("switchLang",index+1);
-
-    }
 
 }

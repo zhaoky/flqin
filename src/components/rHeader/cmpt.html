@@ -1,49 +1,52 @@
 <div class="-header">
-    <div class="-header-head">
-        <div class="-header-c">
-            <div class="-logo">
-                <div class="-logo-c"></div>
-            </div>
-            <div
-                class="-header-title"
-                ng-class="{'-rotate':$ctrl.isShowNav}"
-                ng-click="$ctrl.isShowNav = !$ctrl.isShowNav">
-                {{$ctrl.titleList[$ctrl.pageIndex].title}}
-            </div>
-            <div class="-language">
-                <div class="-language-c" ng-class="{'-selectEn':$ctrl.selected==2}">
+	<div class="-header-head">
+		<div class="-header-c">
+			<div class="-logo">
+				<a class="-logo-c" href="https://github.com/zhaoky" target="_blank"></a>
+			</div>
+			<div
+					show-nav
+					class="-header-title"
+					ng-class="{'-rotate':$ctrl.isShowNav}">
+				{{$ctrl.titleList[$ctrl.pageIndex].title}}
+			</div>
+			<div class="-language">
+				<div
+						switch-lang
+						class="-language-c"
+				     ng-class="{'-selectEn':$ctrl.selected==2}">
                     <span
-                        ng-class="{'-selected':$ctrl.selected == $index+1}"
-                        ng-repeat="item in $ctrl.langList track by $index"
-                        ng-click="$ctrl.switchLang($index)">
+		                    data-index="{{$index}}"
+		                    ng-class="{'-selected':$ctrl.selected == $index+1}"
+		                    ng-repeat="item in $ctrl.langList track by $index">
                         {{item}}
                     </span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="-header-nav" ng-class="{'-show-nav':$ctrl.isShowNav}" opacity-callback>
-        <ul class="-list" selected-nav-item>
-            <li
-                class="-item"
-                ng-class="{'-cur-index':$ctrl.pageIndex == $index}"
-                ng-repeat="item in $ctrl.titleList track by $index">
-                <em data-index="{{$index}}">{{item.title}}</em>
-            </li>
-        </ul>
-    </div>
-    <div class="-header-nav-dot">
-        <ul selected-nav-item>
-            <li
-                ng-class="{'-cur-index':$ctrl.pageIndex == $index}"
-                class="-item"
-                ng-repeat="item in $ctrl.titleList track by $index">
-                <em class="-dot" data-index="{{$index}}">
-                    <img ng-src="{{item.svg}}" alt="">
-                </em>
-                <span class="-dot-title">{{item.title}}</span>
-            </li>
-        </ul>
-    </div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	<div class="-header-nav" ng-class="{'-show-nav':$ctrl.isShowNav}" opacity-callback>
+		<ul class="-list" selected-nav-item>
+			<li
+					class="-item"
+					ng-class="{'-cur-index':$ctrl.pageIndex == $index}"
+					ng-repeat="item in $ctrl.titleList track by $index">
+				<em data-index="{{$index}}">{{item.title}}</em>
+			</li>
+		</ul>
+	</div>
+	<div class="-header-nav-dot">
+		<ul selected-nav-item>
+			<li
+					ng-class="{'-cur-index':$ctrl.pageIndex == $index}"
+					class="-item"
+					ng-repeat="item in $ctrl.titleList track by $index">
+				<em class="-dot" data-index="{{$index}}">
+					<img ng-src="{{item.svg}}" alt="">
+				</em>
+				<span class="-dot-title">{{item.title}}</span>
+			</li>
+		</ul>
+	</div>
 </div>

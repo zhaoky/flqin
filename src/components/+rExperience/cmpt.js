@@ -109,7 +109,7 @@ function ResumeExperienceCtrl(resumeData,$rootScope) {
 
     vm.exp = vm.expList[vm.curIndex];
 
-    $rootScope.$broadcast("switchLang",function(evt,data){
+    $rootScope.$on("switchLang",function(evt,data){
 
         let extendData = Number(data) == 2?resumeData.data.en.experience:resumeData.data.cn.experience;
 

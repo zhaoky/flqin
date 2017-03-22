@@ -12,7 +12,7 @@ function ResumeContactCtrl(resumeData,$rootScope) {
 
     resumeData.extend(vm, resumeData.data.cn.contact);
 
-    $rootScope.$broadcast("switchLang",function(evt,data){
+    $rootScope.$on("switchLang",function(evt,data){
 
         let extendData = Number(data) == 2?resumeData.data.en.contact:resumeData.data.cn.contact;
 
