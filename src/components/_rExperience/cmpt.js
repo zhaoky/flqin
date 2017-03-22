@@ -2,7 +2,7 @@ export default angular
 	.module("rExperience", [
 	])
 	.component("resumeExperience", {
-		templateUrl : "components/+rExperience/cmpt.html",
+		templateUrl : "components/_rExperience/cmpt.html",
 		controller  : ResumeExperienceCtrl,
 		bindings:{
 			pageIndex:"<"

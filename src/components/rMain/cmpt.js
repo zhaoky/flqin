@@ -1,9 +1,9 @@
-import rContact from "../+rContact/cmpt";
-import rDefault from "../+rDefault/cmpt";
-import rDemo from "../+rDemo/cmpt";
-import rExperience from "../+rExperience/cmpt";
-import rInfo from "../+rInfo/cmpt";
-import rSkill from "../+rSkill/cmpt";
+import rContact from "../_rContact/cmpt";
+import rDefault from "../_rDefault/cmpt";
+import rDemo from "../_rDemo/cmpt";
+import rExperience from "../_rExperience/cmpt";
+import rInfo from "../_rInfo/cmpt";
+import rSkill from "../_rSkill/cmpt";
 
 export default angular
 	.module("rMain", [
@@ -49,7 +49,7 @@ export default angular
 
 			this.stop = function () {
 
-				document.querySelector("body").addEventListener(actionEvent.start, function (ev) {
+				document.querySelector("body").addEventListener(actionEvent.event.start, function (ev) {
 
 					ev.preventDefault();
 
@@ -161,7 +161,7 @@ export default angular
 				function touchStartHandler(e) {
 					console.log("start");
 					
-					if (moving) {
+					if (moving || e.type != "touchstart") {
 						return;
 					}
 					
@@ -252,6 +252,8 @@ export default angular
 				function setTouchEndAttr(){
 					
 					let nodeList = ele[0].querySelectorAll(".page-section");
+
+                    nodeList = Array.prototype.slice.call(nodeList);
 					
 					nodeList.forEach(function (item, index) {
 						

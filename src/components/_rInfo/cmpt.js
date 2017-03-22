@@ -1,7 +1,7 @@
 export default angular
 	.module("rInfo", [])
 	.component("resumeInfo", {
-		templateUrl : "components/+rInfo/cmpt.html",
+		templateUrl : "components/_rInfo/cmpt.html",
 		controller  : ResumeInfoCtrl
 	})
 	.name;

@@ -2,7 +2,7 @@ export default angular
 	.module("rSkill", [
 	])
 	.component("resumeSkill", {
-		templateUrl : "components/+rSkill/cmpt.html",
+		templateUrl : "components/_rSkill/cmpt.html",
 		controller  : ResumeSkillCtrl
 	})
 	.name;

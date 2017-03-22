@@ -1,7 +1,7 @@
 export default angular
 	.module("rContact", [])
 	.component("resumeContact", {
-		templateUrl : "components/+rContact/cmpt.html",
+		templateUrl : "components/_rContact/cmpt.html",
 		controller  : ResumeContactCtrl
 	})
 	.name;

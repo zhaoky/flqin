@@ -1,9 +1,9 @@
-@import "../+rInfo/cmpt.less";
-@import "../+rdefault/cmpt.less";
-@import "../+rSkill/cmpt.less";
-@import "../+rExperience/cmpt.less";
-@import "../+rDemo/cmpt.less";
-@import "../+rContact/cmpt.less";
+@import "../_rInfo/cmpt.less";
+@import "../_rdefault/cmpt.less";
+@import "../_rSkill/cmpt.less";
+@import "../_rExperience/cmpt.less";
+@import "../_rDemo/cmpt.less";
+@import "../_rContact/cmpt.less";
 
 .page-section{
 	position: absolute;
@@ -53,6 +53,7 @@
 	height: 35px;
 	left: 50%;
 	z-index: 100;
+	pointer-events: none;
 	transform: translateX(-50%);
 	animation: arrowAnimate 1.5s ease-in-out infinite;
 	&:before {

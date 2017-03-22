@@ -1,7 +1,7 @@
 export default angular
 	.module("rDemo", [])
 	.component("resumeDemo", {
-		templateUrl : "components/+rDemo/cmpt.html",
+		templateUrl : "components/_rDemo/cmpt.html",
 		controller  : ResumeDemoCtrl
 	})
 	.directive("switchWork",[

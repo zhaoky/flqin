@@ -1,7 +1,7 @@
 export default angular
 	.module("rDefault", [])
 	.component("resumeDefault", {
-		templateUrl : "components/+rDefault/cmpt.html",
+		templateUrl : "components/_rDefault/cmpt.html",
 		controller  : ResumeDefaultCtrl
 	})
 	.name;
