@@ -1,5 +1,5 @@
 <div class="-experience">
-    <div class="-title">经历</div>
+    <div class="-title">{{$ctrl.title}}</div>
     <div class="-content -contain">
         <div class="-banner" touch-three-d>
             <div class="-experience-content">
@@ -9,8 +9,8 @@
                 <div class="-right">
                     <h4>{{$ctrl.exp.title}}</h4>
                     <p class="-time">{{$ctrl.exp.time}}</p>
-                    <p class="-post">职位：<span>{{$ctrl.exp.post}}</span></p>
-                    <p class="-tech">技术栈：<span>{{$ctrl.exp.tech}}</span></p>
+                    <p class="-post"><{{$ctrl.exp.post}}></p>
+                    <p class="-tech">"{{$ctrl.exp.tech}}"</p>
                     <ul class="-list">
                         <li class="-item" ng-repeat="item in $ctrl.exp.contentList track by $index">{{item}}</li>
                     </ul>
@@ -25,8 +25,6 @@
                     ng-repeat="item in $ctrl.cutList track by $index"></li>
             </ul>
         </div>
-        <div class="-exp-des">
-            2014年初，放弃网络工程师职位，开始前端自学生涯。
-        </div>
+        <div class="-exp-des">{{$ctrl.des}}</div>
     </div>
 </div>

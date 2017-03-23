@@ -1,15 +1,16 @@
 <div class="-work">
-    <div class="-title">作品集</div>
+    <div class="-title">{{$ctrl.title}}</div>
     <div class="-content">
         <ul class="-work-list">
             <li class="-work-item" ng-repeat="item in $ctrl.demoList track by $index">
                 <h4 class="-work-title">{{item.title}}</h4>
                 <p class="-work-tech">{{item.tech}}</p>
                 <p class="-work-des">{{item.des}}</p>
+                <a class="-work-link" ng-href="{{item.url}}"><img src="img/w_link.svg" alt=""></a>
             </li>
         </ul>
         <div class="-work-more">
-            <a href="https://github.com/zhaoky/demos" target="_blank">点击进入我的github Demo站！</a>
+            <a href="https://github.com/zhaoky/demos" target="_blank">{{$ctrl.viewMore}}</a>
         </div>
         <div class="-work-switch" switch-work>
             <i class="-left"></i>

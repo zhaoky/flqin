@@ -1,5 +1,5 @@
 .-work{
-  background-color: rgb(75, 133, 160);
+  background: rgb(75, 133, 160) url(../img/bg.png);
   .-content{
       color: #FFF;
       .-work-list{
@@ -11,6 +11,7 @@
         padding: 0 10px;
         color: #000;
         flex-wrap: wrap;
+        text-align: justify;
         .-work-item{
           box-shadow: 0 3px 10px rgba(0,0,0,.2);
           border-radius: 6px;
@@ -35,6 +36,26 @@
             font-size: 15px;
             line-height: 22px;
           }
+          .-work-link{
+            width: 200px;
+            height: 30px;
+            border: 1px solid #E6E6E6;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: .6;
+            transition: all .3s ease;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+              height: 60%;
+            }
+            &:hover{
+              opacity: 1;
+              background: #E6E6E6;
+            }
+          }
         }
       }
       .-work-more{
@@ -51,51 +72,23 @@
         bottom: 10%;
         height:30px;
         z-index: 1;
+        display: flex;
+        justify-content: space-between;
         .-left,.-right{
           border-radius: 50%;
-          border:1px solid #FFF;
-          height:30px;
+          border: 1px solid #FFF;
+          height: 30px;
           width: 30px;
           position: relative;
-          &:before{
-            content: '';
-            display: block;
-            width: 35%;
-            height: 100%;
-            border-left: 2px solid transparent;
-            border-right: 2px solid transparent;
-            border-bottom: 2px solid #FFF;
-            position: absolute;
-            right: 1px;
-            top: 10px;
-            transform: rotate(135deg);
-          }
-          &:after{
-            content: '';
-            display: block;
-            width: 35%;
-            height: 100%;
-            border-left: 2px solid transparent;
-            border-right: 2px solid transparent;
-            border-top: 2px solid #FFF;
-            position: absolute;
-            right: 14px;
-            top: 10px;
-            transform: rotate(45deg);
-          }
+          background: url(../img/arrow.svg) no-repeat center 35%;
+          background-size: 70%;
+          transform: rotate(90deg);
         }
         .-left{
-          float: left;
           transform: rotate(-90deg);
         }
-        .-right{
-          float: right;
-          transform: rotate(90deg);
-          &:after{
-            right: 14px;
-          }
-        }
       }
+
     }
 }
 
@@ -126,7 +119,12 @@
           width: 100%;
           height: 100%;
           position: absolute;
+          background: rgba(255,255,255,0.95);
           border-radius:0;
+          text-align: center;
+          .-work-link{
+            margin: 0 auto;
+          }
         }
 
       }
