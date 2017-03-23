@@ -16,12 +16,12 @@ export default angular
                     header:{
                         langList:["中","英"],
                         titleList:[
-                        	{svg:"img/homePage.svg", title:"首页"},
-                        	{svg:"img/user.svg", title:"关于我"},
-                        	{svg:"img/skills.svg", title:"技能栈"},
-                        	{svg:"img/experience.svg", title:"经历"},
-                        	{svg:"img/production.svg", title:"作品集"},
-                        	{svg:"img/contact.svg", title:"联系我"}
+                        	{svg:"img/d_home.svg", title:"首页"},
+                        	{svg:"img/d_info.svg", title:"关于我"},
+                        	{svg:"img/d_skills.svg", title:"技能栈"},
+                        	{svg:"img/d_exp.svg", title:"经历"},
+                        	{svg:"img/d_works.svg", title:"作品集"},
+                        	{svg:"img/d_contact.svg", title:"联系我"}
 						]
                     },
                     footer:{},
@@ -35,10 +35,10 @@ export default angular
                     },
                     info:{
                         infoList:[
-                            {icon:"img/homePage.svg",key:"年龄",value:"26岁"},
-                            {icon:"img/tech.png",key:"学历",value:"本科"},
-                            {icon:"img/site.png",key:"坐标",value:"成都"},
-                            {icon:"img/status.png",key:"状态",value:"在职"}
+                            {icon:"img/i_age.svg",key:"年龄",value:"26岁"},
+                            {icon:"img/i_edu.svg",key:"学历",value:"本科"},
+                            {icon:"img/i_site.svg",key:"坐标",value:"成都"},
+                            {icon:"img/i_status.svg",key:"状态",value:"在职"}
                         ],
                         desList:[
                             "三年互联网经验,两年半全职前端开发经验",
@@ -103,7 +103,7 @@ export default angular
                                 title:"兰途网络科技有限公司",
                                 time:"2015年6月~至今",
                                 post:"web前端研发工程师",
-                                imgUrl:"img/js.svg",
+                                imgUrl:"img/e_js.svg",
                                 tech:"less gulp angular1.x cordova 原生js及若干类库",
                                 contentList:[
                                     "负责快速构建高质量移动APP/PC/微信页面",
@@ -116,7 +116,7 @@ export default angular
                                 title:"卓煌企业管理有限公司",
                                 time:"2014年8月~2015年6月",
                                 post:"网页开发兼SEO优化",
-                                imgUrl:"img/h5.svg",
+                                imgUrl:"img/e_html.svg",
                                 tech:"html5,css3,javascript,jquery,bootstrap等",
                                 contentList:[
                                     "负责企业站静态页开发",
@@ -129,7 +129,7 @@ export default angular
                                 title:"壹零陆文化传播有限责任公司",
                                 time:"2014年3月~2014年8月",
                                 post:"SEO",
-                                imgUrl:"img/seo.svg",
+                                imgUrl:"img/e_seo.svg",
                                 tech:"SEO,SEM,百度（360，搜狗）竞价、推广等",
                                 contentList:[
                                     "负责网站后台维护，微博、微信等新媒体营销和推广",
@@ -156,11 +156,11 @@ export default angular
                             {title:"PDF版",url:"www.baidu.com"},
                         ],
                         typeList:[
-                            "img/github.png",
-                            "img/sf.png",
-                            "img/blog.png",
-                            "img/zh.png",
-                            "img/oc.png",
+                            "img/s_github.svg",
+                            "img/s_sf.svg",
+                            "img/s_blog.svg",
+                            "img/s_zh.svg",
+                            "img/s_wb.svg",
                         ]
                     }
                 },
@@ -293,7 +293,8 @@ export default angular
             actionEvent = {
                 start: isSupportTouch ? "touchstart" : "mousedown",
                 move : isSupportTouch ? "touchmove" : "mousemove",
-                end  : isSupportTouch ? "touchend" : "mouseup"
+                end  : isSupportTouch ? "touchend" : "mouseup",
+                wheel: "mousewheel",
             };
 
             this.event = actionEvent;
@@ -308,6 +309,4 @@ export default angular
 	})
 	.name;
 
-function ZkyResumeCtrl() {
-	console.log("ZkyResumeCtrl");
-}
+function ZkyResumeCtrl() {}

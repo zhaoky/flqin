@@ -74,49 +74,64 @@ export default angular
 					startTouchY,
 					disY,
 					curTouchIndex,
-					nodeList  = ele[0].querySelectorAll(".page-section"),
-					nodeListLen = nodeList.length,
+					nodeList,
+					nodeListLen,
 					arrow = new initArrow();
 				
+				//
+				// getNodeList();
+				//
+				// function getNodeList(){
+				//
+				// 	let node = ele[0].querySelectorAll(".page-section");
+				//
+				// 	if(node[0].clientHeight == 0){
+				// 		console.log(3,node);
+				// 		$timeout(getNodeList,200);
+				// 		return;
+				// 	}
+				//
+				// 	nodeList = node;
+				//
+				// 	init();
+				// }
 				init();
-				
 				$scope.$watch("pageIndex", function (newV, oldV) {
 					
-					let nodeList = ele[0].querySelectorAll(".page-section");
-					
-					if (moving || typeof newV === 'undefined') {
+					if (moving || typeof newV === 'undefined' ||typeof  oldV === 'undefined') {
 						return;
 					}
 					
-					let newIndex = +newV;
+					let
+						promise,
+						newIndex = +newV;
 					
-					moving = (typeof oldV !== 'undefined');
-
-                    resumeData.moving = moving;
+                    resumeData.moving = moving = (typeof oldV !== 'undefined');
+					
 					
 					if(Math.abs(newIndex-oldV) > 1){
-						var promise = new Promise(function(resolve){
-							nodeList[newIndex].style.display = "block";
-							nodeList[newIndex].style.transform  = newIndex > oldV ?  "translateY(100%)" : "translateY(-100%)";
+						
+						promise = new Promise(function(resolve){
+							
+							jumpStartSetNodeAttr(newIndex,oldV);
+							
 							$timeout(function(){
 								resolve();
 							},200);
+							
 						});
 						promise.then(function(){
-							nodeList[newIndex].classList.add("active");
-							nodeList[newIndex].style.display = "";
-							if(typeof oldV !== 'undefined'){
-								nodeList[oldV].style.transform = newIndex > oldV ?  "translateY(-100%)" : "translateY(100%)";
-								nodeList[oldV].style.transition = "transform 0.5s";
-							}
+							
+							jumpEndNodeAttr(newIndex,oldV);
+							
 						});
+						
 					}else if(Math.abs(newIndex-oldV) == 1){
-						nodeList[newIndex].classList.add("active");
-						if(typeof oldV !== 'undefined'){
-							nodeList[oldV].style.transform = newIndex > oldV ?  "translateY(-100%)" : "translateY(100%)";
-							nodeList[oldV].style.transition = "transform 0.5s";
-						}
+						
+						jumpEndNodeAttr(newIndex,oldV);
 					}
+					
+					
 					
 					pageIndex = newIndex;
 					
@@ -131,20 +146,25 @@ export default angular
 				});
 				//初始化
 				function init(){
-					// nodeList = Array.from(nodeList);
+					
 					
 					ele[0].classList.add("dock-fill");
+					
+					nodeList = ele[0].querySelectorAll(".page-section");
+					
+					nodeListLen = nodeList.length;
 					
 					nodeList[0].classList.add("cur-page");
 					
 					nodeList[pageIndex + 1].classList.add("next-page");
+					
 					
 					arrow.init();
 					
 					stopIosDropDown.stop();
 					
 					ele[0].addEventListener(actionEvent.event.start, touchStartHandler);
-					ele[0].addEventListener("mousewheel", startWheelHandler);
+					ele[0].addEventListener(actionEvent.event.wheel, startWheelHandler);
 				}
 				//滚轮事件
 				function startWheelHandler(e) {
@@ -216,8 +236,6 @@ export default angular
 				
 				function littleBounce(){
 					
-					let nodeList = ele[0].querySelectorAll(".page-section");
-					
 					nodeList[curTouchIndex].style.transform = "";
 					nodeList[curTouchIndex].style.transition = "transform 0.5s";
 					
@@ -237,8 +255,6 @@ export default angular
 				
 				function setTouchMovePageAttr(){
 					
-					let nodeList = ele[0].querySelectorAll(".page-section");
-					
 					curTouchIndex = disY < 0 ? (pageIndex + 1) : (pageIndex - 1);
 					
 					nodeList[curTouchIndex].classList.add("touch-page");
@@ -251,9 +267,8 @@ export default angular
 				
 				function setTouchEndAttr(){
 					
-					let nodeList = ele[0].querySelectorAll(".page-section");
-
-                    nodeList = Array.prototype.slice.call(nodeList);
+                    // nodeList = Array.prototype.slice.call(nodeList);
+					nodeList = Array.from(nodeList);
 					
 					nodeList.forEach(function (item, index) {
 						
@@ -273,6 +288,26 @@ export default angular
 					});
 					
 					ele[0].querySelectorAll(".-arrow")[0].style.display = (pageIndex == nodeListLen - 1) ? "none" : "block";
+					
+				}
+				
+				function jumpStartSetNodeAttr(newIndex,oldIndex){
+					nodeList[newIndex].style.display = "block";
+					nodeList[newIndex].style.transform  = newIndex > oldIndex ?  "translateY(100%)" : "translateY(-100%)";
+				}
+				
+				function jumpEndNodeAttr(newIndex,oldIndex){
+					
+					let nodeList = ele[0].querySelectorAll(".page-section");
+					
+					nodeList[newIndex].classList.add("active");
+					nodeList[newIndex].style.display = "";
+					
+					if(typeof oldIndex !== 'undefined'){
+						return;
+					}
+					nodeList[oldIndex].style.transform = newIndex > oldIndex ?  "translateY(-100%)" : "translateY(100%)";
+					nodeList[oldIndex].style.transition = "transform 0.5s";
 					
 				}
 				
