@@ -6,9 +6,9 @@ export default angular
 	})
 	.name;
 
-ResumeDefaultCtrl.$inject = ["resumeData","$rootScope"];
+ResumeDefaultCtrl.$inject = ["resumeData","$rootScope","$scope"];
 
-function ResumeDefaultCtrl(resumeData,$rootScope) {
+function ResumeDefaultCtrl(resumeData,$rootScope,$scope) {
 	let vm = this;
 
     resumeData.extend(vm, resumeData.data.cn.default);
@@ -18,5 +18,7 @@ function ResumeDefaultCtrl(resumeData,$rootScope) {
         let extendData = Number(data) == 2?resumeData.data.en.default:resumeData.data.cn.default;
 
         resumeData.extend(vm, extendData);
+	
+	    $scope.$apply();
     });
 }

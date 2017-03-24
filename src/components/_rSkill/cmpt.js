@@ -7,9 +7,9 @@ export default angular
 	})
 	.name;
 
-ResumeSkillCtrl.$inject = ["resumeData","$rootScope"];
+ResumeSkillCtrl.$inject = ["resumeData","$rootScope","$scope"];
 
-function ResumeSkillCtrl(resumeData,$rootScope) {
+function ResumeSkillCtrl(resumeData,$rootScope,$scope) {
     let vm = this;
 
     resumeData.extend(vm, resumeData.data.cn.skill);
@@ -19,5 +19,7 @@ function ResumeSkillCtrl(resumeData,$rootScope) {
         let extendData = Number(data) == 2?resumeData.data.en.skill:resumeData.data.cn.skill;
 
         resumeData.extend(vm, extendData);
+	
+	    $scope.$apply();
     });
 }

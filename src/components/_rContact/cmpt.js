@@ -5,9 +5,9 @@ export default angular
 		controller  : ResumeContactCtrl
 	})
 	.name;
-ResumeContactCtrl.$inject = ["resumeData","$rootScope"];
+ResumeContactCtrl.$inject = ["resumeData","$rootScope","$scope"];
 
-function ResumeContactCtrl(resumeData,$rootScope) {
+function ResumeContactCtrl(resumeData,$rootScope,$scope) {
     let vm = this;
 
     resumeData.extend(vm, resumeData.data.cn.contact);
@@ -17,5 +17,7 @@ function ResumeContactCtrl(resumeData,$rootScope) {
         let extendData = Number(data) == 2?resumeData.data.en.contact:resumeData.data.cn.contact;
 
         resumeData.extend(vm, extendData);
+	
+	    $scope.$apply();
     });
 }

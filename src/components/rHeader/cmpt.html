@@ -14,10 +14,10 @@
 				<div
 						switch-lang
 						class="-language-c"
-				     ng-class="{'-selectEn':$ctrl.selected==2}">
+						ng-class="{'-selectEn':$ctrl.selectedLang==2}">
                     <span
 		                    data-index="{{$index}}"
-		                    ng-class="{'-selected':$ctrl.selected == $index+1}"
+		                    ng-class="{'-selected':$ctrl.selectedLang == $index+1}"
 		                    ng-repeat="item in $ctrl.langList track by $index">
                         {{item}}
                     </span>

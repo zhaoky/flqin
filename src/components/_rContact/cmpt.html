@@ -14,9 +14,9 @@
             </div>
         </div>
         <div class="-contact-type">
-            <span class="-item" ng-repeat="item in $ctrl.typeList track by $index">
-                <img ng-src="{{item}}" alt="">
-            </span>
+            <a class="-item" ng-repeat="item in $ctrl.typeList track by $index" ng-href="{{item.url}}">
+                <img ng-src="{{item.icon}}" alt="">
+            </a>
         </div>
     </div>
 </div>

@@ -98,9 +98,9 @@ export default angular
 	])
 	.name;
 
-ResumeExperienceCtrl.$inject = ["resumeData","$rootScope"];
+ResumeExperienceCtrl.$inject = ["resumeData","$rootScope","$scope"];
 
-function ResumeExperienceCtrl(resumeData,$rootScope) {
+function ResumeExperienceCtrl(resumeData,$rootScope,$scope) {
     let vm = this;
 
     resumeData.extend(vm, resumeData.data.cn.experience);
@@ -116,5 +116,7 @@ function ResumeExperienceCtrl(resumeData,$rootScope) {
         resumeData.extend(vm, extendData);
 
         vm.exp = vm.expList[0];
+	
+	    $scope.$apply();
     });
 }

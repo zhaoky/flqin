@@ -31,9 +31,9 @@ export default angular
 	])
 	.name;
 
-ResumeDemoCtrl.$inject = ["resumeData","$rootScope"];
+ResumeDemoCtrl.$inject = ["resumeData","$rootScope","$scope"];
 
-function ResumeDemoCtrl(resumeData,$rootScope) {
+function ResumeDemoCtrl(resumeData,$rootScope, $scope) {
     let vm = this;
 
     resumeData.extend(vm, resumeData.data.cn.demo);
@@ -43,5 +43,7 @@ function ResumeDemoCtrl(resumeData,$rootScope) {
         let extendData = Number(data) == 2?resumeData.data.en.demo:resumeData.data.cn.demo;
 
         resumeData.extend(vm, extendData);
+	
+	    $scope.$apply();
     });
 }

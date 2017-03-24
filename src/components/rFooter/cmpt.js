@@ -8,5 +8,4 @@ export default angular
 	.name;
 
 function ResumeFooterCtrl() {
-	console.log("footer");
 }

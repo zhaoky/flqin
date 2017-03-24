@@ -184,7 +184,7 @@ export default angular
                     default:{
                         quote:"Life is a kind of endless yearning, eager to continue to rise, become more great and noble.",
                         desList:[
-                            "I am Keyu Zhao",
+                            "I am Zhao Keyu",
                             "A front-end R & D engineer",
                             "zhaoky2016@163.com"
                         ]
@@ -193,9 +193,9 @@ export default angular
                         title:"About Me",
                         infoList:[
                             {icon:"img/i_age.svg",key:"Age",value:"26"},
-                            {icon:"img/i_edu.svg",key:"Education",value:"B.S."},
-                            {icon:"img/i_site.svg",key:"Location",value:"ChengDu"},
-                            {icon:"img/i_status.svg",key:"Status",value:"Employed"}
+                            {icon:"img/i_edu.svg",key:"Edu.",value:"B.S."},
+                            {icon:"img/i_site.svg",key:"Add.",value:"ChengDu"},
+                            {icon:"img/i_status.svg",key:"Status",value:"On Job"}
                         ],
                         desList:[
                             "Three years of Internet experience, two and a half years full-time front-end development experience",
@@ -239,12 +239,12 @@ export default angular
                             },
                             {
                                 title:"移动校园APP",
-                                des:"One-stop, the whole life cycle of the campus official mobile service platform, covering PC, Andrews, IOS, WeChat platform, on-line schools, including the Central University of Finance and Economics, Beijing Jiaotong University, China Opera Academy, Liaoning University, Southwest University of Finance and so on, download Hundreds of thousands, loved by the students teacher.",
+                                des:"One-stop, the whole life cycle of the campus official mobile service platform, covering PC, Andrews, IOS, WeChat platform, on-line schools, including CUFE, BJTU, NACTA, LNU, SWUFE and so on, download Hundreds of thousands, loved by the students teacher.",
                                 url:"http://app.cufe.edu.cn/"
                             },
                             {
                                 title:"移动校园管理系统",
-                                des:"According to the background management system of campus APP, including the personnel structure, information statistics, permission setting, H5 production machine, data exchange platform, data management of each module, feedback settings, etc., for the university to provide Internet-based mobile campus overall solution.",
+                                des:"According to the background management system of campus APP, including the personnel structure, information statistics, H5 production machine, data exchange platform, data management of each module, feedback settings, etc., for the university to provide Internet-based mobile campus overall solution.",
                                 url:"http://www.app8848.com/cloud_mgr/#/user/login"
                             },
                             {
@@ -263,9 +263,9 @@ export default angular
                                 time:"2015.06~now",
                                 post:"Web front-end R & D engineers",
                                 imgUrl:"img/e_js.svg",
-                                tech:"less gulp angular1.x cordova javascript and a number of libraries",
+                                tech:"less gulp angular1.x cordova javascript and some libraries",
                                 contentList:[
-                                    "Responsible for the rapid construction of high-quality mobile APP / PC / WeChat page",
+                                    "Responsible for the rapid construction of high-quality APP / PC / WeChat page",
                                     "According to business needs to design the appropriate project",
                                     "Highly component, modular thinking, with the platform debugging capabilities",
                                     "Learning ES6 and vue, react, ng2, experience the function of programming ideas"
@@ -276,7 +276,7 @@ export default angular
                                 time:"2014.08~2015.06",
                                 post:"Web development and SEO",
                                 imgUrl:"img/e_html.svg",
-                                tech:"html5,css3,javascript,jquery,bootstrap and so on",
+                                tech:"html5,css3,javascript,jquery,bootstrap",
                                 contentList:[
                                     "Responsible for enterprise station static page development",
                                     "Responsible for website background maintenance",
@@ -289,12 +289,12 @@ export default angular
                                 time:"2014.03~2014.08",
                                 post:"SEO",
                                 imgUrl:"img/e_seo.svg",
-                                tech:"SEO,SEM,Baidu (360, Sogou) bid, promotion and so on",
+                                tech:"SEO,SEM,Baidu (360, Sogou) bid, promotion",
                                 contentList:[
-                                    "Responsible for the site background maintenance, WeiBo, WeChat and other new media marketing and promotion",
+                                    "Responsible for site background maintenance, new media marketing and promotion",
                                     "Responsible for Baidu PPC background adjustment",
                                     "Get the best new person award",
-                                    "The same period of work began to systematically self-learning web front-end technology",
+                                    "The same period of work began to self-learning web front-end technology",
                                 ]
                             }
                         ],
@@ -316,11 +316,11 @@ export default angular
                             {title:"PDF",url:"www.baidu.com"},
                         ],
                         typeList:[
-                            "img/s_github.svg",
-                            "img/s_sf.svg",
-                            "img/s_blog.svg",
-                            "img/s_zh.svg",
-                            "img/s_wb.svg",
+                            {icon:"img/s_github.svg",url:"https://github.com/zhaoky"},
+                            {icon:"img/s_sf.svg",url:"https://segmentfault.com/u/keyu2016"},
+                            {icon:"img/s_blog.svg",url:""},
+                            {icon:"img/s_zh.svg",url:"https://www.zhihu.com/people/fezky"},
+                            {icon:"img/s_wb.svg",url:"http://weibo.com/zky2013"},
                         ]
                     }
                 }
