@@ -8,12 +8,12 @@
                         <div class="-img">
                             <img ng-src="{{item.icon}}" alt="">
                         </div>
-                        <div class="-intro">{{item.key}}/{{item.value}}</div>
+                        <div class="-intro" ng-class="{'-intro-en':$ctrl.isEng}">{{item.key}}/{{item.value}}</div>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="-info-des">
+        <div class="-info-des" ng-class="{'-info-des-en':$ctrl.isEng}">
             <p ng-repeat="item in $ctrl.desList track by $index">{{item}}</p>
         </div>
     </div>

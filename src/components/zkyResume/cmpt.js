@@ -73,11 +73,11 @@ export default angular
                             "编码常思其健壮性，扩展性，维护性"
                         ]
                     },
-                    demo:{
+                    works:{
                         title:"作品集",
-                        demoList:[
+                        worksList:[
                             {
-                                title:"web前端工程师简历",
+                                title:"web前端工程师简历（2015年版）",
                                 des:"本简历初版，上线一个月后，百度关键词“web前端工程师简历”排名前三，点击量数百万，深受广大前端初学者的好评及模仿，至今搜该关键词百度前10页都处处能见该简历的仿版。",
                                 url:"http://wwww.flqin.com/old",
                             },
@@ -97,7 +97,7 @@ export default angular
                                 url:"http://www.lantunet.com"
                             }
                         ],
-                        viewMore:"github上面查看更多..."
+                        viewMore:"github上面查看更多"
                     },
                     experience:{
                         title:"经历",
@@ -160,11 +160,11 @@ export default angular
                             {title:"PDF版",url:"www.baidu.com"},
                         ],
                         typeList:[
-                            "img/s_github.svg",
-                            "img/s_sf.svg",
-                            "img/s_blog.svg",
-                            "img/s_zh.svg",
-                            "img/s_wb.svg",
+                            {icon:"img/s_github.svg",url:"https://github.com/zhaoky"},
+                            {icon:"img/s_sf.svg",url:"https://segmentfault.com/u/keyu2016"},
+                            {icon:"img/s_blog.svg",url:""},
+                            {icon:"img/s_zh.svg",url:"https://www.zhihu.com/people/fezky"},
+                            {icon:"img/s_wb.svg",url:"http://weibo.com/zky2013"},
                         ]
                     }
                 },
@@ -229,31 +229,31 @@ export default angular
                             "Coding often thinking its robustness, scalability, maintainability"
                         ]
                     },
-                    demo:{
+                    works:{
                         title:"Works",
-                        demoList:[
+                        worksList:[
                             {
-                                title:"Web front engineer resumes",
+                                title:"Web front engineer resumes (2015)",
                                 des:"The first edition of this resume, on the line a month later, Baidu keyword 'web front engineer resumes' ranked the top three, hundreds of millions of traffic, by the majority of front-end beginners praise and imitation, so far the search Baidu 10 pages are everywhere See the copy of the resume.",
                                 url:"http://wwww.flqin.com/old",
                             },
                             {
-                                title:"移动校园APP",
+                                title:"Campus APP",
                                 des:"One-stop, the whole life cycle of the campus official mobile service platform, covering PC, Andrews, IOS, WeChat platform, on-line schools, including CUFE, BJTU, NACTA, LNU, SWUFE and so on, download Hundreds of thousands, loved by the students teacher.",
                                 url:"http://app.cufe.edu.cn/"
                             },
                             {
-                                title:"移动校园管理系统",
+                                title:"Mobile campus management system",
                                 des:"According to the background management system of campus APP, including the personnel structure, information statistics, H5 production machine, data exchange platform, data management of each module, feedback settings, etc., for the university to provide Internet-based mobile campus overall solution.",
                                 url:"http://www.app8848.com/cloud_mgr/#/user/login"
                             },
                             {
-                                title:"企业官网",
+                                title:"Enterprise official website",
                                 des:"Ordinary enterprise website development, compatible with IE8 +, suitable for all mobile models, with good compatibility, scalability. According to the habits of customer groups for detailed analysis planning, to develop a set of corporate website for their own design style program.",
                                 url:"http://www.lantunet.com"
                             }
                         ],
-                        viewMore:"Go github to see more ..."
+                        viewMore:"Go github to see more"
                     },
                     experience:{
                         title:"Experience",
@@ -310,7 +310,7 @@ export default angular
                             "Line road friends, is a shortcut",
                             "With me, see the bigger world together",
                         ],
-                        download:"Download resume",
+                        download:"Download Resume",
                         fileList:[
                             {title:"HTML",url:"www.baidu.com"},
                             {title:"PDF",url:"www.baidu.com"},

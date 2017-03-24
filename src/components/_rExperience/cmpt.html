@@ -1,7 +1,7 @@
 <div class="-experience">
     <div class="-title">{{$ctrl.title}}</div>
     <div class="-content -contain">
-        <div class="-banner" touch-three-d>
+        <div class="-banner" data-refused-stop touch-three-d>
             <div class="-experience-content">
                 <div class="-left">
                     <div class="-img" style="background-image: url({{$ctrl.exp.imgUrl}})"></div>
@@ -12,7 +12,7 @@
                     <p class="-post"><{{$ctrl.exp.post}}></p>
                     <p class="-tech">"{{$ctrl.exp.tech}}"</p>
                     <ul class="-list">
-                        <li class="-item" ng-repeat="item in $ctrl.exp.contentList track by $index">{{item}}</li>
+                        <li class="-item" ng-class="{'-item-en':$ctrl.isEng}" ng-repeat="item in $ctrl.exp.contentList track by $index">{{item}}</li>
                     </ul>
                 </div>
             </div>

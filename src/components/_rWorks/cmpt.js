@@ -1,8 +1,8 @@
 export default angular
-	.module("rDemo", [])
-	.component("resumeDemo", {
-		templateUrl : "components/_rDemo/cmpt.html",
-		controller  : ResumeDemoCtrl
+	.module("rWorks", [])
+	.component("resumeWorks", {
+		templateUrl : "components/_rWorks/cmpt.html",
+		controller  : ResumeWorksCtrl
 	})
 	.directive("switchWork",[
 		"actionEvent",
@@ -31,16 +31,18 @@ export default angular
 	])
 	.name;
 
-ResumeDemoCtrl.$inject = ["resumeData","$rootScope","$scope"];
+ResumeWorksCtrl.$inject = ["resumeData","$rootScope","$scope"];
 
-function ResumeDemoCtrl(resumeData,$rootScope, $scope) {
+function ResumeWorksCtrl(resumeData,$rootScope, $scope) {
     let vm = this;
 
-    resumeData.extend(vm, resumeData.data.cn.demo);
+    resumeData.extend(vm, resumeData.data.cn.works);
 
     $rootScope.$on("switchLang",function(evt,data){
 
-        let extendData = Number(data) == 2?resumeData.data.en.demo:resumeData.data.cn.demo;
+        let extendData = Number(data) == 2?resumeData.data.en.works:resumeData.data.cn.works;
+
+        vm.isEng = Number(data) == 2;
 
         resumeData.extend(vm, extendData);
 	

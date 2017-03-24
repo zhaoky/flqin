@@ -1,6 +1,6 @@
 import rContact from "../_rContact/cmpt";
 import rDefault from "../_rDefault/cmpt";
-import rDemo from "../_rDemo/cmpt";
+import rWorks from "../_rWorks/cmpt";
 import rExperience from "../_rExperience/cmpt";
 import rInfo from "../_rInfo/cmpt";
 import rSkill from "../_rSkill/cmpt";
@@ -9,7 +9,7 @@ export default angular
     .module("rMain", [
         rContact,
         rDefault,
-        rDemo,
+        rWorks,
         rExperience,
         rInfo,
         rSkill
@@ -51,8 +51,23 @@ export default angular
 
                 document.querySelector("body").addEventListener(actionEvent.event.start, function (ev) {
 
+                    if(_isPc()){
+                        return;
+                    }
+
+                    if(ev.target.nodeName == "A"){
+                        return;
+                    }
+
                     ev.preventDefault();
 
+                });
+            };
+
+            function _isPc(){
+
+                return ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].every(function(i){
+                    return navigator.userAgent.indexOf(i)<0;
                 });
 
             }

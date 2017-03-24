@@ -102,8 +102,9 @@
 		width: 100%;
 		font-size: 13px;
 		background-color: rgba(255, 255, 255, 0.4);
+		visibility: hidden;
 		opacity: 0;
-		transition: 0.5s;
+		transition: all 0.5s;
 		.-list{
 			justify-content: space-around;
 			align-items: center;
@@ -118,7 +119,8 @@
 		}
 	}
 	.-show-nav{
-		opacity: 1;
+		visibility: visible;
+		opacity:1;
 	}
 	.-header-nav-dot{
 		position: fixed;

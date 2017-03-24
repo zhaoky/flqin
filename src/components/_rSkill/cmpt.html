@@ -1,7 +1,7 @@
 <div class="-skill">
     <div class="-title">{{$ctrl.title}}</div>
     <div class="-content">
-        <div class="-contain">
+        <div class="-contain" ng-class="{'-contain-en':$ctrl.isEng}">
             <div class="-skill-circle">
                 <ul class="-outCircle">
                     <li class="-out"
@@ -18,7 +18,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="-des">
+            <div class="-des" ng-class="{'-des-en':$ctrl.isEng}">
                 <p ng-repeat="item in $ctrl.desList track by $index">{{item}}</p>
             </div>
         </div>

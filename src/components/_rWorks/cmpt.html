@@ -2,9 +2,9 @@
     <div class="-title">{{$ctrl.title}}</div>
     <div class="-content">
         <ul class="-work-list">
-            <li class="-work-item" ng-repeat="item in $ctrl.demoList track by $index">
+            <li class="-work-item" ng-repeat="item in $ctrl.worksList track by $index">
                 <h4 class="-work-title">{{item.title}}</h4>
-                <p class="-work-des">{{item.des}}</p>
+                <p class="-work-des" ng-class="{'-work-des-en':$ctrl.isEng}">{{item.des}}</p>
                 <a class="-work-link" ng-href="{{item.url}}"><img src="img/w_link.svg" alt=""></a>
             </li>
         </ul>

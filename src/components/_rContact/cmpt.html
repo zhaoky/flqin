@@ -1,7 +1,7 @@
 <div class="-contact">
     <div class="-title">{{$ctrl.title}}</div>
-    <div class="-content">
-        <div class="-contact-des1">
+    <div class="-content" ng-class="{'-content-en':$ctrl.isEng}">
+        <div class="-contact-des1" ng-class="{'-contact-des1-en':$ctrl.isEng}">
             <span ng-repeat="item in $ctrl.desList1 track by $index">{{item}}</span>
         </div>
         <div class="-contact-des2">

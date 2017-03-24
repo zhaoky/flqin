@@ -51,24 +51,6 @@ export default angular
 			}
 		}
 	])
-	.directive("opacityCallback", [
-		function () {
-			function link($scope, ele) {
-				let vm = $scope.$ctrl;
-				ele[0].addEventListener("webkitTransitionEnd", transitionEndHandler);
-				function transitionEndHandler() {
-					if (vm.isShowNav) {
-						ele[0].style.display = vm.isShowNav ? "block" : "none";
-					}
-				}
-			}
-			
-			return {
-				restrict: "A",
-				link    : link
-			}
-		}
-	])
 	.directive("selectedNavItem", [
 		"resumeData",
 		"actionEvent",

@@ -216,6 +216,7 @@ function distBasisJs() {
 				console.log("webpack 热执行完成!");
 				resolve();
 			}))
+            .pipe($if(gulp.kit.isProduction(), uglify(gulp.kit.getUglifyConfig())))
 			.pipe(gulp.dest("dist/js/"))
 			.on("end", function () {
 				resolve();

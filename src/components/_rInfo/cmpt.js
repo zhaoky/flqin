@@ -17,6 +17,8 @@ function ResumeInfoCtrl(resumeData,$rootScope,$scope) {
 
         let extendData = Number(data) == 2?resumeData.data.en.info:resumeData.data.cn.info;
 
+        vm.isEng = Number(data) == 2;
+
         resumeData.extend(vm, extendData);
 	    
 	    $scope.$apply();

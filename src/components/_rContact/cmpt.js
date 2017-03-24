@@ -16,6 +16,8 @@ function ResumeContactCtrl(resumeData,$rootScope,$scope) {
 
         let extendData = Number(data) == 2?resumeData.data.en.contact:resumeData.data.cn.contact;
 
+        vm.isEng = Number(data) == 2;
+
         resumeData.extend(vm, extendData);
 	
 	    $scope.$apply();

@@ -113,6 +113,8 @@ function ResumeExperienceCtrl(resumeData,$rootScope,$scope) {
 
         let extendData = Number(data) == 2?resumeData.data.en.experience:resumeData.data.cn.experience;
 
+        vm.isEng = Number(data) == 2;
+
         resumeData.extend(vm, extendData);
 
         vm.exp = vm.expList[0];
