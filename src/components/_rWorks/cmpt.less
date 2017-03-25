@@ -72,7 +72,7 @@
         bottom: 10%;
         height:30px;
         z-index: 1;
-        display: flex;
+        display: none;
         justify-content: space-between;
         .-left,.-right{
           border-radius: 50%;
@@ -90,6 +90,21 @@
       }
 
     }
+}
+
+@media screen and (max-width: 1366px) {
+  .-work {
+    .-content {
+      top: 150px;
+      .-work-list{
+        max-width: 1200px;
+        .-work-item{
+          padding: 15px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 600px){
@@ -138,6 +153,9 @@
       .-work-more{
         margin-top: 15%;
         font-size: 16px;
+      }
+      .-work-switch{
+        display: flex;
       }
     }
   }
