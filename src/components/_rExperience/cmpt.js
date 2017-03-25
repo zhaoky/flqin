@@ -19,7 +19,7 @@ export default angular
 				    bannerHeight,
 				    offsetLeft,
 					offsetTop;
-				$scope.$watch("$ctrl.pageIndex",function(newV){
+				$scope.$watch("$parent.$parent.pageIndex",function(newV){
 					if(Number(newV) !== 3){
 						return;
 					}
