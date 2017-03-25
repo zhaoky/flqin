@@ -12,7 +12,9 @@ const
 	webpack  = require("webpack-stream"),
 	plumber  = require("gulp-plumber"),
 	imageMin = require("gulp-imagemin"),
-	shell    = require("shelljs");
+	shell    = require("shelljs"),
+	postcss      = require('gulp-postcss'),
+	autoprefixer = require('autoprefixer');
 
 const kit = require("./kit");
 
@@ -124,6 +126,7 @@ function distCss() {
 		gulp
 			.src("src/index.less")
 			.pipe(less())
+			.pipe(postcss([autoprefixer()]))
 			.pipe(rename("style.css"))
 			.pipe($if(gulp.kit.isProduction(), minCss()))
 			.pipe(gulp.dest("dist/css/"))
