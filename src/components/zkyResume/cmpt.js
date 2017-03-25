@@ -226,7 +226,7 @@ export default angular
                             "Skilled use of angularJs1.x and encapsulate all kinds of libraries",
                             "Permanent PC / APP / WeChat three platform front-end research and development",
                             "Good at component / plugin development, can be written out of the library to write JS code",
-                            "Coding often thinking its robustness, scalability, maintainability"
+                            "Coding thinking its robustness, scalability, maintainability"
                         ]
                     },
                     works:{
@@ -305,8 +305,8 @@ export default angular
                         desList1:["INSPIRATION","CODE","DREAM","FUTURE"],
                         desList2:[
                             "Focus on efficiency, preference for agile development",
-                            "Like to try，look forward to something new",
-                            "Front is interested，interest is the future",
+                            "Like to try, look forward to something new",
+                            "Front is interested, interest is the future",
                             "Line road friends, is a shortcut",
                             "With me, see the bigger world together",
                         ],
