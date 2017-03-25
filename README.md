@@ -6,7 +6,7 @@
 
 #### 百度搜索: [web前端工程师简历](https://www.baidu.com/s?ie=UTF-8&wd=web%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AE%80%E5%8E%86)
 
-![](http://www.flqin.com/img/web.jpg)
+![](http://www.flqin.com/2015/img/web.jpg)
 
 ### MISC
 
