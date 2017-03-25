@@ -226,7 +226,7 @@ export default angular
                             "Skilled use of angularJs1.x and encapsulate all kinds of libraries",
                             "Permanent PC / APP / WeChat three platform front-end research and development",
                             "Good at component / plugin development, can be written out of the library to write JS code",
-                            "Coding thinking its robustness, scalability, maintainability"
+                            "Coding thinking robustness/scalability/maintainability"
                         ]
                     },
                     works:{
@@ -243,7 +243,7 @@ export default angular
                                 url:"http://app.cufe.edu.cn/"
                             },
                             {
-                                title:"Mobile campus management system",
+                                title:"campus management system",
                                 des:"According to the background management system of campus APP, including the personnel structure, information statistics, H5 production machine, data exchange platform, data management of each module, feedback settings, etc., for the university to provide Internet-based mobile campus overall solution.",
                                 url:"http://www.app8848.com/cloud_mgr/#/user/login"
                             },
@@ -285,7 +285,7 @@ export default angular
                                 ]
                             },
                             {
-                                title:"106 Culture Communication Co., Ltd.",
+                                title:"106 Culture Co., Ltd.",
                                 time:"2014.03~2014.08",
                                 post:"SEO",
                                 imgUrl:"img/e_seo.svg",
