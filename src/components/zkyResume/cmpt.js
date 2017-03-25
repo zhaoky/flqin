@@ -79,7 +79,7 @@ export default angular
                             {
                                 title:"web前端工程师简历（2015年版）",
                                 des:"本简历初版，上线一个月后，百度关键词“web前端工程师简历”排名前三，点击量数百万，深受广大前端初学者的好评及模仿，至今搜该关键词百度前10页都处处能见该简历的仿版。",
-                                url:"http://wwww.flqin.com/old",
+                                url:"http://wwww.flqin.com/2015/",
                             },
                             {
                                 title:"移动校园APP",

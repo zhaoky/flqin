@@ -1,5 +1,5 @@
 <div class="-experience">
-    <div class="-title">{{$ctrl.title}}</div>
+    <div class="-title" ng-bind="$ctrl.title"></div>
     <div class="-content">
         <div class="-banner" touch-three-d>
             <div class="-experience-content">
@@ -7,12 +7,16 @@
                     <div class="-img" style="background-image: url({{$ctrl.exp.imgUrl}})"></div>
                 </div>
                 <div class="-right">
-                    <h4>{{$ctrl.exp.title}}</h4>
-                    <p class="-time">{{$ctrl.exp.time}}</p>
-                    <p class="-post"><{{$ctrl.exp.post}}></p>
-                    <p class="-tech">"{{$ctrl.exp.tech}}"</p>
+                    <h4 ng-bind="$ctrl.exp.title"></h4>
+                    <p class="-time" ng-bind="$ctrl.exp.time"></p>
+                    <p class="-post"><<span ng-bind="$ctrl.exp.post"></span>></p>
+                    <p class="-tech">"<span ng-bind="$ctrl.exp.tech"></span>"</p>
                     <ul class="-list">
-                        <li class="-item" ng-class="{'-item-en':$ctrl.isEng}" ng-repeat="item in $ctrl.exp.contentList track by $index">{{item}}</li>
+                        <li class="-item"
+                            ng-class="{'-item-en':$ctrl.isEng}"
+                            ng-repeat="item in $ctrl.exp.contentList track by $index"
+                            ng-bind="item">
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -25,6 +29,6 @@
                     ng-repeat="item in $ctrl.cutList track by $index"></li>
             </ul>
         </div>
-        <div class="-exp-des">{{$ctrl.des}}</div>
+        <div class="-exp-des" ng-bind="$ctrl.des"></div>
     </div>
 </div>

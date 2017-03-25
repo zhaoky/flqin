@@ -7,8 +7,8 @@
 			<div
 					show-nav
 					class="-header-title"
-					ng-class="{'-rotate':$ctrl.isShowNav}">
-				{{$ctrl.titleList[$ctrl.pageIndex].title}}
+					ng-class="{'-rotate':$ctrl.isShowNav}"
+			 		ng-bind="$ctrl.titleList[$ctrl.pageIndex].title">
 			</div>
 			<div class="-language">
 				<div
@@ -18,8 +18,8 @@
                     <span
 		                    data-index="{{$index}}"
 		                    ng-class="{'-selected':$ctrl.selectedLang == $index+1}"
-		                    ng-repeat="item in $ctrl.langList track by $index">
-                        {{item}}
+		                    ng-repeat="item in $ctrl.langList track by $index"
+							ng-bind="item">
                     </span>
 				</div>
 			</div>
@@ -32,7 +32,7 @@
 					class="-item"
 					ng-class="{'-cur-index':$ctrl.pageIndex == $index}"
 					ng-repeat="item in $ctrl.titleList track by $index">
-				<em data-index="{{$index}}">{{item.title}}</em>
+				<em data-index="{{$index}}" ng-bind="item.title"></em>
 			</li>
 		</ul>
 	</div>
@@ -45,7 +45,7 @@
 				<em class="-dot" data-index="{{$index}}">
 					<img ng-src="{{item.svg}}" alt="">
 				</em>
-				<span class="-dot-title">{{item.title}}</span>
+				<span class="-dot-title" ng-bind="item.title"></span>
 			</li>
 		</ul>
 	</div>

@@ -13,11 +13,10 @@ export default angular
                 ele[0].addEventListener(actionEvent.event.start,switchWorkHandler);
 
                 function switchWorkHandler(evt){
-                	console.log(evt);
+
                 	if(evt.target.nodeName !== "I"){
                 		return;
 					}
-
 					rotate += evt.target.className == "-left"?90:-90;
 
                     worksContain.style.transform ="rotateY("+rotate+"deg)";

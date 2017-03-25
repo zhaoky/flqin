@@ -2,9 +2,9 @@
     <div class="-content">
         <div class="-photo"></div>
         <div class="-des">
-            <p class="-quote">{{$ctrl.quote}}</p>
+            <p class="-quote" ng-bind="$ctrl.quote"></p>
             <div class="-des-list">
-                <p ng-repeat="item in $ctrl.desList track by $index">{{item}}</p>
+                <p ng-repeat="item in $ctrl.desList track by $index" ng-bind="item"></p>
             </div>
         </div>
     </div>
