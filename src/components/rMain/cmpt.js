@@ -166,10 +166,10 @@ export default angular
                 //滚轮事件
                 function startWheelHandler(e) {
 
-                    if (moving || (e.wheelDelta > 0 && pageIndex == nodeListLen - 1) || (e.wheelDelta < 0 && pageIndex == 0)) {
+                    if (moving || (e.wheelDelta < 0 && pageIndex == nodeListLen - 1) || (e.wheelDelta > 0 && pageIndex == 0)) {
                         return;
                     }
-                    e.wheelDelta > 0 ? pageIndex++ : pageIndex--;
+                    e.wheelDelta < 0 ? pageIndex++ : pageIndex--;
 
                     applyPageIndex(pageIndex);
 
