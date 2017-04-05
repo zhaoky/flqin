@@ -6,20 +6,20 @@ export default angular
 	})
 	.name;
 
-ResumeInfoCtrl.$inject = ["resumeData","$rootScope","$scope"];
+ResumeInfoCtrl.$inject = ["dataExtend","resumeData","$rootScope","$scope"];
 
-function ResumeInfoCtrl(resumeData,$rootScope,$scope) {
+function ResumeInfoCtrl(dataExtend,resumeData,$rootScope,$scope) {
     let vm = this;
 
-    resumeData.extend(vm, resumeData.data.cn.info);
+    dataExtend.extend(vm, resumeData.cn.info);
 
     $rootScope.$on("switchLang",function(evt,data){
 
-        let extendData = Number(data) == 2?resumeData.data.en.info:resumeData.data.cn.info;
+        let extendData = Number(data) == 2?resumeData.en.info:resumeData.cn.info;
 
         vm.isEng = Number(data) == 2;
 
-        resumeData.extend(vm, extendData);
+        dataExtend.extend(vm, extendData);
 	    
 	    $scope.$apply();
     });

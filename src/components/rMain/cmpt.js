@@ -14,65 +14,7 @@ export default angular
         rInfo,
         rSkill
     ])
-    .service("initArrow", [
-        function () {
-            function Arrow() {
 
-            }
-
-            Arrow.prototype = {
-
-                init   : function () {
-
-                    var
-                        page      = document.querySelectorAll(".dock-fill"),
-                        arrowNode = document.createElement("div");
-
-                    arrowNode.classList.add("-arrow");
-
-                    page[0].appendChild(arrowNode);
-                },
-                destroy: function () {
-
-                    var arrowNode = document.querySelector(".-arrow");
-
-                    arrowNode.parentNode.removeChild(arrowNode);
-                }
-            };
-
-            return Arrow;
-        }
-    ])
-    .service("stopIosDropDown", [
-        "actionEvent",
-        function (actionEvent) {
-
-            this.stop = function () {
-
-                document.querySelector("body").addEventListener(actionEvent.event.start, function (ev) {
-
-                    if(_isPc()){
-                        return;
-                    }
-
-                    if(ev.target.nodeName == "A"){
-                        return;
-                    }
-
-                    ev.preventDefault();
-
-                });
-            };
-
-            function _isPc(){
-
-                return ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].every(function(i){
-                    return navigator.userAgent.indexOf(i)<0;
-                });
-
-            }
-        }
-    ])
     .directive("resumeMain", [
         "initArrow",
         "stopIosDropDown",
@@ -90,8 +32,7 @@ export default angular
                     disY,
                     curTouchIndex,
                     nodeList  = ele[0].querySelectorAll(".page-section"),
-                    nodeListLen = nodeList.length,
-                    arrow = new initArrow();
+                    nodeListLen = nodeList.length;
 
                 init();
 
@@ -140,7 +81,7 @@ export default angular
                 });
 
                 $scope.$on("$destroy", function () {
-                    arrow.destroy();
+                    initArrow.destroy();
                     ele[0].removeEventListener("touchstart", touchStartHandler);
                     ele[0].removeEventListener("mousewheel", startWheelHandler);
                 });
@@ -153,12 +94,12 @@ export default angular
                     nodeList[0].classList.add("cur-page");
 
                     nodeList[pageIndex + 1].classList.add("next-page");
+    
+                    initArrow.init();
 
-                    arrow.init();
+                    stopIosDropDown.stop(actionEvent);
 
-                    stopIosDropDown.stop();
-
-                    consoleLog();
+                    _consoleLog();
 
                     ele[0].addEventListener(actionEvent.event.start, touchStartHandler);
                     ele[0].addEventListener("mousewheel", startWheelHandler);
@@ -287,7 +228,7 @@ export default angular
 
                 }
 
-                function consoleLog(){
+                function _consoleLog(){
                     console.log("Hi! 朋友，感谢您愿意调试简历代码。\n" +
                         "本简历采用ES6,angularJS 1.x,gulp,less,webpack开发构建。\n" +
                         "源码已开源在（https://github.com/zhaoky/flqin),喜欢请点个star吧！ \n" +
@@ -309,4 +250,5 @@ export default angular
             }
         }
     ])
+    
     .name;

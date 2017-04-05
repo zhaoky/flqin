@@ -98,12 +98,12 @@ export default angular
 	])
 	.name;
 
-ResumeExperienceCtrl.$inject = ["resumeData","$rootScope","$scope"];
+ResumeExperienceCtrl.$inject = ["dataExtend","resumeData","$rootScope","$scope"];
 
-function ResumeExperienceCtrl(resumeData,$rootScope,$scope) {
+function ResumeExperienceCtrl(dataExtend,resumeData,$rootScope,$scope) {
     let vm = this;
 
-    resumeData.extend(vm, resumeData.data.cn.experience);
+    dataExtend.extend(vm, resumeData.cn.experience);
 
     vm.curIndex = 0;
 
@@ -111,11 +111,11 @@ function ResumeExperienceCtrl(resumeData,$rootScope,$scope) {
 
     $rootScope.$on("switchLang",function(evt,data){
 
-        let extendData = Number(data) == 2?resumeData.data.en.experience:resumeData.data.cn.experience;
+        let extendData = Number(data) == 2?resumeData.en.experience:resumeData.cn.experience;
 
         vm.isEng = Number(data) == 2;
 
-        resumeData.extend(vm, extendData);
+        dataExtend.extend(vm, extendData);
 
         vm.exp = vm.expList[0];
 	

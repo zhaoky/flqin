@@ -6,18 +6,18 @@ export default angular
 	})
 	.name;
 
-ResumeDefaultCtrl.$inject = ["resumeData","$rootScope","$scope"];
+ResumeDefaultCtrl.$inject = ["dataExtend","resumeData","$rootScope","$scope"];
 
-function ResumeDefaultCtrl(resumeData,$rootScope,$scope) {
+function ResumeDefaultCtrl(dataExtend,resumeData,$rootScope,$scope) {
 	let vm = this;
 
-    resumeData.extend(vm, resumeData.data.cn.default);
+    dataExtend.extend(vm, resumeData.cn.default);
 
     $rootScope.$on("switchLang",function(evt,data){
 
-        let extendData = Number(data) == 2?resumeData.data.en.default:resumeData.data.cn.default;
+        let extendData = Number(data) == 2?resumeData.en.default:resumeData.cn.default;
 
-        resumeData.extend(vm, extendData);
+        dataExtend.extend(vm, extendData);
 	
 	    $scope.$apply();
     });

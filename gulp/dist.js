@@ -204,11 +204,16 @@ function distBasisJs() {
 				},
 				
 				module: {
-					loaders: [{
-						test   : /\.js$/,
-						exclude: /(node_modules)/,
-						loader : "babel-loader?presets[]=es2015"
-					}]
+					loaders: [
+						{
+							test  : /\.json$/,
+							loader: 'json-loader'
+						}, {
+							test   : /\.js$/,
+							exclude: /(node_modules)/,
+							loader : "babel-loader?presets[]=es2015"
+						}
+					]
 				},
 				
 				plugins: []

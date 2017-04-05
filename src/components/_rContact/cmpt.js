@@ -5,20 +5,20 @@ export default angular
 		controller  : ResumeContactCtrl
 	})
 	.name;
-ResumeContactCtrl.$inject = ["resumeData","$rootScope","$scope"];
+ResumeContactCtrl.$inject = ["dataExtend","resumeData","$rootScope","$scope"];
 
-function ResumeContactCtrl(resumeData,$rootScope,$scope) {
+function ResumeContactCtrl(dataExtend,resumeData,$rootScope,$scope) {
     let vm = this;
 
-    resumeData.extend(vm, resumeData.data.cn.contact);
+    dataExtend.extend(vm, resumeData.cn.contact);
 
     $rootScope.$on("switchLang",function(evt,data){
 
-        let extendData = Number(data) == 2?resumeData.data.en.contact:resumeData.data.cn.contact;
+        let extendData = Number(data) == 2?resumeData.en.contact:resumeData.cn.contact;
 
         vm.isEng = Number(data) == 2;
-
-        resumeData.extend(vm, extendData);
+	
+	    dataExtend.extend(vm, extendData);
 	
 	    $scope.$apply();
     });

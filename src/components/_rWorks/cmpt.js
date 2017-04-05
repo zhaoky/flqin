@@ -30,20 +30,20 @@ export default angular
 	])
 	.name;
 
-ResumeWorksCtrl.$inject = ["resumeData","$rootScope","$scope"];
+ResumeWorksCtrl.$inject = ["dataExtend","resumeData","$rootScope","$scope"];
 
-function ResumeWorksCtrl(resumeData,$rootScope, $scope) {
+function ResumeWorksCtrl(dataExtend,resumeData,$rootScope, $scope) {
     let vm = this;
 
-    resumeData.extend(vm, resumeData.data.cn.works);
+    dataExtend.extend(vm, resumeData.cn.works);
 
     $rootScope.$on("switchLang",function(evt,data){
 
-        let extendData = Number(data) == 2?resumeData.data.en.works:resumeData.data.cn.works;
+        let extendData = Number(data) == 2?resumeData.en.works:resumeData.cn.works;
 
         vm.isEng = Number(data) == 2;
 
-        resumeData.extend(vm, extendData);
+        dataExtend.extend(vm, extendData);
 	
 	    $scope.$apply();
     });

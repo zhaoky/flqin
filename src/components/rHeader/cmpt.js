@@ -79,13 +79,13 @@ export default angular
 	])
 	.name;
 
-ResumeHeaderCtrl.$inject = ["resumeData", "$rootScope", "$scope"];
+ResumeHeaderCtrl.$inject = ["dataExtend","resumeData", "$rootScope", "$scope"];
 
-function ResumeHeaderCtrl(resumeData, $rootScope, $scope) {
+function ResumeHeaderCtrl(dataExtend,resumeData, $rootScope, $scope) {
 	
 	let vm = this;
 	
-	resumeData.extend(vm, resumeData.data.cn.header);
+	dataExtend.extend(vm, resumeData.cn.header);
 	
 	vm.pageIndex = 0;
 	
@@ -93,9 +93,9 @@ function ResumeHeaderCtrl(resumeData, $rootScope, $scope) {
 	
 	$rootScope.$on("switchLang", function (evt, data) {
 		
-		let extendData = Number(data) == 2 ? resumeData.data.en.header : resumeData.data.cn.header;
+		let extendData = Number(data) == 2 ? resumeData.en.header : resumeData.cn.header;
 		
-		resumeData.extend(vm, extendData);
+		dataExtend.extend(vm, extendData);
 		
 		$scope.$apply();
 		
