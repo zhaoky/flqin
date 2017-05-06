@@ -2,15 +2,15 @@
 
 ### 项目地址：http://www.flqin.com
 
-#### 老版本项目地址：http://www.flqin.com/2015/
+#### （2015版）项目地址：http://www.flqin.com/2015/
 
 #### 百度搜索: [web前端工程师简历](https://www.baidu.com/s?ie=UTF-8&wd=web%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AE%80%E5%8E%86)
 
-![](http://www.flqin.com/2015/img/web.jpg)
+![](https://raw.githubusercontent.com/zhaoky/flqin/master/src/img/web.jpg)
 
 ### MISC
 
-很多朋友给我发邮件学习怎么制作这样的简历，其实你只需要将本项目clone下来查看代码就可以了！
+很多朋友给我发邮件学习怎么制作这样的简历，其实你只需要将本项目fork，查看代码就可以了！
 
 有任何疑问和建议请直接在此评论，互相学习，共同进步！
 
