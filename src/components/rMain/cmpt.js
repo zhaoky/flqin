@@ -94,7 +94,7 @@ export default angular
                     nodeList[0].classList.add("cur-page");
 
                     nodeList[pageIndex + 1].classList.add("next-page");
-    
+
                     initArrow.init();
 
                     stopIosDropDown.stop(actionEvent);
@@ -102,8 +102,20 @@ export default angular
                     _consoleLog();
 
                     ele[0].addEventListener(actionEvent.event.start, touchStartHandler);
-                    ele[0].addEventListener("mousewheel", startWheelHandler);
+                    ele[0].addEventListener("mousewheel", _throttleGenerator(startWheelHandler, 100));
                 }
+
+                function _throttleGenerator(fn, time) {
+                  let date = new Date();
+                  return function() {
+                    let nowDate = new Date();
+                    if (nowDate - date > time) {
+                      fn(...arguments);
+                    }
+                    date = nowDate;
+                  }
+                }
+
                 //滚轮事件
                 function startWheelHandler(e) {
 
@@ -250,5 +262,4 @@ export default angular
             }
         }
     ])
-    
     .name;
