@@ -35,7 +35,7 @@
     },
     "footer": {},
     "default": {
-      "quote": "经常深度思考应该才是最好的常态   - -",
+      "quote": "经常深度思考才是最好的常态   - -",
       "desList": [
         "我叫娄涛",
         "一名前端研发工程师",
@@ -70,7 +70,7 @@
         "两年开发经验,专注于前端、nodejs开发。",
         "熟悉MV*开发,熟悉自动化,模块化开发",
         "高效的自学能力,具备独立分析解决问题能力",
-        "一直在自我提高的路上，从未停止。Never give up!"
+        "一直在自我提高的路上，从未停止。"
       ]
     },
     "skill": {
@@ -147,7 +147,7 @@
         {
           "title": "前端原生javascript项目作品",
           "des": "包含了很多实际使用的组件，原生javascript(感谢豪情大大)",
-          "url": ""
+          "url": "http://www.vlvlk.tk:8000/"
         }
       ],
       "viewMore": "github上面查看更多"
@@ -158,7 +158,7 @@
         {
           "title": "北京辰信领创信息技术有限公司",
           "time": "2016年8月~至今",
-          "post": "前端开发",
+          "post": "前端、nodejs开发",
           "imgUrl": "img/e_html.svg",
           "tech": "angular.js、vue.js、nodejs开发、docker、elastic",
           "contentList": [
@@ -174,7 +174,7 @@
           "imgUrl": "img/e_seo.svg",
           "tech": "angularjs、nodejs、docker、elastic",
           "contentList": [
-            "负责云子可信前端开发，兼顾docker以及elastic"
+            "负责云子可信前端开发，兼顾node、docker以及elastic"
           ]
         }
       ]
@@ -188,11 +188,10 @@
         "梦想"
       ],
       "desList2": [
-        "注重效率，偏爱敏捷开发",
-        "喜欢尝试，期待新鲜事物",
-        "前端即兴趣，兴趣即未来",
-        "行路有良友，便是捷径",
-        "带上我吧，一起看到更大的世界"
+        "好的方案不是想出来的，是讨论出来的",
+        "永远期待更好的代码、更好的产品",
+        "一而再，再而三，寻根问底，常常深度思考",
+        "选择的同时意味着放弃"
       ],
       "download": "下载简历",
       "fileList": [
@@ -212,15 +211,11 @@
         },
         {
           "icon": "img/s_blog.svg",
-          "url": ""
+          "url": "http://www.vlvlk.tk"
         },
         {
           "icon": "img/s_zh.svg",
-          "url": "https://www.zhihu.com/people/fezky"
-        },
-        {
-          "icon": "img/s_wb.svg",
-          "url": "http://weibo.com/zky2013"
+          "url": "https://www.zhihu.com/people/ellison-66/activities"
         }
       ]
     }
@@ -260,11 +255,11 @@
     },
     "footer": {},
     "default": {
-      "quote": "Life is a kind of endless yearning, eager to continue to rise, become more great and noble.",
+      "quote": "Always be deep in thought",
       "desList": [
-        "I am Zhao Keyu",
-        "A front-end R & D engineer",
-        "zhaoky2016@163.com"
+        "I am Lou Tao",
+        "A front-end & nodejs developer",
+        "tao201494@163.com"
       ]
     },
     "info": {
@@ -273,7 +268,7 @@
         {
           "icon": "img/i_age.svg",
           "key": "Age",
-          "value": "26"
+          "value": "24"
         },
         {
           "icon": "img/i_edu.svg",
@@ -283,7 +278,7 @@
         {
           "icon": "img/i_site.svg",
           "key": "Add.",
-          "value": "ChengDu"
+          "value": "Nanjing"
         },
         {
           "icon": "img/i_status.svg",
@@ -292,10 +287,10 @@
         }
       ],
       "desList": [
-        "Three years of Internet experience, two and a half years full-time front-end development experience",
+        "Two years of experience, Focus on front-end developent and nodejs development",
         "Familiar with MV * development, well versed in automation, modular development of the road",
         "Efficient self-learning ability, with independent analysis to solve problems",
-        "Strong self-driving force, the code OCD"
+        "Always on the way to self-improvement, never stop"
       ]
     },
     "skill": {
@@ -303,7 +298,7 @@
       "outCircleList": [
         {
           "color": "rgba(121,100,102,0.8)",
-          "name": "gulp"
+          "name": "grunt"
         },
         {
           "color": "rgba(49,65,82,0.8)",
@@ -311,11 +306,11 @@
         },
         {
           "color": "rgba(76,157,160,0.8)",
-          "name": "webpack"
+          "name": "docker"
         },
         {
           "color": "rgba(66,66,66,0.8)",
-          "name": "less"
+          "name": "linux"
         },
         {
           "color": "rgba(193,131,106,0.8)",
@@ -326,61 +321,53 @@
           "name": "nodejs"
         },
         {
-          "color": "rgba(71,83,94,0.8)",
-          "name": "cordova"
+          "color": "rgba(147,147,189,0.8)",
+          "name": "vue"
         },
         {
-          "color": "rgba(147,147,189,0.8)",
-          "name": "react"
+          "color": "rgba(66,66,66,0.8)",
+          "name": "es6"
         }
       ],
       "innerCircleList": [
         {
           "color": "rgba(179,164,140,0.8)",
-          "name": "es6"
+          "name": "Comic and Animation"
         },
         {
           "color": "rgba(171,209,220,0.8)",
-          "name": "vue"
+          "name": "headstone"
         },
         {
           "color": "rgba(238,215,163,0.8)",
-          "name": "ng2"
+          "name": "mac"
         },
         {
           "color": "rgba(207,184,178,0.8)",
-          "name": "fp"
+          "name": "sport"
         }
       ],
       "desList": [
-        "Skilled use of angularJs1.x and encapsulate all kinds of libraries",
-        "Permanent PC / APP / WeChat three platform front-end research and development",
-        "Good at component / plugin development, can be written out of the library to write JS code",
-        "Coding thinking robustness/scalability/maintainability"
+        "Be familiar with angular1 and Vue",
+        "Write html,js,css without book and library",
+        "Good at component / plugin development",
+        "Coding thinking robustness/scalability/maintainability",
+        "Interested in raw javascript and now is writing ... ",
+        "Expect better code"
       ]
     },
     "works": {
       "title": "Works",
       "worksList": [
         {
-          "title": "Web front engineer resumes (2015)",
-          "des": "The first edition of this resume, on the line a month later, Baidu keyword 'web front engineer resumes' ranked the top three, hundreds of millions of traffic, by the majority of front-end beginners praise and imitation, so far the search Baidu 10 pages are everywhere See the copy of the resume.",
-          "url": "http://www.flqin.com/2015/"
+          "title": "angular2 list table",
+          "des": "A small project that write for my work",
+          "url": ""
         },
         {
-          "title": "Campus APP",
-          "des": "One-stop, the whole life cycle of the campus official mobile service platform, covering PC, Andrews, IOS, WeChat platform, on-line schools, including CUFE, BJTU, NACTA, LNU, SWUFE and so on, download Hundreds of thousands, loved by the students teacher.",
-          "url": "http://app.cufe.edu.cn/"
-        },
-        {
-          "title": "campus management system",
-          "des": "According to the background management system of campus APP, including the personnel structure, information statistics, H5 production machine, data exchange platform, data management of each module, feedback settings, etc., for the university to provide Internet-based mobile campus overall solution.",
-          "url": "http://www.app8848.com/cloud_mgr/#/user/login"
-        },
-        {
-          "title": "Enterprise official website",
-          "des": "Ordinary enterprise website development, compatible with IE8 +, suitable for all mobile models, with good compatibility, scalability. According to the habits of customer groups for detailed analysis planning, to develop a set of corporate website for their own design style program.",
-          "url": "http://www.lantunet.com"
+          "title": "raw javascript demos",
+          "des": "Write for improve myself. (thanks for haoqing)",
+          "url": "http://www.vlvlk.tk:8000/"
         }
       ],
       "viewMore": "Go github to see more"
@@ -389,61 +376,42 @@
       "title": "Experience",
       "expList": [
         {
-          "title": "LANTU TECH",
-          "time": "2015.06~now",
-          "post": "Web front-end R & D engineers",
+          "title": "Chenxinlinchuan Co., Ltd",
+          "time": "2017.08~now",
+          "post": "Web front-end and nodejs developer",
           "imgUrl": "img/e_js.svg",
-          "tech": "less gulp angular1.x cordova javascript and some libraries",
+          "tech": "angular.js、vue.js、nodejs、docker、elastic",
           "contentList": [
-            "Responsible for the rapid construction of high-quality APP / PC / WeChat page",
-            "According to business needs to design the appropriate project",
-            "Highly component, modular thinking, with the platform debugging capabilities",
-            "Learning ES6 and vue, react, ng2, experience the function of programming ideas"
+            "Jingyun offial website",
+            "Refactor of jingyun project（angular.js->vue.js）",
+            "Entire project mantenance and refactor"
           ]
         },
         {
-          "title": "Zhuohuang Management Co., Ltd",
-          "time": "2014.08~2015.06",
-          "post": "Web development and SEO",
+          "title": "Chuantuodajiang Co., Ltd",
+          "time": "2015.11~2017.08",
+          "post": "Web front-end developer",
           "imgUrl": "img/e_html.svg",
-          "tech": "html5,css3,javascript,jquery,bootstrap",
+          "tech": "angular.js、vue.js、nodejs、docker、elastic",
           "contentList": [
-            "Responsible for enterprise station static page development",
-            "Responsible for website background maintenance",
-            "Responsible for Baidu bid operation and seo optimization",
-            "Outside of work to enhance their own javascript coding ability"
-          ]
-        },
-        {
-          "title": "106 Culture Co., Ltd.",
-          "time": "2014.03~2014.08",
-          "post": "SEO",
-          "imgUrl": "img/e_seo.svg",
-          "tech": "SEO,SEM,Baidu (360, Sogou) bid, promotion",
-          "contentList": [
-            "Responsible for site background maintenance, new media marketing and promotion",
-            "Responsible for Baidu PPC background adjustment",
-            "Get the best new person award",
-            "The same period of work began to self-learning web front-end technology"
+            "Responsible for yunzikexin develop, use nodejs,docker,elastic at the same time"
           ]
         }
-      ],
-      "des": "In early 2014, to abandon the network engineer position, began front self-study career."
+      ]
     },
     "contact": {
       "title": "Contact Me",
       "desList1": [
-        "INSPIRATION",
+        "HARDWORKING",
+        "HEALTH",
         "CODE",
-        "DREAM",
-        "FUTURE"
+        "DREAM"
       ],
       "desList2": [
-        "Focus on efficiency, preference for agile development",
-        "Like to try, look forward to something new",
-        "Front is interested, interest is the future",
-        "Line road friends, is a shortcut",
-        "With me, see the bigger world together"
+        "Good program is not come up, is to discuss it",
+        "Expect better code and better product",
+        "deep thinking",
+        "The choice at the same time means to give up"
       ],
       "download": "Download Resume",
       "fileList": [
@@ -459,23 +427,15 @@
       "typeList": [
         {
           "icon": "img/s_github.svg",
-          "url": "https://github.com/zhaoky"
-        },
-        {
-          "icon": "img/s_sf.svg",
-          "url": "https://segmentfault.com/u/keyu2016"
+          "url": "https://github.com/ellisonLou"
         },
         {
           "icon": "img/s_blog.svg",
-          "url": ""
+          "url": "http://www.vlvlk.tk"
         },
         {
           "icon": "img/s_zh.svg",
-          "url": "https://www.zhihu.com/people/fezky"
-        },
-        {
-          "icon": "img/s_wb.svg",
-          "url": "http://weibo.com/zky2013"
+          "url": "https://www.zhihu.com/people/ellison-66/activities"
         }
       ]
     }
