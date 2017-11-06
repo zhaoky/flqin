@@ -43,6 +43,7 @@ function buildAll() {
 	return Promise
 		.all([
 			distIndexHtml(),
+			distIndexApp(),
 			distBasisHtml(),
 			distCss(),
 			distLibJs(),
@@ -199,7 +200,7 @@ function distBasisJs() {
 			.pipe(webpack({
 				
 				watch : true,
-				output: {
+				output: { 
 					filename: "basis.js"
 				},
 				
@@ -277,6 +278,21 @@ function distFavicon() {
 		gulp
 			.src(SRC.favicon)
 			.pipe(imageMin())
+			.pipe(gulp.dest("dist"))
+			.on("end", function () {
+				resolve();
+			})
+			.on("error", function () {
+				reject();
+			});
+	});
+}
+function distIndexApp() {
+	return new Promise((resolve, reject) => {
+		gulp
+			.src(["src/app.js"], {
+				base: "src"
+			})
 			.pipe(gulp.dest("dist"))
 			.on("end", function () {
 				resolve();
