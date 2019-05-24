@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>
-      title
+      web前端工程师简历
     </title>
 
     <meta content="赵柯宇的web前端工程师个人简历，前端学习，前端开发" name="description" />
@@ -12,15 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="fragment" content="!" />
     <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
-    <script>
-      (function() {
-        function autoRootFontSize() {
-          document.documentElement.style.fontSize = (Math.min(screen.width, document.documentElement.getBoundingClientRect().width) / 750) * 32 + "px";
-        }
-        window.addEventListener("resize", autoRootFontSize);
-        autoRootFontSize();
-      })();
-    </script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
@@ -192,5 +184,12 @@
         <p>蜀ICP备15021330号 Copyright © 2015 - 2019</p>
       </div>
     </footer>
-  </body>
+
+    <script src="js/lib.js"></script>
+    <script src="js/basis.js"></script>
+
+    <script>
+      angular.bootstrap(document, ["bootstrap"]);
+    </script>
+  <script type="text/javascript" src="main.js"></script></body>
 </html>

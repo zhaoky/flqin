@@ -1,4 +1,22 @@
-.idea
+# Logs
+logs
+*.log
+npm-debug.log*
+.history
+.DS_Store
+
+# Dependency directories
 node_modules
+jspm_packages
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
 .vscode
-dist
+.idea
+.sencha
+.build
+node_modules
+package-lock.json
