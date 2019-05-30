@@ -20,7 +20,11 @@
     "前端工程师简历",
     "web前端简历"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@fe_korey/fullpage": "^1.0.2",
+    "@fe_korey/mvvm": "^1.0.8",
+    "normalize.css": "^8.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-transform-runtime": "^7.4.4",
@@ -36,9 +40,12 @@
     "eslint-config-google": "^0.13.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "file-loader": "^3.0.1",
     "happypack": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^2.3.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "lint-staged": "^8.1.7",
     "mini-css-extract-plugin": "^0.6.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",

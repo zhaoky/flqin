@@ -1,9 +1,9 @@
-@import "../_rInfo/cmpt.less";
-@import "../_rdefault/cmpt.less";
-@import "../_rSkill/cmpt.less";
-@import "../_rExperience/cmpt.less";
-@import "../_rWorks/cmpt.less";
-@import "../_rContact/cmpt.less";
+@import '../_rInfo/cmpt.less';
+@import '../_rdefault/cmpt.less';
+@import '../_rSkill/cmpt.less';
+@import '../_rExperience/cmpt.less';
+@import '../_rWorks/cmpt.less';
+@import '../_rContact/cmpt.less';
 
 section {
   position: absolute;
@@ -47,12 +47,12 @@ main {
 }
 .-arrow {
   position: absolute;
-  bottom: 20px;
-  width: 20px;
-  height: 35px;
+  bottom: 20PX;
+  width: 20PX;
+  height: 35PX;
   left: 50%;
   z-index: 100;
-  background: url("../img/arrow.svg") no-repeat bottom center;
+  background: url('../img/arrow.svg') no-repeat bottom center;
   background-size: contain;
   pointer-events: none;
   transform: translateX(-50%);
@@ -61,31 +61,31 @@ main {
 
 @keyframes arrowAnimate {
   0% {
-    bottom: 10px;
+    bottom: 10PX;
     opacity: 0.8;
   }
   50% {
-    bottom: 20px;
+    bottom: 20PX;
     opacity: 1;
   }
   80% {
-    bottom: 22px;
+    bottom: 22PX;
     opacity: 0.4;
   }
   100% {
-    bottom: 22px;
+    bottom: 22PX;
     opacity: 0;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600PX) {
   .-arrow {
-    width: 15px;
+    width: 15PX;
     &::before {
-      border-width: 2px;
-      right: -12px;
+      border-width: 2PX;
+      right: -12PX;
     }
     &::after {
-      border-width: 2px;
+      border-width: 2PX;
     }
   }
 }

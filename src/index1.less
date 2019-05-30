@@ -1,0 +1,39 @@
+@import './components/rFooter/cmpt.less';
+@import './components/rHeader/cmpt.less';
+@import './components/rMain/cmpt.less';
+.-overview,
+.-info,
+.-skill,
+.-experience,
+.-work,
+.-contact {
+  height: 100%;
+}
+.-content {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.-title {
+  position: absolute;
+  top: 150px;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+}
+
+@media screen and (max-width: 1366px) {
+  .-title {
+    top: 70px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .-title {
+    display: none;
+  }
+}

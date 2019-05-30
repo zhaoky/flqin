@@ -1,124 +1,130 @@
 export default angular
-	.module("rExperience", [
-	])
-	.component("resumeExperience", {
-		templateUrl : "components/_rExperience/cmpt.html",
-		controller  : ResumeExperienceCtrl,
-		bindings:{
-			pageIndex:"<"
-		}
-	})
-	.directive("touchThreeD",[
-		"$window",
-		"actionEvent",
-		function($window,actionEvent){
-			function link($scope,ele){
-				
-				let
-					bannerWidth,
-				    bannerHeight,
-				    offsetLeft,
-					offsetTop;
-				$scope.$watch("$parent.$parent.pageIndex",function(newV){
-					if(Number(newV) !== 3){
-						return;
-					}
-					bannerWidth = ele[0].offsetWidth;
-					bannerHeight = ele[0].offsetHeight;
-					offsetLeft = ele[0].offsetLeft;
-					offsetTop = ele[0].offsetTop;
-				});
-				
-				ele[0].addEventListener(actionEvent.event.move,mousemoveHandler);
-				ele[0].addEventListener("mouseout",mouseoutHandler);
+  .module('rExperience', [])
+  .component('resumeExperience', {
+    templateUrl: 'components/_rExperience/cmpt.html',
+    controller: ResumeExperienceCtrl,
+    bindings: {
+      pageIndex: '<'
+    }
+  })
+  .directive('touchThreeD', [
+    '$window',
+    'actionEvent',
+    function($window, actionEvent) {
+      function link($scope, ele) {
+        let bannerWidth;
+        let bannerHeight;
+        let offsetLeft;
+        let offsetTop;
+        $scope.$watch('$parent.$parent.pageIndex', function(newV) {
+          if (Number(newV) !== 3) {
+            return;
+          }
+          bannerWidth = ele[0].offsetWidth;
+          bannerHeight = ele[0].offsetHeight;
+          offsetLeft = ele[0].offsetLeft;
+          offsetTop = ele[0].offsetTop;
+        });
 
-				function mousemoveHandler(evt){
-                    let
-                        pageX = evt.pageX,
-                        pageY = evt.pageY,
-                        x = pageX - offsetLeft - bannerWidth/2,
-                        y = bannerHeight/2-pageY + offsetTop+140;
-                    	ele[0].style.transform = "rotateY(" + x/50 + "deg) rotateX(" + y/50 + "deg)";
-                }
+        ele[0].addEventListener(actionEvent.event.move, mousemoveHandler);
+        ele[0].addEventListener('mouseout', mouseoutHandler);
 
-                function mouseoutHandler(evt){
-                    	ele[0].style.transform = "rotateY(0deg) rotateX(0deg)";
-                }
+        function mousemoveHandler(evt) {
+          const pageX = evt.pageX;
+          const pageY = evt.pageY;
+          const x = pageX - offsetLeft - bannerWidth / 2;
+          const y = bannerHeight / 2 - pageY + offsetTop + 140;
+          ele[0].style.transform =
+            'rotateY(' + x / 50 + 'deg) rotateX(' + y / 50 + 'deg)';
+        }
 
-                $window.onresize= onResize;
+        function mouseoutHandler(evt) {
+          ele[0].style.transform = 'rotateY(0deg) rotateX(0deg)';
+        }
 
-                function onResize(){
-                    offsetLeft = ele[0].offsetLeft;
-                    offsetTop = ele[0].offsetTop;
-				}
+        $window.onresize = onResize;
 
-			}
-			return{
-				restrict:"A",
-				link:link
-			}
-		}
-	])
-	.directive("switchExp",[
-		"actionEvent",
-		function(actionEvent){
-			function link($scope,ele){
-				
-				let
-					vm = $scope.$ctrl,
-					contentNode = document.body.querySelectorAll(".-experience-content")[0];
+        function onResize() {
+          offsetLeft = ele[0].offsetLeft;
+          offsetTop = ele[0].offsetTop;
+        }
+      }
+      return {
+        restrict: 'A',
+        link: link
+      };
+    }
+  ])
+  .directive('switchExp', [
+    'actionEvent',
+    function(actionEvent) {
+      function link($scope, ele) {
+        const vm = $scope.$ctrl;
+        const contentNode = document.body.querySelectorAll(
+          '.-experience-content'
+        )[0];
 
-				vm.cutList = new Array(3);
+        vm.cutList = new Array(3);
 
-				ele[0].addEventListener(actionEvent.event.start,switchExpList);
-				
-				function switchExpList(evt){
-					if(evt.target.nodeName != "LI"){
-						return;
-					}
-					
-					if(evt.target.dataset.index !== vm.curIndex){
-                        vm.curIndex = evt.target.dataset.index;
-						contentNode.style.opacity = "0";
-						contentNode.addEventListener("webkitTransitionEnd",transitionEndHandler);
-					}
-				}
-				function transitionEndHandler(){
-					contentNode.style.opacity = "1";
-					$scope.$apply(function(){
-						vm.exp = vm.expList[vm.curIndex];
-					});
-					contentNode.removeEventListener("webkitTransitionEnd",transitionEndHandler);
-				}
-			}
-			return{
-				link:link
-			}
-		}
-	])
-	.name;
+        ele[0].addEventListener(actionEvent.event.start, switchExpList);
 
-ResumeExperienceCtrl.$inject = ["dataExtend","resumeData","$rootScope","$scope"];
+        function switchExpList(evt) {
+          if (evt.target.nodeName != 'LI') {
+            return;
+          }
 
-function ResumeExperienceCtrl(dataExtend,resumeData,$rootScope,$scope) {
-    let vm = this;
+          if (evt.target.dataset.index !== vm.curIndex) {
+            vm.curIndex = evt.target.dataset.index;
+            contentNode.style.opacity = '0';
+            contentNode.addEventListener(
+              'webkitTransitionEnd',
+              transitionEndHandler
+            );
+          }
+        }
+        function transitionEndHandler() {
+          contentNode.style.opacity = '1';
+          $scope.$apply(function() {
+            vm.exp = vm.expList[vm.curIndex];
+          });
+          contentNode.removeEventListener(
+            'webkitTransitionEnd',
+            transitionEndHandler
+          );
+        }
+      }
+      return {
+        link: link
+      };
+    }
+  ]).name;
 
-    dataExtend.extend(vm, resumeData.cn.experience);
+ResumeExperienceCtrl.$inject = [
+  'dataExtend',
+  'resumeData',
+  '$rootScope',
+  '$scope'
+];
 
-    vm.curIndex = 0;
+function ResumeExperienceCtrl(dataExtend, resumeData, $rootScope, $scope) {
+  const vm = this;
 
-    vm.exp = vm.expList[vm.curIndex];
+  dataExtend.extend(vm, resumeData.cn.experience);
 
-    $rootScope.$on("switchLang",function(evt,data){
+  vm.curIndex = 0;
 
-        let extendData = Number(data) == 2?resumeData.en.experience:resumeData.cn.experience;
+  vm.exp = vm.expList[vm.curIndex];
 
-        vm.isEng = Number(data) == 2;
+  $rootScope.$on('switchLang', function(evt, data) {
+    const extendData =
+      Number(data) == 2 ? resumeData.en.experience : resumeData.cn.experience;
 
-        dataExtend.extend(vm, extendData);
+    vm.isEng = Number(data) == 2;
 
-        vm.exp = vm.expList[0];
-	
-	    $scope.$apply();
-    });
+    dataExtend.extend(vm, extendData);
+
+    vm.exp = vm.expList[0];
+
+    $scope.$apply();
+  });
 }
