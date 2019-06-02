@@ -63,9 +63,7 @@ export default angular
             return;
           }
 
-          +evt.target.dataset.index !== vm.pageIndex &&
-            !resumeData.moving &&
-            (vm.pageIndex = +evt.target.dataset.index);
+          +evt.target.dataset.index !== vm.pageIndex && !resumeData.moving && (vm.pageIndex = +evt.target.dataset.index);
           vm.isShowNav = false;
           $scope.$apply();
         }
@@ -90,8 +88,7 @@ function ResumeHeaderCtrl(dataExtend, resumeData, $rootScope, $scope) {
   vm.selectedLang = 1; // 1为中文,2为英文
 
   $rootScope.$on('switchLang', function(evt, data) {
-    const extendData =
-      Number(data) == 2 ? resumeData.en.header : resumeData.cn.header;
+    const extendData = Number(data) == 2 ? resumeData.en.header : resumeData.cn.header;
 
     dataExtend.extend(vm, extendData);
 

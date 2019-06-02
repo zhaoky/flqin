@@ -34,8 +34,7 @@ export default angular
           const pageY = evt.pageY;
           const x = pageX - offsetLeft - bannerWidth / 2;
           const y = bannerHeight / 2 - pageY + offsetTop + 140;
-          ele[0].style.transform =
-            'rotateY(' + x / 50 + 'deg) rotateX(' + y / 50 + 'deg)';
+          ele[0].style.transform = 'rotateY(' + x / 50 + 'deg) rotateX(' + y / 50 + 'deg)';
         }
 
         function mouseoutHandler(evt) {
@@ -60,9 +59,7 @@ export default angular
     function(actionEvent) {
       function link($scope, ele) {
         const vm = $scope.$ctrl;
-        const contentNode = document.body.querySelectorAll(
-          '.-experience-content'
-        )[0];
+        const contentNode = document.body.querySelectorAll('.-experience-content')[0];
 
         vm.cutList = new Array(3);
 
@@ -76,10 +73,7 @@ export default angular
           if (evt.target.dataset.index !== vm.curIndex) {
             vm.curIndex = evt.target.dataset.index;
             contentNode.style.opacity = '0';
-            contentNode.addEventListener(
-              'webkitTransitionEnd',
-              transitionEndHandler
-            );
+            contentNode.addEventListener('webkitTransitionEnd', transitionEndHandler);
           }
         }
         function transitionEndHandler() {
@@ -87,10 +81,7 @@ export default angular
           $scope.$apply(function() {
             vm.exp = vm.expList[vm.curIndex];
           });
-          contentNode.removeEventListener(
-            'webkitTransitionEnd',
-            transitionEndHandler
-          );
+          contentNode.removeEventListener('webkitTransitionEnd', transitionEndHandler);
         }
       }
       return {
@@ -99,12 +90,7 @@ export default angular
     }
   ]).name;
 
-ResumeExperienceCtrl.$inject = [
-  'dataExtend',
-  'resumeData',
-  '$rootScope',
-  '$scope'
-];
+ResumeExperienceCtrl.$inject = ['dataExtend', 'resumeData', '$rootScope', '$scope'];
 
 function ResumeExperienceCtrl(dataExtend, resumeData, $rootScope, $scope) {
   const vm = this;
@@ -116,8 +102,7 @@ function ResumeExperienceCtrl(dataExtend, resumeData, $rootScope, $scope) {
   vm.exp = vm.expList[vm.curIndex];
 
   $rootScope.$on('switchLang', function(evt, data) {
-    const extendData =
-      Number(data) == 2 ? resumeData.en.experience : resumeData.cn.experience;
+    const extendData = Number(data) == 2 ? resumeData.en.experience : resumeData.cn.experience;
 
     vm.isEng = Number(data) == 2;
 

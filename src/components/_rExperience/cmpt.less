@@ -1,192 +1,190 @@
-.-experience{
+.-experience {
   background: rgb(148, 92, 76) url(../img/bg.png);
-  .-content{
-    perspective:3000PX;
-    .-banner{
-      width: 750PX;
-      height: 350PX;
-      background: #F2F4F5;
-      margin:0 auto;
-      border: 1PX solid #eee;
-      border-radius: 10PX;
-      color:#000;
-      transition: transform .3s linear;
+  .-content {
+    perspective: 3000px;
+    .-banner {
+      width: 750px;
+      height: 350px;
+      background: #f2f4f5;
+      margin: 0 auto;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      color: #000;
+      transition: transform 0.3s linear;
       overflow: hidden;
-      box-shadow: 0 0 25PX rgba(0,0,0,0.5);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
       transform-style: preserve-3d;
-      .-experience-content{
+      .-experience-content {
         transition: opacity 0.3s;
         height: 100%;
-        .-left{
+        .-left {
           float: left;
           height: 100%;
           position: relative;
-          perspective: 800PX;
+          perspective: 800px;
           transform-style: preserve-3d;
-          .-img{
+          .-img {
             background: no-repeat center center;
             background-size: 55%;
-            width: 150PX;
+            width: 150px;
             height: 100%;
-            transform: translateZ(50PX);
+            transform: translateZ(50px);
           }
-          &:after{
-            content: "";
+          &::after {
+            content: '';
             background: #eee;
-            width: 1PX;
+            width: 1px;
             position: absolute;
             top: 10%;
             bottom: 10%;
             right: 0;
           }
         }
-        .-right{
-          padding-left: 50PX;
+        .-right {
+          padding-left: 50px;
           float: left;
           height: 100%;
-          width: 550PX;
-          h4{
-            color: #945C4C;
-            font-size: 20PX;
+          width: 550px;
+          h4 {
+            color: #945c4c;
+            font-size: 20px;
           }
-          .-time{
-            color: #AF7464;
-            font-size: 14PX;
+          .-time {
+            color: #af7464;
+            font-size: 14px;
           }
-          .-post{
-            color: #9E6351;
-            font-size: 16PX;
+          .-post {
+            color: #9e6351;
+            font-size: 16px;
           }
-          .-tech{
-            color: #9E6351;
-            font-size: 14PX;
+          .-tech {
+            color: #9e6351;
+            font-size: 14px;
           }
-          .-list{
-            .-item{
-              line-height: 30PX;
-              font-size: 16PX;
+          .-list {
+            .-item {
+              line-height: 30px;
+              font-size: 16px;
               position: relative;
-              &:before{
-                content: "";
+              &::before {
+                content: '';
                 position: absolute;
                 top: 50%;
-                left: -10PX;
-                width: 5PX;
-                height: 5PX;
+                left: -10px;
+                width: 5px;
+                height: 5px;
                 transform: translateY(-50%);
                 border-radius: 50%;
-                background-color: #AF7464;
+                background-color: #af7464;
               }
             }
-            .-item-en{
-              font-size: 14PX;
+            .-item-en {
+              font-size: 14px;
             }
           }
         }
       }
     }
-    .-shout-cut{
-      width: 200PX;
+    .-shout-cut {
+      width: 200px;
       margin: 0 auto;
-      padding-top: 50PX;
-      .-cut-list{
+      padding-top: 50px;
+      .-cut-list {
         display: flex;
         justify-content: space-between;
         align-items: center;
         z-index: 101;
-        .-item{
-          width: 10PX;
-          height: 10PX;
+        .-item {
+          width: 10px;
+          height: 10px;
           border-radius: 50%;
-          background-color: #623C32;
-          cursor:pointer;
-          transition: background-color .3s linear;
+          background-color: #623c32;
+          cursor: pointer;
+          transition: background-color 0.3s linear;
           position: relative;
-          &:before{
+          &::before {
             content: '';
             position: absolute;
-            top: -15PX;
-            right: -15PX;
-            left: -15PX;
-            bottom: -15PX;
+            top: -15px;
+            right: -15px;
+            left: -15px;
+            bottom: -15px;
           }
         }
-        .-selected{
-          background-color: #AF7164;
+        .-selected {
+          background-color: #af7164;
         }
       }
-
     }
-    .-exp-des{
-      margin-top: 50PX;
-      color: #FFF;
+    .-exp-des {
+      margin-top: 50px;
+      color: #fff;
       text-align: center;
-      font-size: 18PX;
+      font-size: 18px;
     }
   }
-
 }
 
-@media screen and (max-width: 1366PX) {
+@media screen and (max-width: 1366px) {
   .-experience {
     .-content {
-      top: 150PX;
-      .-shout-cut{
-        padding-top: 20PX;
+      top: 150px;
+      .-shout-cut {
+        padding-top: 20px;
       }
-      .-exp-des{
-        margin-top: 20PX;
+      .-exp-des {
+        margin-top: 20px;
       }
     }
   }
 }
 
-@media screen and (max-width: 600PX){
-  .-experience{
-    .-content{
-      top:80PX;
-      .-banner{
+@media screen and (max-width: 600px) {
+  .-experience {
+    .-content {
+      top: 80px;
+      .-banner {
         width: 90%;
         height: 80%;
-        .-experience-content{
-          .-left{
+        .-experience-content {
+          .-left {
             display: none;
           }
-          .-right{
+          .-right {
             width: 90%;
             margin: 0 auto;
             padding: 0;
             float: none;
-            h4{
-              font-size: 16PX;
-              margin: 10PX 0;
+            h4 {
+              font-size: 16px;
+              margin: 10px 0;
             }
-            p{
-              margin: 10PX 0;
+            p {
+              margin: 10px 0;
             }
-            .-time{
-              font-size: 12PX;
+            .-time {
+              font-size: 12px;
             }
-            .-post{
-              font-size: 14PX;
+            .-post {
+              font-size: 14px;
             }
-            .-tech{
-              font-size: 13PX;
+            .-tech {
+              font-size: 13px;
             }
-            .-list{
-              .-item{
-                font-size: 12PX;
-                line-height: 16PX;
-                margin: 12PX 0;
+            .-list {
+              .-item {
+                font-size: 12px;
+                line-height: 16px;
+                margin: 12px 0;
               }
             }
           }
         }
       }
-      .-shout-cut{
-        padding-top: 35PX;
+      .-shout-cut {
+        padding-top: 35px;
       }
-      .-exp-des{
+      .-exp-des {
         display: none;
       }
     }
