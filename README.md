@@ -2,6 +2,7 @@
     <a href="https://www.travis-ci.com/zhaoky/flqin">
       <img src="https://travis-ci.com/zhaoky/flqin.svg?branch=master" alt="Travis CI Status"/>
     </a>
+                <img src="https://img.shields.io/github/stars/zhaoky/flqin.svg" alt="">
 <p>
 ## web前端工程师简历
 

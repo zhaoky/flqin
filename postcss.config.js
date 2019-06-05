@@ -4,7 +4,8 @@ module.exports = {
     'postcss-pxtorem': {
       rootValue: 32,
       propList: ['*'],
-      minPixelValue: 2
+      minPixelValue: 3,
+      mediaQuery: false
     }
   }
 };

@@ -1,123 +1,158 @@
+import eJm from './assets/logo_jm.png';
+import eLt from './assets/logo_lt.png';
+import eZh from './assets/logo_zh.png';
+import dHome from './assets/d_home.svg';
+import dSkills from './assets/d_skills.svg';
+import dExp from './assets/d_exp.svg';
+import dWorks from './assets/d_works.svg';
+import dContact from './assets/d_contact.svg';
+import sGithub from './assets/s_github.svg';
+import sSf from './assets/s_sf.svg';
+import sBlog from './assets/s_blog.svg';
+import sZh from './assets/s_zh.svg';
+import sWb from './assets/s_wb.svg';
+
 export default {
   cn: {
     header: {
       langList: ['中', '英'],
       titleList: [
         {
-          svg: 'img/d_home.svg',
+          svg: dHome,
           title: '首页'
         },
         {
-          svg: 'img/d_info.svg',
-          title: '关于我'
+          svg: dSkills,
+          title: '能力'
         },
         {
-          svg: 'img/d_skills.svg',
-          title: '技能栈'
-        },
-        {
-          svg: 'img/d_exp.svg',
+          svg: dExp,
           title: '经历'
         },
         {
-          svg: 'img/d_works.svg',
+          svg: dWorks,
           title: '作品集'
         },
         {
-          svg: 'img/d_contact.svg',
+          svg: dContact,
           title: '联系我'
         }
       ]
     },
-    footer: {},
+    footer: ['Released under the MIT License', 'All Rights Reserved ', 'Copyright © 2014-2019 Korey Zhao'],
     overview: {
+      infoList: ['28岁', '本科', '成都', '在职'],
       quote: '生活是一种绵延不绝的渴望，渴望不断上升，变得更伟大而高贵。',
       desList: ['我叫赵柯宇，前端工程师', '聚美优品电商&增长团队前端负责人', 'keyu.zhao@foxmail.com']
     },
-    info: {
-      title: '关于我',
-      infoList: [
-        {
-          icon: 'img/i_age.svg',
-          key: '年龄',
-          value: '26岁'
-        },
-        {
-          icon: 'img/i_edu.svg',
-          key: '学历',
-          value: '本科'
-        },
-        {
-          icon: 'img/i_site.svg',
-          key: '坐标',
-          value: '成都'
-        },
-        {
-          icon: 'img/i_status.svg',
-          key: '状态',
-          value: '在职'
-        }
-      ],
-      desList: ['三年互联网经验,两年半全职前端开发经验', '熟悉MV*开发,深谙自动化,模块化开发之道', '高效的自学能力,具备独立分析解决问题能力', '强烈的自我驱动力,代码强迫症患者']
-    },
+    // info: {
+    //   title: '关于我',
+    //   infoList: [
+    //     {
+    //       icon: 'img/i_age.svg',
+    //       key: '年龄',
+    //       value: '26岁'
+    //     },
+    //     {
+    //       icon: 'img/i_edu.svg',
+    //       key: '学历',
+    //       value: '本科'
+    //     },
+    //     {
+    //       icon: 'img/i_site.svg',
+    //       key: '坐标',
+    //       value: '成都'
+    //     },
+    //     {
+    //       icon: 'img/i_status.svg',
+    //       key: '状态',
+    //       value: '在职'
+    //     }
+    //   ],
+    //   desList: ['三年互联网经验,两年半全职前端开发经验', '熟悉MV*开发,深谙自动化,模块化开发之道', '高效的自学能力,具备独立分析解决问题能力', '强烈的自我驱动力,代码强迫症患者']
+    // },
     skill: {
       title: '技能栈',
       outCircleList: [
         {
-          color: 'rgba(121,100,102,0.8)',
+          bg: {
+            backgroundColor: 'rgba(121,100,102,0.8)'
+          },
           name: 'gulp'
         },
         {
-          color: 'rgba(49,65,82,0.8)',
+          bg: {
+            backgroundColor: 'rgba(49,65,82,0.8)'
+          },
           name: 'angular'
         },
         {
-          color: 'rgba(76,157,160,0.8)',
+          bg: {
+            backgroundColor: 'rgba(76,157,160,0.8)'
+          },
           name: 'webpack'
         },
         {
-          color: 'rgba(66,66,66,0.8)',
+          bg: {
+            backgroundColor: 'rgba(66,66,66,0.8)'
+          },
           name: 'less'
         },
         {
-          color: 'rgba(193,131,106,0.8)',
+          bg: {
+            backgroundColor: 'rgba(193,131,106,0.8)'
+          },
           name: 'git'
         },
         {
-          color: 'rgba(117,148,179,0.8)',
+          bg: {
+            backgroundColor: 'rgba(117,148,179,0.8)'
+          },
           name: 'nodejs'
         },
         {
-          color: 'rgba(71,83,94,0.8)',
+          bg: {
+            backgroundColor: 'rgba(71,83,94,0.8)'
+          },
           name: 'cordova'
         },
         {
-          color: 'rgba(147,147,189,0.8)',
+          bg: {
+            backgroundColor: 'rgba(147,147,189,0.8)'
+          },
           name: 'react'
         }
       ],
       innerCircleList: [
         {
-          color: 'rgba(179,164,140,0.8)',
+          bg: {
+            backgroundColor: 'rgba(179,164,140,0.8)'
+          },
           name: 'es6'
         },
         {
-          color: 'rgba(171,209,220,0.8)',
+          bg: {
+            backgroundColor: 'rgba(171,209,220,0.8)'
+          },
           name: 'vue'
         },
         {
-          color: 'rgba(238,215,163,0.8)',
+          bg: {
+            backgroundColor: 'rgba(238,215,163,0.8)'
+          },
           name: 'ng2'
         },
         {
-          color: 'rgba(207,184,178,0.8)',
+          bg: {
+            backgroundColor: 'rgba(207,184,178,0.8)'
+          },
           name: 'fp'
         }
       ],
-      desList: ['熟练使用angularJs1.x及各种类库的指令封装', '常驻PC/APP/微信三平台前端研发', '擅长组件/插件开发，能脱离库书写JS代码', '编码常思其健壮性，扩展性，维护性']
+      desList: ['前端技术栈均有涉及', '常驻PC/APP/微信三平台前端研发', '擅长组件/插件开发，能脱离库书写JS代码', '编码常思其健壮性，扩展性，维护性']
     },
     works: {
-      title: '作品集',
+      // title: '作品集',
       worksList: [
         {
           title: 'web前端工程师简历（2015年版）',
@@ -139,39 +174,51 @@ export default {
           title: '企业官网',
           des: '普通性的各类企业网站开发，兼容IE8+,适配全移动机型，具有良好的兼容性，扩展性。根据客户群体的习性进行详细分析策划，制定出一套适合企业自身的网站建设的设计风格方案。',
           url: 'http://www.lantunet.com'
+        },
+        {
+          title: '企业官网2',
+          des: '普通性的各类企业网站开发，兼容IE8+,适配全移动机型，具有良好的兼容性，扩展性。根据客户群体的习性进行详细分析策划，制定出一套适合企业自身的网站建设的设计风格方案。',
+          url: 'http://www.lantunet.com'
         }
       ],
       viewMore: 'github上面查看更多'
     },
-    experience: {
+    exp: {
       title: '经历',
       expList: [
         {
-          title: '兰途网络科技有限公司',
-          time: '2015年6月~至今',
+          title: '聚美优品（成都）',
+          time: '2017年4月~至今',
+          post: '资深前端工程师/前端负责人',
+          img: {
+            backgroundImage: `url(${eJm})`
+          },
+          tech: 'SEO,SEM,百度（360，搜狗）竞价、推广等',
+          contentList: ['负责网站后台维护，微博、微信等新媒体营销和推广', '负责百度PPC后台调整', '获得最佳新人奖', '同期工作之余开始系统性的自学web前端各项技术']
+        },
+        {
+          title: '兰途科技',
+          time: '2015年6月-2017年4月',
           post: 'web前端研发工程师',
-          imgUrl: 'img/e_js.svg',
+          img: {
+            backgroundImage: `url(${eLt})`
+          },
           tech: 'less gulp angular1.x cordova 原生js及若干类库',
           contentList: ['负责快速构建高质量移动APP/PC/微信页面', '根据业务需求设计合适的工程项目', '高度组件化、模块化思维，拥有各平台调试能力', '同期学习ES6及vue,react,ng2,体会函数式编程思想']
         },
         {
-          title: '卓煌企业管理有限公司',
+          title: '卓煌企业',
           time: '2014年8月~2015年6月',
           post: '网页开发兼SEO优化',
-          imgUrl: 'img/e_html.svg',
+          img: {
+            backgroundImage: `url(${eZh})`
+          },
           tech: 'html5,css3,javascript,jquery,bootstrap等',
           contentList: ['负责企业站静态页开发', '负责网站后台维护', '负责百度竞价操作及seo优化', '同期工作之余提升自己原生JS的编码能力']
-        },
-        {
-          title: '壹零陆文化传播有限责任公司',
-          time: '2014年3月~2014年8月',
-          post: 'SEO',
-          imgUrl: 'img/e_seo.svg',
-          tech: 'SEO,SEM,百度（360，搜狗）竞价、推广等',
-          contentList: ['负责网站后台维护，微博、微信等新媒体营销和推广', '负责百度PPC后台调整', '获得最佳新人奖', '同期工作之余开始系统性的自学web前端各项技术']
         }
       ],
-      des: '2014年初，放弃网络工程师职位，开始前端自学生涯。'
+      des: '2014年初，放弃网络工程师职位，开始前端自学生涯。',
+      cutList: [1, 2, 3]
     },
     contact: {
       title: '联系我',
@@ -190,23 +237,23 @@ export default {
       ],
       typeList: [
         {
-          icon: 'img/s_github.svg',
+          icon: sGithub,
           url: 'https://github.com/zhaoky'
         },
         {
-          icon: 'img/s_sf.svg',
+          icon: sSf,
           url: 'https://segmentfault.com/u/keyu2016'
         },
         {
-          icon: 'img/s_blog.svg',
+          icon: sBlog,
           url: ''
         },
         {
-          icon: 'img/s_zh.svg',
+          icon: sZh,
           url: 'https://www.zhihu.com/people/fezky'
         },
         {
-          icon: 'img/s_wb.svg',
+          icon: sWb,
           url: 'http://weibo.com/zky2013'
         }
       ]
@@ -376,7 +423,9 @@ export default {
           title: 'LANTU TECH',
           time: '2015.06~now',
           post: 'Web front-end R & D engineers',
-          imgUrl: 'img/e_js.svg',
+          img: {
+            backgroundImage: 'img/e_js.svg'
+          },
           tech: 'less gulp angular1.x cordova javascript and some libraries',
           contentList: [
             'Responsible for the rapid construction of high-quality APP / PC / WeChat page',
@@ -389,7 +438,9 @@ export default {
           title: 'Zhuohuang Management Co., Ltd',
           time: '2014.08~2015.06',
           post: 'Web development and SEO',
-          imgUrl: 'img/e_html.svg',
+          img: {
+            backgroundImage: 'img/e_html.svg'
+          },
           tech: 'html5,css3,javascript,jquery,bootstrap',
           contentList: [
             'Responsible for enterprise station static page development',
@@ -402,7 +453,9 @@ export default {
           title: '106 Culture Co., Ltd.',
           time: '2014.03~2014.08',
           post: 'SEO',
-          imgUrl: 'img/e_seo.svg',
+          img: {
+            backgroundImage: 'img/e_seo.svg'
+          },
           tech: 'SEO,SEM,Baidu (360, Sogou) bid, promotion',
           contentList: [
             'Responsible for site background maintenance, new media marketing and promotion',
@@ -437,23 +490,23 @@ export default {
       ],
       typeList: [
         {
-          icon: 'img/s_github.svg',
+          icon: sGithub,
           url: 'https://github.com/zhaoky'
         },
         {
-          icon: 'img/s_sf.svg',
+          icon: sSf,
           url: 'https://segmentfault.com/u/keyu2016'
         },
         {
-          icon: 'img/s_blog.svg',
+          icon: sBlog,
           url: ''
         },
         {
-          icon: 'img/s_zh.svg',
+          icon: sZh,
           url: 'https://www.zhihu.com/people/fezky'
         },
         {
-          icon: 'img/s_wb.svg',
+          icon: sWb,
           url: 'http://weibo.com/zky2013'
         }
       ]

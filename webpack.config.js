@@ -85,12 +85,7 @@ if (_DEV_) {
   config.module.rules.push(
     {
       test: /\.less$/,
-      use: [
-        MiniCssExtractPlugin.loader,
-        'css-loader',
-        'postcss-loader',
-        'less-loader'
-      ]
+      use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader']
     },
     {
       test: /\.css/,
