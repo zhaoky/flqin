@@ -5,33 +5,17 @@ import res from './data';
 import { MVVM } from '@fe_korey/mvvm';
 import { Fullpage } from '@fe_korey/fullpage';
 
-/**
- * 判断是否为PC
- *
- * @return {Boolean}
- */
-function isPC() {
-  const u = navigator.userAgent;
-  const Agents = ['Android', 'iPhone', 'webOS', 'BlackBerry', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
-  let flag = true;
-  for (let i = 0; i < Agents.length; i++) {
-    if (u.indexOf(Agents[i]) > 0) {
-      flag = false;
-      break;
-    }
-  }
-  return flag;
-}
-
 const model = {
   selectedLang: 0,
   isShowNav: false,
+  isPc: false,
+  isEng: false,
   pageIndex: 0,
-  expCur: res.cn.exp.expList[0],
+  expCur: {},
   selectExpIndex: 0,
   workIndex: 0
 };
-
+let fp;
 const data = {
   view: document.getElementById('app'),
   model: { ...res.cn, ...model },
@@ -40,18 +24,21 @@ const data = {
       data.model.isShowNav = !data.model.isShowNav;
     },
     directToPage(index) {
-      console.log(index);
       data.model.pageIndex = index;
       fp.directToPage(index);
       data.model.isShowNav = false;
     },
     switchLang(index) {
       data.model.selectedLang = index;
-      if (index === 1) {
-        data.model = { ...model, ...res.en };
-      } else {
-        data.model = { ...model, ...res.cn };
-      }
+      data.model.isEng = index === 1;
+      const dataNames = ['header', 'footer', 'overview', 'skill', 'exp', 'works', 'contact'];
+      const language = index === 1 ? 'en' : 'cn';
+      dataNames.forEach(i => {
+        data.model[i] = res[language][i];
+      });
+      data.model.expCur = res[language].exp.expList[data.model.selectExpIndex];
+      data.model.workIndex = 0;
+      setWorkDraw();
     },
     switchExp($event, index) {
       $event.stopPropagation();
@@ -64,7 +51,8 @@ const data = {
        */
       function transitionEndHandler() {
         sliderDom.style.opacity = '1';
-        data.model.expCur = res.cn.exp.expList[index];
+        const language = !!data.model.isEng ? 'en' : 'cn';
+        data.model.expCur = res[language].exp.expList[index];
         data.model.selectExpIndex = index;
         sliderDom.removeEventListener('webkitTransitionEnd', transitionEndHandler);
       }
@@ -86,12 +74,42 @@ const data = {
     }
   },
   mounted() {
+    appInit();
     setWorkDraw();
+    createFullpage();
     if (isPC()) {
+      data.model.isPc = true;
       setExpTouch3D();
     }
   }
 };
+/**
+ * 判断是否为PC
+ *
+ * @return {Boolean}
+ */
+function isPC() {
+  const u = navigator.userAgent;
+  const Agents = ['Android', 'iPhone', 'webOS', 'BlackBerry', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
+  let flag = true;
+  for (let i = 0; i < Agents.length; i++) {
+    if (u.indexOf(Agents[i]) > 0) {
+      flag = false;
+      break;
+    }
+  }
+  return flag;
+}
+/**
+ * appInit
+ *
+ */
+function appInit() {
+  const appDom = document.getElementById('app');
+  appDom.style.display = 'block';
+  data.model.expCur = res.cn.exp.expList[0];
+  console.log(1, res.cn.exp.expList);
+}
 /**
  * setWorkDraw
  *
@@ -110,10 +128,6 @@ function setWorkDraw() {
 function setExpTouch3D() {
   const expDom = document.getElementsByClassName('slider')[0];
   const contentDom = expDom.parentNode;
-  const bannerWidth = expDom.offsetWidth;
-  const bannerHeight = expDom.offsetHeight;
-  let offsetLeft = expDom.offsetLeft;
-  let offsetTop = contentDom.offsetTop;
   expDom.addEventListener('mousemove', throttleGenerator(expMousemoveHandler, 20));
   expDom.addEventListener('mouseout', expMouseoutHandler);
 
@@ -143,8 +157,13 @@ function setExpTouch3D() {
   function expMousemoveHandler(e) {
     const pageX = e.pageX;
     const pageY = e.pageY;
+    const bannerWidth = expDom.offsetWidth;
+    const bannerHeight = expDom.offsetHeight;
+    const offsetLeft = expDom.offsetLeft;
+    const offsetTop = contentDom.offsetTop;
     const x = pageX - offsetLeft - bannerWidth / 2;
     const y = -(pageY - offsetTop - bannerHeight / 2);
+    console.log(x, y);
     expDom.style.transform = `rotateY(${x / 50}deg) rotateX(${y / 25}deg)`;
   }
   /**
@@ -154,20 +173,21 @@ function setExpTouch3D() {
   function expMouseoutHandler() {
     expDom.style.transform = 'rotateY(0deg) rotateX(0deg)';
   }
-
-  window.addEventListener('resize', () => {
-    offsetLeft = expDom.offsetLeft;
-    offsetTop = contentDom.offsetTop;
+}
+/**
+ * createFullpage
+ *
+ */
+function createFullpage() {
+  fp = new Fullpage({
+    root: '#fullpage',
+    hasArrow: true,
+    speedTime: 0.5,
+    slideCallback(index) {
+      console.log(1, index, data.model.isPc);
+      data.model.pageIndex = index;
+    }
   });
 }
 
 new MVVM(data);
-
-const fp = new Fullpage({
-  root: '#fullpage',
-  hasArrow: true,
-  speedTime: 0.5,
-  slideCallback(index) {
-    data.model.pageIndex = index;
-  }
-});
