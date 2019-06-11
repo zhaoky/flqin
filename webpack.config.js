@@ -15,7 +15,7 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: _DEV_ ? 'bundle.js' : '[name].[chunkhash:8].js'
+    filename: _DEV_ ? 'bundle.js' : 'js/[name].[chunkhash:8].js'
   },
   module: {
     rules: [
