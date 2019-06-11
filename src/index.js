@@ -184,7 +184,6 @@ function createFullpage() {
     hasArrow: true,
     speedTime: 0.5,
     slideCallback(index) {
-      console.log(1, index, data.model.isPc);
       data.model.pageIndex = index;
     }
   });
