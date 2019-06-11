@@ -80,6 +80,7 @@ const data = {
     if (isPC()) {
       data.model.isPc = true;
       setExpTouch3D();
+      consoleTip();
     }
   }
 };
@@ -108,7 +109,6 @@ function appInit() {
   const appDom = document.getElementById('app');
   appDom.style.display = 'block';
   data.model.expCur = res.cn.exp.expList[0];
-  console.log(1, res.cn.exp.expList);
 }
 /**
  * setWorkDraw
@@ -188,6 +188,20 @@ function createFullpage() {
       data.model.pageIndex = index;
     }
   });
+}
+/**
+ * consoleTip
+ *
+ */
+function consoleTip() {
+  console.log(
+    `Hi! 朋友，感谢您愿意调试简历代码。\n
+      本简历采用手撸的MVVM(https://www.npmjs.com/package/@fe_korey/mvvm)及Fullpage(https://www.npmjs.com/package/@fe_korey/fullpage),webpack开发构建。\n
+      源码已开源在（https://github.com/zhaoky/flqin),喜欢请点个star吧！ \n
+      如果您有什么建议或者想学习前端，欢迎您加入我们,我们互相学习，共同进步^_^ \n
+      %c QQ小群(http://t.cn/RtlQbTq)`,
+    'color: red'
+  );
 }
 
 new MVVM(data);

@@ -1,8 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 const HappyPack = require('happypack');
 const WebpackBar = require('webpackbar');
-const packageJson = require('./package.json');
 const WebpackStylish = require('webpack-stylish');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -12,11 +10,12 @@ const _DEV_ = process.env.NODE_ENV === 'development';
 
 const config = {
   mode: process.env.NODE_ENV || 'production',
-  entry: path.resolve(__dirname, './src/index.js'),
-  devtool: 'eval',
+  entry: {
+    main: path.resolve(__dirname, './src/index.js')
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: _DEV_ ? 'bundle.js' : 'bundle.[chunkhash:8].js'
+    filename: _DEV_ ? 'bundle.js' : '[name].[chunkhash:8].js'
   },
   module: {
     rules: [
@@ -49,8 +48,7 @@ const config = {
       loaders: ['babel-loader?cacheDirectory']
     }),
     new WebpackStylish(),
-    new WebpackBar(),
-    new webpack.BannerPlugin(`${packageJson.name} v${packageJson.version}`)
+    new WebpackBar()
   ]
 };
 if (_DEV_) {
@@ -100,27 +98,14 @@ if (_DEV_) {
     new OptimizeCssAssetsPlugin()
   );
   config.optimization = {
-    runtimeChunk: { name: 'runtime' },
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all',
       cacheGroups: {
-        commons: {
-          minChunks: 2,
-          name: 'commons',
-          reuseExistingChunk: true
-        },
         vendors: {
           priority: 1,
           name: 'vendors',
-          chunks: 'initial',
+          chunks: 'all',
           test: /[\\/]node_modules[\\/]/
-        },
-        styles: {
-          priority: 2,
-          enforce: true,
-          name: 'styles',
-          chunks: 'initial',
-          test: /\.(css|less)$/
         }
       }
     }
