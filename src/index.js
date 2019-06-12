@@ -193,14 +193,10 @@ function createFullpage() {
  *
  */
 function consoleTip() {
-  console.log(
-    `Hi! 朋友，感谢您愿意调试简历代码。\n
-      本简历采用自研简易MVVM(https://www.npmjs.com/package/@fe_korey/mvvm)及Fullpage(https://www.npmjs.com/package/@fe_korey/fullpage),webpack开发构建。\n
-      源码已开源在（https://github.com/zhaoky/flqin),喜欢请点个star吧！ \n
-      如果您有什么建议或者想学习前端，欢迎您加入我们,我们互相学习，共同进步^_^ \n
-      %c QQ小群(http://t.cn/RtlQbTq)`,
-    'color: red'
-  );
+  console.log('Hi! 朋友，感谢您愿意调试简历代码');
+  console.log('本简历采用%c简易版MVVM(https://www.npmjs.com/package/@fe_korey/mvvm) 及%cFullpage(https://www.npmjs.com/package/@fe_korey/fullpage)，webpack开发构建。', 'color:red', 'color:red');
+  console.log('源码已开源在（https://github.com/zhaoky/flqin)，任何问题请提issue,喜欢请点个star吧！');
+  console.log('如果您有什么建议或者想学习前端，欢迎您加入我们,我们互相学习，共同进步^_^ \n%cQQ小群(http://t.cn/RtlQbTq)', 'color:red');
 }
 
 new MVVM(data);

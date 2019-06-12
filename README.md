@@ -1,65 +1,89 @@
-<p>
-    <a href="https://www.travis-ci.com/zhaoky/flqin">
-      <img src="https://travis-ci.com/zhaoky/flqin.svg?branch=master" alt="Travis CI Status"/>
-    </a>
-                <img src="https://img.shields.io/github/stars/zhaoky/flqin.svg" alt="">
-<p>
-## web前端工程师简历
+<p align="center">
+  <a href="https://www.travis-ci.com/zhaoky/flqin"><img src="https://travis-ci.com/zhaoky/flqin.svg?branch=master" alt="Travis CI Status"></a>
+  <a href="https://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/dm/@fe_korey/resume.svg" alt="Downloads"></a>
+  <a href="hhttps://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/v/@fe_korey/resume.svg" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/l/@fe_korey/resume.svg" alt="License"></a>
+</p>
 
-### 项目地址：http://www.flqin.com
+# [✏️✏️ Front-end engineer resume](https://www.flqin.com)
 
-#### （2015 版）项目地址：http://www.flqin.com/2015/
+English | [中文](./README_CN.MD)
 
-#### 百度搜索: [web 前端工程师简历](https://www.baidu.com/s?ie=UTF-8&wd=web%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AE%80%E5%8E%86)
+#### Baidu search: [web Front-end engineer resume](https://www.baidu.com/s?ie=UTF-8&wd=web%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AE%80%E5%8E%86)
 
-![](https://raw.githubusercontent.com/zhaoky/flqin/master/src/img/web.jpg)
+![](https://raw.githubusercontent.com/zhaoky/flqin/master/src/assets/web.jpg)
 
-### MISC
+## MISC
 
-很多朋友给我发邮件学习怎么制作这样的简历，其实你只需要将本项目 fork，查看代码就可以了！
+Many friends email me to learn how to make such a resume. In fact, you only need to fork the project and try to run the project!
 
-有任何疑问和建议请直接在此评论，互相学习，共同进步！
+Because the MVVM framework is numerous and constantly updated, the previous version (angular1.6) has been deprecated, and finally chose to implement [an MVVM framework](https://github.com/zhaoky/mvvm) to serve this project.
 
-也欢迎朋友们加入 Q 群：[Fe.d 小分队](http://t.cn/RtlQbTq),里面有众多未来大牛及海量学习资源，是一个前端初学者的学习交流平台。
+Please [click here](https://github.com/zhaoky/flqin/issues) if you have any questions or suggestions.Learn from each other and make progress together!
 
-喜欢请点个 star 吧!
+Welcome friends to join QQ group：[Fe.d 小分队](http://t.cn/RtlQbTq), is the FE beginner's learning exchange platform, there are many future bossesand and learning resources.
 
-> 不会用 git？请学习廖老师的[git 教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+Please click star if you like, thank you! 💕💕
 
-### branch
+## Start
 
-- master
+1. install node.js/npm/yarn
 
-  - 上线产品级代码
+2. install git
 
-- 2015.07（老分支）
+3. clone
 
-  - 2015 年版简历
-  - 采用 jQuery,fullPage.js 开发
+```
+git clone https://github.com/zhaoky/flqin.git
+```
 
-- dev（开发分支）
+4. change directory
 
-  - 2017 年版简历
-  - 采用 ES6,angularJS 1.x,gulp,less,webpack 开发构建
-  - 不断更新优化中
+```
+cd flqin
+```
 
-### 准备环境
+5. install dependencies
 
-    1.安装 node.js
-    2.安装 gulp 全局的命令行接口
-    执行命令: `npm install gulp -g`
+```
+npm i // or yarn
+```
 
-### 项目初始化
+6. serve with hot reload at localhost:8080
 
-    安装 node package modules
-    执行命令: `npm install`
+```
+npm run dev //or yarn run dev
+```
 
-### 开启服务器开始构建开发
+7. build for production with minification
 
-    1.npm install
+```
+npm run build //or yarn run build
+```
 
-    2.gulp dd
+8. build for production with analyze
 
-### 构建产品级上线代码
+```
+npm run analyze //or yarn run analyze
+```
 
-    gulp dd -p
+9. check code and fix
+
+```
+npm run lint // or yarn run lint
+npm run fix // or yarn run fix
+```
+
+## Technical support
+
+### [@korey/MVVM](https://github.com/zhaoky/mvvm)
+
+A simple MVVM framework that currently implements data-binding and view-refresh functionality, is constantly optimizing and updating, and welcomes learning exchanges.
+
+### [@korey/Fullpage](https://github.com/zhaoky/fullpage)
+
+A simple Fullpage framework, which currently implements full-screen page-turning with pull-up, scrolling, and anchor-pointing, is still being optimized and updated. Welcome to learn and communicate.
+
+## License
+
+[MIT](./LICENSE)
