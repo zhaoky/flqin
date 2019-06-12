@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - "10"
+
+stages:
+  - name: lint
+    if: NOT tag =~ /^v\d+\.\d+$/
+  - name: build
+    if: branch = master OR tag = /^v\d+\.\d+$/
+
+jobs:
+  include:
+    - stage: lint
+      script: yarn run lint
+    - stage: build
+      script: yarn run build

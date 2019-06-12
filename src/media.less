@@ -1,0 +1,156 @@
+
+@media screen and (min-width: 600px) {
+  #app{
+    header {
+      .title-c {
+        .title {
+          display: none;
+        }
+        .title-pc {
+          display: block;
+          font-size: 24PX;
+        }
+      }
+      .nav-dot{
+        display: block;
+        right: 40PX;
+        font-size: 14PX;
+        &-item{
+          line-height: 24PX;
+          width: 24PX;
+          height: 24PX;
+          margin: 12PX auto;
+          em{
+            left: 20PX;
+            width: 12PX;
+            height: 12PX;
+          }
+          .-title{
+            width: 60PX;
+            left: -70PX;
+            border-radius: 3PX 0 0 3PX;
+            &::after {
+              content: '';
+              position: absolute;
+              right: -12PX;
+              width: 0;
+              height: 0;
+              border-top: 12PX solid transparent;
+              border-left: 12PX solid rgba(0, 0, 0, 0.7);
+              border-bottom: 12PX solid transparent;
+            }
+          }
+        }
+      }
+    }
+    main{
+      .overview{
+        .content{
+          .des{
+            .quote {
+              font-size: 22PX;
+            }
+            .des-list {
+              padding-top: 30PX;
+              font-size: 18PX;
+            }
+          }
+        }
+      }
+      .skill{
+        .content{
+          top:30vh;
+          .des{
+            margin-top:0;
+            margin-left:100PX;
+            line-height: 24PX;
+            font-size: 16PX;
+            max-width: 750PX;
+          }
+        }
+      }
+      .experience{
+        .content{
+          top:20vh;
+          .slider{
+            width: 750PX;
+            height: 350PX;
+            &-container{
+              display: flex;
+              align-items: center;
+              h4{
+                font-size: 20PX;
+              }
+              .-post{
+                font-size:15PX;
+              }
+              .right{
+                margin-left: 100PX;
+                .-time{
+                  font-size:20PX;
+                }
+                .-list{
+                  width:400PX;
+                  .exp-item{
+                    font-size:16PX;
+                    line-height: 30PX;
+                  }
+                }
+              }
+
+            }
+
+          }
+          .shout-cut{
+            padding-top: 10vh;
+            width: 200PX;
+          }
+        }
+      }
+      .work{
+        .content{
+          .work-list{
+            &-item{
+              max-height: 450PX;
+            }
+          }
+          .switch{
+            width: 500PX;
+          }
+        }
+      }
+      .contact{
+        .content{
+          .words{
+            font-size: 22PX;
+            width:300PX;
+          }
+          .words-en{
+            width:500PX;
+          }
+          .idea{
+            font-size: 18PX;
+          }
+          .download{
+            margin-top: 100PX;
+            max-width:200PX;
+          }
+          .way{
+            max-width:350PX;
+            &-item{
+              width:40PX;
+              height:40PX;
+            }
+          }
+        }
+      }
+    }
+    footer{
+      .github{
+        iframe{
+          width:92PX;
+        }
+      }
+    }
+  }
+}
