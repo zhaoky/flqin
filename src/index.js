@@ -163,7 +163,6 @@ function setExpTouch3D() {
     const offsetTop = contentDom.offsetTop;
     const x = pageX - offsetLeft - bannerWidth / 2;
     const y = -(pageY - offsetTop - bannerHeight / 2);
-    console.log(x, y);
     expDom.style.transform = `rotateY(${x / 50}deg) rotateX(${y / 25}deg)`;
   }
   /**
