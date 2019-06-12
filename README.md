@@ -1,11 +1,10 @@
+<h2 align="center"><a href='https://www.flqin.com' target='_blank'>✏️✏️ront-end engineer resume</a></h2>
 <p align="center">
   <a href="https://www.travis-ci.com/zhaoky/flqin"><img src="https://travis-ci.com/zhaoky/flqin.svg?branch=master" alt="Travis CI Status"></a>
   <a href="https://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/dm/@fe_korey/resume.svg" alt="Downloads"></a>
   <a href="hhttps://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/v/@fe_korey/resume.svg" alt="Version"></a>
   <a href="https://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/l/@fe_korey/resume.svg" alt="License"></a>
 </p>
-
-# [✏️✏️ Front-end engineer resume](https://www.flqin.com)
 
 English | [中文](./README_CN.MD)
 
