@@ -651,17 +651,17 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@fe_korey/fullpage@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@fe_korey/fullpage/-/fullpage-1.0.3.tgz#d922e771bd684184b179d5586b4dc8effa028457"
-  integrity sha512-njgSBken9NtcFNFVZNNCOYjN9wPDS6YKgYvsgXmwAwlVcHb+uflHK/5Nr1YPZxXhxuAd2kIubH2TdAg1VZ8QYQ==
+"@fe_korey/fullpage@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@fe_korey/fullpage/-/fullpage-1.0.4.tgz#8e14176b2f2c5f89cc3389654cdf759b9f652205"
+  integrity sha512-d5fiUKzySAg/O8EQ61tUe3+JoqQHfhr9V8xgRZeb8jJhHDUQ0PssmU3fdf8P3qGrhwUVIFAGKXSuq68X7ydjTw==
   dependencies:
     "@babel/runtime-corejs2" "^7.4.4"
 
-"@fe_korey/mvvm@^1.0.17":
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/@fe_korey/mvvm/-/mvvm-1.0.17.tgz#dde515d03a864bb3d0d6027dd39029b78f8164d8"
-  integrity sha512-LOewDWitd7luRrjxobZnRwvYOQeDWzCurwBegRkaJcVID+x9AwAERMkJC+PPSltk96Pe7/Ktg/nyR4JZ2B1aNA==
+"@fe_korey/mvvm@^1.0.18":
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/@fe_korey/mvvm/-/mvvm-1.0.18.tgz#8765ba822dfea441cf9a095c6b00ccc2ead26c7a"
+  integrity sha512-/Z9A0zrB+79Tf3X1HXiOSNnVLc4fdhoQ9zzASxlunE1hCKBARFn3XuIcgBMOYl0dd2RggN62Tui3ll6BOpYmFA==
   dependencies:
     "@babel/runtime-corejs2" "^7.4.4"
 

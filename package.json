@@ -1,6 +1,6 @@
 {
   "name": "@fe_korey/resume",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "赵柯宇的web前端工程师简历",
   "main": "dist/index.js",
   "homepage": "https://www.flqin.com",
@@ -21,8 +21,8 @@
     "web前端简历"
   ],
   "dependencies": {
-    "@fe_korey/fullpage": "^1.0.3",
-    "@fe_korey/mvvm": "^1.0.17",
+    "@fe_korey/fullpage": "^1.0.4",
+    "@fe_korey/mvvm": "^1.0.18",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {

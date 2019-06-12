@@ -130,6 +130,7 @@
               </div>
               <div class="work-link" v-if="item.url">
                 <a class="-img" v-href="item.url" target="_blank"></a>
+                <p class="-des" v-if='item.url.indexOf("quickapp")>-1'>（安卓浏览器可跳转）</p>
               </div>
             </li>
           </ul>

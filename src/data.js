@@ -290,7 +290,7 @@ export default {
     },
     footer: ['Released under the MIT License', 'All Rights Reserved ', 'Copyright © 2014-2019 Korey Zhao'],
     overview: {
-      infoList: ['28years', 'B.S.', 'chengDu', 'On Job'],
+      infoList: ['28years', 'B.S.', 'ChengDu', 'On Job'],
       quote: 'Life is a kind of endless yearning, eager to continue to rise, become more great and noble.',
       desList: ['I am Korey Zhao, FE engineer', 'Jumei（chengdu）E-commerce & growth team FE leader', 'keyu.zhao@foxmail.com']
     },
