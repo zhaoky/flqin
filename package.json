@@ -1,6 +1,6 @@
 {
   "name": "@fe_korey/resume",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "赵柯宇的web前端工程师简历",
   "main": "dist/index.js",
   "homepage": "https://www.flqin.com",
