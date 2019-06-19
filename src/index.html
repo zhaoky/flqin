@@ -85,7 +85,7 @@
               <li class="inner-item" v-style="item.bg" v-for="item in skill.innerCircleList" v-text="item.name"></li>
             </ul>
           </div>
-          <div class="des" v-class="skill.isEng?'-des-en':''">
+          <div class="des" v-class="isEng?'-des-en':''">
             <p v-for="item in skill.desList" v-text="item"></p>
           </div>
         </div>
@@ -103,7 +103,7 @@
               <div class="right">
                 <p class="-time" v-text="expCur.time"></p>
                 <ul class="-list">
-                  <li class="exp-item" v-class="exp.isEng?'-item-en':''" v-for="item in expCur.contentList" v-text="item"></li>
+                  <li class="exp-item" v-for="item in expCur.contentList" v-text="item"></li>
                 </ul>
               </div>
             </div>
@@ -123,14 +123,14 @@
               <div class="-title">
                 <a class="-link" v-text="item.title" v-href="item.url"></a>
               </div>
-              <p class="-des" v-class="works.isEng?'-work-des-en':''" v-text="item.des"></p>
+              <p class="-des" v-class="isEng?'-work-des-en':''" v-text="item.des"></p>
               <div class="-qrcode" v-if="item.mini">
                 <img class="-img" v-src="item.mini" />
-                <p class="-des">（微信内长按识别）</p>
+                <p class="-des" v-text="isEng?'(Press in wechat)':'（微信内长按识别）'"></p>
               </div>
               <div class="work-link" v-if="item.url">
                 <a class="-img" v-href="item.url" target="_blank"></a>
-                <p class="-des" v-if='item.url.indexOf("quickapp")>-1'>（安卓浏览器可跳转）</p>
+                <p class="-des" v-if='item.url.indexOf("quickapp")>-1' v-text="isEng?'(Android can jump)':'（安卓浏览器可跳转）'"></p>
               </div>
             </li>
           </ul>
