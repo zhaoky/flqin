@@ -87,20 +87,18 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "**/*": [
-        "eclint fix",
-        "git add"
-      ],
-      "src/**/*.less": [
-        "stylelint --fix",
-        "git add"
-      ],
-      "src/**/*.js": [
-        "eslint --fix",
-        "git add"
-      ]
-    }
+    "**/*": [
+      "eclint fix",
+      "git add"
+    ],
+    "src/**/*.less": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "src/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">= 8.0.0",
