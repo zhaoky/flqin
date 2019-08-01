@@ -249,7 +249,7 @@ export default {
         },
         {
           icon: sBlog,
-          url: 'http://blog.flqin.com'
+          url: 'https://blog.flqin.com'
         },
         {
           icon: sZh,
@@ -526,7 +526,7 @@ export default {
         },
         {
           icon: sBlog,
-          url: 'http://blog.flqin.com'
+          url: 'https://blog.flqin.com'
         },
         {
           icon: sZh,
