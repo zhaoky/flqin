@@ -15,6 +15,9 @@ const config = {
   entry: {
     main: path.resolve(__dirname, './src/index.js')
   },
+  resolve: {
+    symlinks: false
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: _DEV_ ? 'bundle.js' : 'js/[name].[chunkhash:8].js'

@@ -615,14 +615,6 @@
     js-levenshtein "^1.1.3"
     semver "^5.5.0"
 
-"@babel/runtime-corejs2@^7.4.4":
-  version "7.5.4"
-  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs2/-/runtime-corejs2-7.5.4.tgz#7111dbb344acce1f7dd601786cff40d516b27a96"
-  integrity sha512-sHv74OzyZ18d6tjHU0HmlVES3+l+lydkOMTiKsJSTGWcTBpIMfXLEgduahlJrQjknW9RCQAqLIEdLOHjBmq/hg==
-  dependencies:
-    core-js "^2.6.5"
-    regenerator-runtime "^0.13.2"
-
 "@babel/runtime-corejs3@^7.4.5":
   version "7.5.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.5.4.tgz#88dab70e4915c8e8c7212b01ebd73e57159190cf"
@@ -663,20 +655,6 @@
     esutils "^2.0.2"
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
-
-"@fe_korey/fullpage@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@fe_korey/fullpage/-/fullpage-1.0.5.tgz#b54d09384f30f816aa33964631c6bf51c2a1c7ae"
-  integrity sha512-+FOx8rJmKCBupOcXnFR4IZj60wehIQUJ5W4lVAJd10zVyjtYEzEHhEGxsGGp70pg3IjJpbZcq/xhoI63eyGS+Q==
-  dependencies:
-    "@babel/runtime-corejs2" "^7.4.4"
-
-"@fe_korey/mvvm@1.0.20":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@fe_korey/mvvm/-/mvvm-1.0.20.tgz#c195d24aae2ae480b1d252aff3b9ec00ed6f5b48"
-  integrity sha512-c1kcfQdXxwYBcKlJj+Y43xZwh1Lul6FXlu/7K8o/kOVMKpHxAvbVPvRJ/L2JSG8nageqgkr5Ny6LyPdP5Zqy9g==
-  dependencies:
-    "@babel/runtime-corejs2" "^7.4.4"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -2108,11 +2086,6 @@ core-js-pure@3.1.4, core-js-pure@^3.0.0:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.1.4.tgz#5fa17dc77002a169a3566cc48dc774d2e13e3769"
   integrity sha512-uJ4Z7iPNwiu1foygbcZYJsJs1jiXrTTCvxfLDXNhI/I+NHbSIEyr548y4fcsCEyWY0XgfAG/qqaunJ1SThHenA==
-
-core-js@^2.6.5:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
-  integrity sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"

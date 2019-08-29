@@ -34,19 +34,19 @@
       </div>
       <div class="language">
         <div class="-c" v-class="selectedLang==1?'-selectEn':''">
-          <span class="-item" v-class="selectedLang == $index?'-selected':''" v-for="item in header.langList" v-text="item" v-on:click="switchLang($index)"></span>
+          <span class="-item" v-class="selectedLang == $index?'-selected':''" v-for="(item,$index) in header.langList" v-text="item" v-on:click="switchLang($index)"></span>
         </div>
       </div>
       <div class="nav" v-class="isShowNav?'show-nav':''">
         <ul class="-list">
-          <li v-class="pageIndex === $index?'-cur-index':''" v-for="item in header.titleList">
+          <li v-class="pageIndex === $index?'-cur-index':''" v-for="(item,$index) in header.titleList">
             <span v-text="item.title" v-on:click="directToPage($index)"></span>
           </li>
         </ul>
       </div>
       <div class="nav-dot">
         <ul>
-          <li v-class="pageIndex == $index?'-cur-index':''" class="nav-dot-item" v-for="item in header.titleList">
+          <li v-class="pageIndex == $index?'-cur-index':''" class="nav-dot-item" v-for="(item,$index) in header.titleList">
             <em v-on:click="directToPage($index)">
               <img v-src="item.svg" alt="" />
             </em>
@@ -110,7 +110,7 @@
           </div>
           <div class="shout-cut">
             <ul>
-              <li v-class="$index == selectExpIndex?'-selected':''" v-for="item in exp.expList" v-on:click="switchExp($event,$index)"></li>
+              <li v-class="$index == selectExpIndex?'-selected':''" v-for="(item,$index) in exp.expList" v-on:click="switchExp($event,$index)"></li>
             </ul>
           </div>
         </div>

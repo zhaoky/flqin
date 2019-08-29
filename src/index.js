@@ -2,9 +2,8 @@ import 'normalize.css';
 import './index.less';
 import './media.less';
 import res from './data';
-import { MVVM } from '@fe_korey/mvvm';
+import MVVM from '@fe_korey/mvvm';
 import { Fullpage } from '@fe_korey/fullpage';
-
 const model = {
   selectedLang: 0,
   isShowNav: false,

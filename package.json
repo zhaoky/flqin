@@ -21,8 +21,6 @@
     "web前端简历"
   ],
   "dependencies": {
-    "@fe_korey/fullpage": "^1.0.5",
-    "@fe_korey/mvvm": "1.0.20",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
