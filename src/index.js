@@ -4,6 +4,7 @@ import './media.less';
 import res from './data';
 import MVVM from '@fe_korey/mvvm';
 import { Fullpage } from '@fe_korey/fullpage';
+
 const model = {
   selectedLang: 0,
   isShowNav: false,
@@ -14,7 +15,9 @@ const model = {
   selectExpIndex: 0,
   workIndex: 0
 };
+
 let fp;
+
 const data = {
   view: document.getElementById('app'),
   model: { ...res.cn, ...model },
@@ -84,6 +87,7 @@ const data = {
     }
   }
 };
+
 /**
  * 判断是否为PC
  *

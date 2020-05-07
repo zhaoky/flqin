@@ -41,7 +41,7 @@ export default {
         }
       ]
     },
-    footer: ['Released under the MIT License', 'All Rights Reserved ', 'Copyright © 2014-2019 Korey Zhao'],
+    footer: ['Released under the MIT License', 'All Rights Reserved ', `Copyright © 2014-${new Date().getFullYear()} Korey Zhao`],
     overview: {
       infoList: ['28岁', '本科', '成都', '在职'],
       quote: '生活是一种绵延不绝的渴望，渴望不断上升，变得更伟大而高贵。',
@@ -53,49 +53,49 @@ export default {
           bg: {
             backgroundColor: 'rgba(121,100,102,0.8)'
           },
-          name: '快应用'
+          name: 'vue'
         },
         {
           bg: {
             backgroundColor: 'rgba(49,65,82,0.8)'
           },
-          name: 'angular'
+          name: 'react'
         },
         {
           bg: {
             backgroundColor: 'rgba(76,157,160,0.8)'
           },
-          name: 'webpack'
+          name: 'angular'
         },
         {
           bg: {
             backgroundColor: 'rgba(66,66,66,0.8)'
           },
-          name: '小程序'
+          name: 'nodejs'
         },
         {
           bg: {
             backgroundColor: 'rgba(193,131,106,0.8)'
           },
-          name: 'flutter'
+          name: '小程序'
         },
         {
           bg: {
             backgroundColor: 'rgba(117,148,179,0.8)'
           },
-          name: 'nodejs'
+          name: '快应用'
         },
         {
           bg: {
             backgroundColor: 'rgba(71,83,94,0.8)'
           },
-          name: 'vue'
+          name: 'ssr'
         },
         {
           bg: {
             backgroundColor: 'rgba(147,147,189,0.8)'
           },
-          name: 'react'
+          name: 'ts'
         }
       ],
       innerCircleList: [
@@ -103,32 +103,32 @@ export default {
           bg: {
             backgroundColor: 'rgba(179,164,140,0.8)'
           },
-          name: 'ts'
+          name: '构建'
         },
         {
           bg: {
             backgroundColor: 'rgba(171,209,220,0.8)'
           },
-          name: 'pwa'
+          name: '优化'
         },
         {
           bg: {
             backgroundColor: 'rgba(238,215,163,0.8)'
           },
-          name: 'rxjs'
+          name: '测试'
         },
         {
           bg: {
             backgroundColor: 'rgba(207,184,178,0.8)'
           },
-          name: 'jest'
+          name: '部署'
         }
       ],
       desList: [
-        '五年前端开发经验，一年管理经验',
+        '六年前端开发经验，两年管理经验',
         '实际主导开发过多平台项目（APP，PC，H5，小程序，快应用等），制定并规范团队协作模式',
-        '擅长组件开发及构建优化，前端技术栈均有尝试，能脱离库书写代码',
-        '自我驱动力强，带领并帮助团队成长'
+        '前端技术栈均有尝试，擅长组件开发及构建优化',
+        '自我驱动力强，著有webpack、vue等源码分析系列文章'
       ]
     },
     exp: {
@@ -245,7 +245,7 @@ export default {
         },
         {
           icon: sSf,
-          url: 'https://segmentfault.com/u/keyu2016'
+          url: 'https://segmentfault.com/u/fe_korey'
         },
         {
           icon: sBlog,
@@ -253,7 +253,7 @@ export default {
         },
         {
           icon: sZh,
-          url: 'https://www.zhihu.com/people/fezky'
+          url: 'https://www.zhihu.com/people/fe_korey'
         },
         {
           icon: sJj,
@@ -288,7 +288,7 @@ export default {
         }
       ]
     },
-    footer: ['Released under the MIT License', 'All Rights Reserved ', 'Copyright © 2014-2019 Korey Zhao'],
+    footer: ['Released under the MIT License', 'All Rights Reserved ', `Copyright © 2014-${new Date().getFullYear()} Korey Zhao`],
     overview: {
       infoList: ['28years', 'B.S.', 'ChengDu', 'On Job'],
       quote: 'Life is a kind of endless yearning, eager to continue to rise, become more great and noble.',
@@ -300,49 +300,49 @@ export default {
           bg: {
             backgroundColor: 'rgba(121,100,102,0.8)'
           },
-          name: 'quickapp'
+          name: 'vue'
         },
         {
           bg: {
             backgroundColor: 'rgba(49,65,82,0.8)'
           },
-          name: 'angular'
+          name: 'react'
         },
         {
           bg: {
             backgroundColor: 'rgba(76,157,160,0.8)'
           },
-          name: 'webpack'
+          name: 'angular'
         },
         {
           bg: {
             backgroundColor: 'rgba(66,66,66,0.8)'
           },
-          name: 'miniP'
+          name: 'nodejs'
         },
         {
           bg: {
             backgroundColor: 'rgba(193,131,106,0.8)'
           },
-          name: 'flutter'
+          name: 'miniP'
         },
         {
           bg: {
             backgroundColor: 'rgba(117,148,179,0.8)'
           },
-          name: 'nodejs'
+          name: 'quickapp'
         },
         {
           bg: {
             backgroundColor: 'rgba(71,83,94,0.8)'
           },
-          name: 'vue'
+          name: 'ssr'
         },
         {
           bg: {
             backgroundColor: 'rgba(147,147,189,0.8)'
           },
-          name: 'react'
+          name: 'ts'
         }
       ],
       innerCircleList: [
@@ -350,32 +350,32 @@ export default {
           bg: {
             backgroundColor: 'rgba(179,164,140,0.8)'
           },
-          name: 'ts'
+          name: 'build'
         },
         {
           bg: {
             backgroundColor: 'rgba(171,209,220,0.8)'
           },
-          name: 'pwa'
+          name: 'opt'
         },
         {
           bg: {
             backgroundColor: 'rgba(238,215,163,0.8)'
           },
-          name: 'rxjs'
+          name: 'test'
         },
         {
           bg: {
             backgroundColor: 'rgba(207,184,178,0.8)'
           },
-          name: 'jest'
+          name: 'deploy'
         }
       ],
       desList: [
-        '5 years FE development experience,1 years management experience',
+        '6 years FE development experience,2 years management experience',
         'Actually lead the development of many platform projects (APP, PC, H5, miniprogram, quickapp, etc.), formulated and standardized the team workflow',
-        'Good at component development and construction optimization, have tried FE technology stack, can write code without library',
-        'Self-driven, lead and help the team grow'
+        'Try different FE technology stacks, Good at component development and construction optimization',
+        'Self-driven, Author of webpack, vue and other source code analysis series articles'
       ]
     },
     exp: {
@@ -522,7 +522,7 @@ export default {
         },
         {
           icon: sSf,
-          url: 'https://segmentfault.com/u/keyu2016'
+          url: 'https://segmentfault.com/u/fe_korey'
         },
         {
           icon: sBlog,
@@ -530,7 +530,7 @@ export default {
         },
         {
           icon: sZh,
-          url: 'https://www.zhihu.com/people/fezky'
+          url: 'https://www.zhihu.com/people/fe_korey'
         },
         {
           icon: sJj,
