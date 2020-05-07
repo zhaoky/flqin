@@ -377,6 +377,7 @@ a {
               line-height: 100px;
               background: red;
               -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
               &:nth-child(1) {
                 .animation(outX, -4s, outY, 0s);
               }
@@ -423,6 +424,7 @@ a {
               line-height: 80px;
               background: red;
               -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
               &:nth-child(1) {
                 .animation(innerX, -4s, innerY, 0s);
               }
@@ -747,12 +749,12 @@ a {
     color: #756d4d;
     .github {
       margin: 20px auto 0;
-      width: 80px;
       height: 50px;
       display: flex;
       justify-content: space-around;
+      width: 400px;
       iframe {
-        width: 165px;
+        width: 182px;
       }
     }
   }

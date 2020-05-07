@@ -32,7 +32,7 @@ const data = {
       data.model.isEng = index === 1;
       const dataNames = ['header', 'footer', 'overview', 'skill', 'exp', 'works', 'contact'];
       const language = index === 1 ? 'en' : 'cn';
-      dataNames.forEach(i => {
+      dataNames.forEach((i) => {
         data.model[i] = res[language][i];
       });
       data.model.expCur = res[language].exp.expList[data.model.selectExpIndex];
@@ -67,8 +67,9 @@ const data = {
         children[data.model.workIndex - 1].style.transform = `translateX(-19rem)`;
       }
       for (let i = data.model.workIndex; i < children.length; i++) {
-        children[i].style.transform = `translateX(${1.5 * (i - data.model.workIndex)}rem) translateZ(${-1.5 * (i - data.model.workIndex)}rem) scale(${1 - (i - data.model.workIndex) * 0.05}, ${1 -
-          (i - data.model.workIndex) * 0.05})`;
+        children[i].style.transform = `translateX(${1.5 * (i - data.model.workIndex)}rem) translateZ(${-1.5 * (i - data.model.workIndex)}rem) scale(${1 - (i - data.model.workIndex) * 0.05}, ${
+          1 - (i - data.model.workIndex) * 0.05
+        })`;
       }
     }
   },
