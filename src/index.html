@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>
-      web前端工程师个人简历
+      web前端工程师简历
     </title>
     <meta content="赵柯宇的web前端工程师个人简历，前端学习，前端开发" name="description" />
     <meta content="web前端，FE，web前端个人简历，前端开发" name="keywords" />
@@ -14,7 +14,7 @@
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="pragma" content="no-cache" />
     <script>
-      (function() {
+      (function () {
         function autoRootFontSize() {
           const width = Math.min(screen.width, document.documentElement.getBoundingClientRect().width);
           document.documentElement.style.fontSize = width > 600 ? '16px' : (width / 750) * 32 + 'px';
@@ -25,7 +25,7 @@
     </script>
   </head>
 
-  <body id="app" style="display: none">
+  <body id="app" style="display: none;">
     <!-- header -->
     <header class="header">
       <div class="title-c">
@@ -34,19 +34,19 @@
       </div>
       <div class="language">
         <div class="-c" v-class="selectedLang==1?'-selectEn':''">
-          <span class="-item" v-class="selectedLang == $index?'-selected':''" v-for="item in header.langList" v-text="item" v-on:click="switchLang($index)"></span>
+          <span class="-item" v-class="selectedLang == $index?'-selected':''" v-for="(item,$index) in header.langList" v-text="item" v-on:click="switchLang($index)"></span>
         </div>
       </div>
       <div class="nav" v-class="isShowNav?'show-nav':''">
         <ul class="-list">
-          <li v-class="pageIndex === $index?'-cur-index':''" v-for="item in header.titleList">
+          <li v-class="pageIndex === $index?'-cur-index':''" v-for="(item,$index) in header.titleList">
             <span v-text="item.title" v-on:click="directToPage($index)"></span>
           </li>
         </ul>
       </div>
       <div class="nav-dot">
         <ul>
-          <li v-class="pageIndex == $index?'-cur-index':''" class="nav-dot-item" v-for="item in header.titleList">
+          <li v-class="pageIndex == $index?'-cur-index':''" class="nav-dot-item" v-for="(item,$index) in header.titleList">
             <em v-on:click="directToPage($index)">
               <img v-src="item.svg" alt="" />
             </em>
@@ -110,7 +110,7 @@
           </div>
           <div class="shout-cut">
             <ul>
-              <li v-class="$index == selectExpIndex?'-selected':''" v-for="item in exp.expList" v-on:click="switchExp($event,$index)"></li>
+              <li v-class="$index == selectExpIndex?'-selected':''" v-for="(item,$index) in exp.expList" v-on:click="switchExp($event,$index)"></li>
             </ul>
           </div>
         </div>
@@ -169,8 +169,9 @@
     <!-- footer -->
     <footer v-show="pageIndex === 4">
       <div class="github">
-        <iframe src="https://ghbtns.com/github-btn.html?user=zhaoky&repo=flqin&type=star&count=true&size=small" frameborder="0" scrolling="0"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=zhaoky&repo=flqin&type=fork&count=true&size=small" frameborder="0" scrolling="0"></iframe>
+        <a href="https://github.com/zhaoky" target="_blank">
+          <img src="https://img.shields.io/github/stars/zhaoky/flqin.svg?style=social" alt="github" />
+        </a>
       </div>
       <p v-for="item in footer" v-text="item"></p>
     </footer>

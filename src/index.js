@@ -2,7 +2,7 @@ import 'normalize.css';
 import './index.less';
 import './media.less';
 import res from './data';
-import { MVVM } from '@fe_korey/mvvm';
+import MVVM from '@fe_korey/mvvm';
 import { Fullpage } from '@fe_korey/fullpage';
 
 const model = {
@@ -15,7 +15,9 @@ const model = {
   selectExpIndex: 0,
   workIndex: 0
 };
+
 let fp;
+
 const data = {
   view: document.getElementById('app'),
   model: { ...res.cn, ...model },
@@ -33,7 +35,7 @@ const data = {
       data.model.isEng = index === 1;
       const dataNames = ['header', 'footer', 'overview', 'skill', 'exp', 'works', 'contact'];
       const language = index === 1 ? 'en' : 'cn';
-      dataNames.forEach(i => {
+      dataNames.forEach((i) => {
         data.model[i] = res[language][i];
       });
       data.model.expCur = res[language].exp.expList[data.model.selectExpIndex];
@@ -68,8 +70,9 @@ const data = {
         children[data.model.workIndex - 1].style.transform = `translateX(-19rem)`;
       }
       for (let i = data.model.workIndex; i < children.length; i++) {
-        children[i].style.transform = `translateX(${1.5 * (i - data.model.workIndex)}rem) translateZ(${-1.5 * (i - data.model.workIndex)}rem) scale(${1 - (i - data.model.workIndex) * 0.05}, ${1 -
-          (i - data.model.workIndex) * 0.05})`;
+        children[i].style.transform = `translateX(${1.5 * (i - data.model.workIndex)}rem) translateZ(${-1.5 * (i - data.model.workIndex)}rem) scale(${1 - (i - data.model.workIndex) * 0.05}, ${
+          1 - (i - data.model.workIndex) * 0.05
+        })`;
       }
     }
   },
@@ -84,6 +87,7 @@ const data = {
     }
   }
 };
+
 /**
  * 判断是否为PC
  *
