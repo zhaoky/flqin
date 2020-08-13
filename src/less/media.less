@@ -1,0 +1,149 @@
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 37.5px;
+  }
+  #app {
+    header {
+      .title-c {
+        .title {
+          display: none;
+        }
+        .title-pc {
+          display: block;
+          font-size: 24px;
+        }
+      }
+      .nav-dot {
+        display: block;
+        right: 40px;
+        font-size: 14px;
+        &-item {
+          line-height: 24px;
+          width: 24px;
+          height: 24px;
+          margin: 12px auto;
+          em {
+            left: 20px;
+            width: 12px;
+            height: 12px;
+          }
+          .-title {
+            width: 60px;
+            left: -70px;
+            border-radius: 3px 0 0 3px;
+            &::after {
+              content: '';
+              position: absolute;
+              right: -12px;
+              width: 0;
+              height: 0;
+              border-top: 12px solid transparent;
+              border-left: 12px solid rgba(0, 0, 0, 0.7);
+              border-bottom: 12px solid transparent;
+            }
+          }
+        }
+      }
+    }
+    main {
+      .overview {
+        .content {
+          .des {
+            .quote {
+              font-size: 22px;
+            }
+            .des-list {
+              padding-top: 30px;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+      .skill {
+        .content {
+          top: 30vh;
+          .des {
+            margin-top: 0;
+            margin-left: 100px;
+            line-height: 24px;
+            font-size: 16px;
+            max-width: 750px;
+          }
+        }
+      }
+      .experience {
+        .content {
+          top: 20vh;
+          .slider {
+            width: 750px;
+            height: 350px;
+            &-container {
+              display: flex;
+              align-items: center;
+              h4 {
+                font-size: 20px;
+              }
+              .-post {
+                font-size: 15px;
+              }
+              .right {
+                margin-left: 100px;
+                .-time {
+                  font-size: 20px;
+                }
+                .-list {
+                  width: 400px;
+                  .exp-item {
+                    font-size: 16px;
+                    line-height: 30px;
+                  }
+                }
+              }
+            }
+          }
+          .shout-cut {
+            padding-top: 10vh;
+            width: 200px;
+          }
+        }
+      }
+      .work {
+        .content {
+          .work-list {
+            &-item {
+              max-height: 450px;
+            }
+          }
+          .switch {
+            width: 500px;
+          }
+        }
+      }
+      .contact {
+        .content {
+          .words {
+            font-size: 22px;
+            width: 300px;
+          }
+          .words-en {
+            width: 500px;
+          }
+          .idea {
+            font-size: 18px;
+          }
+          .download {
+            margin-top: 100px;
+            max-width: 200px;
+          }
+          .way {
+            max-width: 350px;
+            &-item {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

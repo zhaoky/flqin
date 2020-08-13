@@ -1,18 +1,18 @@
-import eJm from './assets/logo_jm.png';
-import eLt from './assets/logo_lt.png';
-import eZh from './assets/logo_zh.png';
-import dHome from './assets/d_home.svg';
-import dSkills from './assets/d_skills.svg';
-import dExp from './assets/d_exp.svg';
-import dWorks from './assets/d_works.svg';
-import dContact from './assets/d_contact.svg';
-import sGithub from './assets/s_github.svg';
-import sSf from './assets/s_sf.svg';
-import sBlog from './assets/s_blog.svg';
-import sZh from './assets/s_zh.svg';
-import sJj from './assets/s_Jj.svg';
-import wJm from './assets/w_jm.jpg';
-import wLs from './assets/w_ls.jpg';
+import eJm from './../assets/logo_jm.png';
+import eLt from './../assets/logo_lt.png';
+import eZh from './../assets/logo_zh.png';
+import dHome from './../assets/d_home.svg';
+import dSkills from './../assets/d_skills.svg';
+import dExp from './../assets/d_exp.svg';
+import dWorks from './../assets/d_works.svg';
+import dContact from './../assets/d_contact.svg';
+import sGithub from './../assets/s_github.svg';
+import sSf from './../assets/s_sf.svg';
+import sBlog from './../assets/s_blog.svg';
+import sZh from './../assets/s_zh.svg';
+import sJj from './../assets/s_Jj.svg';
+import wJm from './../assets/w_jm.jpg';
+import wLs from './../assets/w_ls.jpg';
 
 export default {
   cn: {

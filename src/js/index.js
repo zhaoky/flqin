@@ -1,7 +1,7 @@
 import 'normalize.css';
-import './index.less';
-import './media.less';
-import res from './data';
+import './../less/index.less';
+import './../less/media.less';
+import res from './data.js';
 import MVVM from '@fe_korey/mvvm';
 import { Fullpage } from '@fe_korey/fullpage';
 

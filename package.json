@@ -26,53 +26,53 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/runtime-corejs3": "^7.9.2",
-    "autoprefixer": "^9.7.6",
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/runtime-corejs3": "^7.11.2",
+    "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
-    "css-loader": "^3.5.3",
-    "eclint": "^2.8.1",
-    "eslint": "^6.8.0",
+    "css-loader": "^4.2.1",
+    "eslint": "^7.6.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-prettier": "^3.1.4",
     "file-loader": "^6.0.0",
-    "happypack": "^5.0.1",
-    "html-webpack-plugin": "4.0.4",
+    "html-webpack-plugin": "4.3.0",
     "husky": "^4.2.5",
-    "less": "^3.11.1",
-    "less-loader": "^6.0.0",
-    "lint-staged": "^10.2.0",
-    "mini-css-extract-plugin": "^0.9.0",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
+    "lint-staged": "^10.2.11",
+    "mini-css-extract-plugin": "^0.10.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-pxtorem": "^5.1.1",
     "prettier": "^2.0.5",
     "script-ext-html-webpack-plugin": "^2.1.3",
     "style-ext-html-webpack-plugin": "^4.0.1",
-    "style-loader": "^1.2.1",
-    "stylelint": "^13.3.3",
-    "stylelint-config-prettier": "^8.0.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-prettier": "^1.1.2",
     "url-loader": "^4.1.0",
-    "webpack": "^4.43.0",
-    "webpack-bundle-analyzer": "^3.7.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
+    "webpack": "^4.44.1",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
     "webpack-stylish": "^0.1.8",
     "webpackbar": "^4.0.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
-    "lint": "eslint src && stylelint 'src/**/*.less' && eclint check",
-    "fix": "eslint src --fix && stylelint 'src/**/*.less' --fix && eclint fix ",
-    "analyze": "cross-env NODE_ENV=production MODE=analysis webpack",
+    "build": "rm -rf dist && cross-env NODE_ENV=production BUILD_TYPE=mvvm webpack",
+    "build:seo": "rm -rf dist && cross-env NODE_ENV=production BUILD_TYPE=seo webpack",
+    "dev": "cross-env NODE_ENV=development BUILD_TYPE=mvvm webpack-dev-server",
+    "dev:seo": "cross-env NODE_ENV=development BUILD_TYPE=seo webpack-dev-server",
+    "lint": "eslint src && stylelint 'src/**/*.less'",
+    "fix": "eslint src --fix && stylelint 'src/**/*.less' --fix",
+    "analyze": "cross-env NODE_ENV=production BUILD_TYPE=mvvm MODE=analysis webpack",
+    "analyze:seo": "cross-env NODE_ENV=production BUILD_TYPE=seo MODE=analysis webpack",
     "debug": "node --inspect-brk=5858 ./node_modules/.bin/webpack"
   },
   "repository": {
@@ -88,15 +88,11 @@
     }
   },
   "lint-staged": {
-    "**/*": [
-      "eclint fix",
-      "git add"
-    ],
-    "src/**/*.less": [
+    "src/less/*.less": [
       "stylelint --fix",
       "git add"
     ],
-    "src/**/*.js": [
+    "src/js/*.js": [
       "eslint --fix",
       "git add"
     ]

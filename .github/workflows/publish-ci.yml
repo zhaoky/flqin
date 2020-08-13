@@ -1,0 +1,52 @@
+name: Github Action Render ZhiBo Website package
+
+on:
+  push:
+    branches:
+      - master
+      - release
+      - develop
+
+jobs:
+  build:
+    name: Build&Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Extract Branch Name
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      - name: Setup nodejs
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Npm install
+        run: npm install
+      - name: Npm run lint
+        run: npm run lint
+      - name: Npm run build
+        run: npm run build
+      # env:
+      #   API_ENV: ${{ contains(github.ref,'develop') && 'development' || 'production' }}
+      # - name: Upload CDN
+      #   env:
+      #     SECRET_ID: ${{secrets.SECRET_ID}}
+      #     SECRET_KEY: ${{secrets.SECRET_KEY}}
+      #     BUCKET: ${{secrets.BUCKET}}
+      #     REGION: ${{secrets.REGION}}
+      #   run: npm run cdn
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: ${{ contains(github.ref,'develop') && 'develop' || 'release' }}
+          path: dist/
