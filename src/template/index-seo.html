@@ -17,52 +17,42 @@
   <meta http-equiv="pragma" content="no-cache" />
 </head>
 
-<body id="app">
+<body id="app" style="display: none;">
   <!-- header -->
   <header class="header">
-    <div class="title-c">
-      <div class="title">首页</div>
-      <div class="title-pc">首页</div>
+    <div class="title">
+      <div class="title-content" data-page-index='0'>首页</div>
     </div>
     <div class="nav">
-      <ul class="-list">
-        <li><span>首页</span></li>
-        <li><span>能力</span></li>
-        <li><span>经历</span></li>
-        <li><span>作品集</span></li>
-        <li><span>联系我</span></li>
-      </ul>
-    </div>
-    <div class="nav-dot">
       <ul>
-        <li class="nav-dot-item">
-          <em>
-            <img src="./../assets/d_home.svg" alt="" />
-          </em>
-          <span class="-title" v-text="item.title">首页</span>
+        <li class="nav-item" data-index='0'>
+          <span class='-img'>
+            <span class='-img-content'></span>
+          </span>
+          <span class="-title">首页</span>
         </li>
-        <li class="nav-dot-item">
-          <em>
-            <img src="./../assets/d_skills.svg" alt="" />
-          </em>
-          <span class="-title" v-text="item.title">能力</span>
+        <li class="nav-item" data-index='1'>
+          <span class='-img'>
+            <span class='-img-content'></span>
+          </span>
+          <span class="-title">能力</span>
         </li>
-        <li class="nav-dot-item">
-          <em>
-            <img src="./../assets/d_exp.svg" alt="" />
-          </em>
-          <span class="-title" v-text="item.title">经历</span>
+        <li class="nav-item" data-index='2'>
+          <span class='-img'>
+            <span class='-img-content'></span>
+          </span>
+          <span class="-title">经历</span>
         </li>
-        <li class="nav-dot-item">
-          <em>
-            <img src="./../assets/d_works.svg" alt="" />
-          </em>
+        <li class="nav-item" data-index='3'>
+          <span class='-img'>
+            <span class='-img-content'></span>
+          </span>
           <span class="-title">作品集</span>
         </li>
-        <li class="nav-dot-item">
-          <em>
-            <img src="./../assets/d_contact.svg" alt="" />
-          </em>
+        <li class="nav-item" data-index='4'>
+          <span class='-img'>
+            <span class='-img-content'></span>
+          </span>
           <span class="-title">联系我</span>
         </li>
       </ul>
@@ -129,7 +119,7 @@
         <div class="slider">
           <div class="slider-container">
             <div class="left">
-              <div class="img" style="background-image: url('./../assets/logo_jm.png');"></div>
+              <div class="img"></div>
               <h4>聚美优品（成都）</h4>
               <p class="-post">"资深前端工程师/前端负责人"</p>
             </div>
@@ -143,11 +133,9 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div class="slider">
           <div class="slider-container">
             <div class="left">
-              <div class="img" style="background-image: url('../../assets/logo_lt.png');"></div>
+              <div class="img"></div>
               <h4>兰途科技</h4>
               <p class="-post">"web前端研发工程师"</p>
             </div>
@@ -161,11 +149,9 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div class="slider">
           <div class="slider-container">
             <div class="left">
-              <div class="img" style="background-image: url('./../assets/logo_zh.png');"></div>
+              <div class="img"></div>
               <h4>卓煌企业</h4>
               <p class="-post">"网页开发兼SEO优化"</p>
             </div>
@@ -182,9 +168,9 @@
         </div>
         <div class="shout-cut">
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li data-index='0'></li>
+            <li data-index='1'></li>
+            <li data-index='2'></li>
           </ul>
         </div>
       </div>
@@ -305,19 +291,19 @@
         </div>
         <div class="way">
           <a class="way-item" target="_blank" href="https://github.com/zhaoky">
-            <img class="way-item-img" src="./../assets/s_github.svg" alt="" />
+            <div class='way-item-img'></div>
           </a>
           <a class="way-item" target="_blank" href="https://segmentfault.com/u/fe_korey">
-            <img class="way-item-img" src="./../assets/s_sf.svg" alt="" />
+            <div class='way-item-img'></div>
           </a>
           <a class="way-item" target="_blank" href="https://blog.flqin.com">
-            <img class="way-item-img" src="./../assets/s_blog.svg" alt="" />
+            <div class='way-item-img'></div>
           </a>
           <a class="way-item" target="_blank" href="https://www.zhihu.com/people/fe_korey">
-            <img class="way-item-img" src="./../assets/s_zh.svg" alt="" />
+            <div class='way-item-img'></div>
           </a>
           <a class="way-item" target="_blank" href="https://juejin.im/user/57c91b3b165abd0068db89c2">
-            <img class="way-item-img" src="./../assets/s_Jj.svg" alt="" />
+            <div class='way-item-img'></div>
           </a>
         </div>
       </div>
