@@ -74,7 +74,7 @@ function initExp() {
     expSlider[expSliderIndex].addEventListener('webkitTransitionEnd', () => {
       expSlider[expSliderIndex].style.display = 'none';
       expSlider[expSliderIndex].style.opacity = '1';
-      expSlider[index].style.display = 'block';
+      expSlider[index].style.display = isMobile ? 'block' : 'flex';
       removeClass(expUl.children[expSliderIndex], '-selected');
       addClass(expUl.children[index], '-selected');
       expSliderIndex = index;
@@ -107,11 +107,22 @@ function initWork() {
       --curIndex;
     } else if (e.target.className === 'right' && curIndex !== children.length - 1) {
       ++curIndex;
-      children[curIndex - 1].style.transform = `translateX(-19rem)`;
+      children[curIndex - 1].style.transform = `translateX(-8.1rem)`;
     }
     setWorkStyle(curIndex);
   });
   setWorkStyle(curIndex);
+}
+
+/**
+ * consoleTip
+ *
+ */
+function consoleTip() {
+  console.info('·Hi! 朋友，感谢您愿意调试简历代码。');
+  console.info('·本简历采用%c原生JS，Fullpage(https://github.com/zhaoky/fullpage )，webpack开发构建。', 'color:red');
+  console.info('·如果您对MVVM感兴趣，请查看%c本简历(https://flqin.com/spa )的mvvm版。 采用（https://github.com/zhaoky/mvvm ）实现。', 'color:red');
+  console.info('·本源码及其mvvm版已开源在(https://github.com/zhaoky/flqin )，欢迎交流探讨。任何问题请提issue，%c喜欢的话请点个star吧！^_^', 'color:#da3c8c');
 }
 
 const fp = new Fullpage({
@@ -127,5 +138,9 @@ window.onload = () => {
   initHeader();
   initExp();
   initWork();
+  consoleTip();
   $('#app').style.display = 'block';
+  setTimeout(() => {
+    removeClass($('.overview'), 'float');
+  }, 0);
 };

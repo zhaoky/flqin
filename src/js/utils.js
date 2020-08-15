@@ -125,7 +125,7 @@ export function toggleClass(node, classname) {
  * 判断是否是移动端
  */
 export const isMobile = (() => {
-  const width = document.body.clientWidth;
+  const width = Math.min(screen.width, document.documentElement.getBoundingClientRect().width);
   return width < 600;
 })();
 

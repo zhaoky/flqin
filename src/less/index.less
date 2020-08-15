@@ -1,8 +1,9 @@
 html {
+  font-family: -apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC',
+    'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif;
   font-size: 10vw;
 }
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
   font-size: 32px;
 }
 ul,
@@ -107,7 +108,7 @@ a {
       top: 100px;
       width: 100%;
       font-size: 13px;
-      background-color: rgba(105, 97, 97, 0.4);
+      background-color: hsla(0, 0%, 100%, 0.4);
       visibility: hidden;
       opacity: 0;
       transition: all 0.5s;
@@ -117,9 +118,10 @@ a {
         display: flex;
         height: 60px;
         font-size: 26px;
+        color: #fff;
       }
       .-cur-index {
-        color: #38bcff;
+        color: #4b5b8b;
       }
     }
     .show-nav {
@@ -138,6 +140,7 @@ a {
         .info {
           margin-top: 10vh;
           position: relative;
+          transition: all 1s;
           .photo {
             width: 300px;
             height: 300px;
@@ -175,6 +178,7 @@ a {
               font-size: 26px;
               box-shadow: inset 0 0 50px 10px rgba(255, 255, 255, 0.67);
               animation: pulse 2s infinite linear;
+              transition: opacity 1s 1s;
               @keyframes pulse {
                 0% {
                   transform: scaleX(1);
@@ -221,15 +225,12 @@ a {
           margin: 0 auto;
           padding-top: 100px;
           color: #fff;
-          .des-list {
-            padding-top: 20px;
-            font-size: 30px;
-          }
           .quote {
             font-size: 32px;
             line-height: 50px;
             position: relative;
             padding: 20px 0;
+            transition: opacity 1s 2s;
             &::after {
               content: '';
               position: absolute;
@@ -238,6 +239,49 @@ a {
               bottom: 0;
               height: 1px;
               background-color: rgba(255, 255, 255, 0.6);
+              transition: all 1s 3s;
+            }
+          }
+          .des-list {
+            padding-top: 20px;
+            font-size: 30px;
+            p {
+              &:nth-child(1) {
+                transition: all 0.5s 4s;
+              }
+              &:nth-child(2) {
+                transition: all 0.5s 4.5s;
+              }
+              &:nth-child(3) {
+                transition: all 0.5s 5s;
+              }
+            }
+          }
+        }
+      }
+    }
+    .float {
+      .content {
+        .info {
+          transform: translateY(50vh);
+          opacity: 0;
+          .-list {
+            .-item {
+              opacity: 0;
+            }
+          }
+        }
+        .des {
+          .quote {
+            opacity: 0;
+            &::after {
+              left: 50%;
+              right: 50%;
+            }
+          }
+          .des-list {
+            p {
+              opacity: 0;
             }
           }
         }
@@ -385,6 +429,9 @@ a {
           margin-top: 100px;
           line-height: 40px;
           font-size: 26px;
+          a {
+            text-decoration: underline;
+          }
         }
         .-des-en {
           line-height: 30px;
@@ -517,7 +564,7 @@ a {
       background: rgb(75, 133, 160) url(./../assets/bg.png);
       .content {
         position: absolute;
-        top: 15vh;
+        top: 20vh;
         left: 10vw;
         right: 10vw;
         .work-list {
@@ -635,7 +682,7 @@ a {
       background: rgb(162, 153, 113) url('./../assets/bg.png');
       .content {
         position: absolute;
-        top: 15vh;
+        top: 20vh;
         left: 10vw;
         right: 10vw;
         margin: 0 auto;
@@ -746,6 +793,10 @@ a {
     border-top: 1px solid #756d4d;
     text-align: center;
     color: #756d4d;
+    a {
+      color: #565038;
+      text-decoration: underline;
+    }
     .github {
       margin: 20px auto 0;
     }
