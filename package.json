@@ -88,22 +88,16 @@
     }
   },
   "lint-staged": {
-    "src/less/*.less": [
-      "stylelint --fix",
-      "git add"
-    ],
-    "src/js/*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+    "src/less/*.less": "stylelint --syntax less",
+    "src/js/*.js": "eslint --fix",
+    "src/**/*": "prettier --write"
   },
   "engines": {
-    "node": ">= 8.0.0",
-    "npm": ">= 6.0.0"
+    "node": ">=10.0.0"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not dead"
+    "not ie <= 10"
   ]
 }
