@@ -167,58 +167,69 @@ export default {
         {
           title: '聚美优品+ 小程序',
           des: '聚美优品+小程序是聚美集团电商业务在微信小程序上的实现，包括普通商品，拼团商品的销售流程及购物流程、用户中心等模块。',
-          mini: wJm
+          mini: wJm,
+          style: {}
         },
         {
           title: '鹿尚生活 小程序',
           des: '鹿尚生活小程序是聚美集团专柜购业务在微信小程序上的实现，包括专柜购区域选择及提货方式等全套销售流程及购物流程、用户中心等模块。',
-          mini: wLs
+          mini: wLs,
+          style: {}
         },
         {
           title: '聚美优品 快应用',
           des: '聚美优品快应用是聚美集团电商业务在安卓快应用上的实现，基于手机硬件平台的新型应用形态，为销售途径提供新的渠道。',
-          url: 'http://hapjs.org/app/com.jm.quickapp'
+          url: 'http://hapjs.org/app/com.jm.quickapp',
+          style: {}
         },
         {
           title: '聚美优品 H5',
           des: '聚美集团电商业务移动端的核心承载者，包括前三页，购物流程，用户中心等，通过jsbridge部分页面也在app内广泛应用。',
-          url: 'https://h5.jumei.com'
+          url: 'https://h5.jumei.com',
+          style: {}
         },
         {
           title: '聚美优品 增长活动',
           des: '聚美集团电商业务的新增长投放项目，电商主要的推广活动承载页面，实现采用多页面架构，支持打包单一活动的工作模式。',
-          url: 'http://r.jumei.com'
+          url: 'http://r.jumei.com',
+          style: {}
         },
         {
           title: '街电crm后台管理系统',
           des: 'PC端街电crm后台商户管理系统，包括各种商户录入，统计，维护等若干功能。',
-          url: ''
+          url: '',
+          style: {}
         },
         {
           title: '移动校园APP',
           des:
             '一站式、全生命周期的校园官方移动服务平台，涵盖PC、安卓、IOS、微信平台，上线学校包括中央财经大学，北京交通大学，中国戏曲学院，辽宁大学，西南财经大学等等，下载量数十万，深受学生老师喜爱。',
-          url: 'http://app.cufe.edu.cn/'
+          url: 'http://app.cufe.edu.cn/',
+          style: {}
         },
         {
           title: '移动校园管理系统',
           des: '针对校园APP的后台管理系统，包括人员架构，信息统计，权限设置，H5生产机，数据交换平台，各个模块的数据管理，反馈设置等等，为高校提供基于互联网运营的移动校园整体解决方案。',
-          url: ''
+          url: '',
+          style: {}
         },
         {
           title: 'web前端工程师简历（2015年版）',
           des: '本简历初版，上线一个月后，百度关键词“web前端工程师简历”排名前三，点击量数百万，深受广大前端初学者的好评及模仿，至今搜该关键词百度前10页都处处能见该简历的仿版。',
-          url: 'http://www.flqin.com/2015/'
+          url: 'http://www.flqin.com/2015/',
+          style: {}
         },
         {
           title: '@korey/MVVM',
           des: '一个简易的MVVM框架，实现了data-binding 和 view-refresh的功能，目前仅服务于本简历项目，仍在不断优化更新，欢迎学习交流',
-          url: 'https://github.com/zhaoky/mvvm'
+          url: 'https://github.com/zhaoky/mvvm',
+          style: {}
         },
         {
           title: '@korey/Fullpage',
           des: '一个简易的Fullpage框架，实现了上拉下拉，滑轮滚动，锚点直达的全屏翻页功能，目前仅服务于本简历项目，仍在不断优化更新，欢迎学习交流',
-          url: 'https://github.com/zhaoky/fullpage'
+          url: 'https://github.com/zhaoky/fullpage',
+          style: {}
         }
       ],
       viewMore: 'github上面查看更多'
@@ -430,66 +441,77 @@ export default {
           title: 'Jumei+ MiniProgram',
           des:
             'Jumei+ MiniProgram is the realization of Jumei e-commerce business on WeChat small program, including general merchandise, sales process of shopping carts, shopping process, user center and other modules.',
-          mini: wJm
+          mini: wJm,
+          style: {}
         },
         {
           title: 'lushangLife MiniProgram',
           des:
             'lushangLife MiniProgram is the realization of Jumei counter purchase business on WeChat small program, including a full set of sales processes such as counter purchase area selection and delivery methods, as well as shopping process and user center modules.',
-          mini: wLs
+          mini: wLs,
+          style: {}
         },
         {
           title: 'Jumei quickapp',
           des:
             'Jumei quickapp is the realization of Jumei e-commerce business in Android quickapp. Based on the new application form of mobile phone hardware platform, it provides a new channel for sales channels.',
-          url: 'http://hapjs.org/app/com.jm.quickapp'
+          url: 'http://hapjs.org/app/com.jm.quickapp',
+          style: {}
         },
         {
           title: 'Jumei H5',
           des:
             'The core carrier of the mobile terminal of Jumei e-commerce business, including the three pages, shopping process, user center, etc., is also widely used in the app through the jsbridge part of the page.',
-          url: 'https://h5.jumei.com'
+          url: 'https://h5.jumei.com',
+          style: {}
         },
         {
           title: 'Jumei growth',
           des:
             'The new growth project of Jumei e-commerce business, the main promotion activities of e-commerce hosted the page, realized the adoption of multi-page architecture, and supported the work mode of packaging a single activity.',
-          url: 'http://r.jumei.com'
+          url: 'http://r.jumei.com',
+          style: {}
         },
         {
           title: 'jiedian CRM',
           des: 'The PC-side street power crm back-end merchant management system includes several functions such as various merchant entry, statistics, and maintenance.',
-          url: ''
+          url: '',
+          style: {}
         },
         {
           title: 'Campus APP',
           des:
             'One-stop, the whole life cycle of the campus official mobile service platform, covering PC, Andrews, IOS, WeChat platform, on-line schools, including CUFE, BJTU, NACTA, LNU, SWUFE and so on, download Hundreds of thousands, loved by the students teacher.',
-          url: 'http://app.cufe.edu.cn/'
+          url: 'http://app.cufe.edu.cn/',
+          style: {}
         },
         {
           title: 'campus management system',
           des:
             'According to the background management system of campus APP, including the personnel structure, information statistics, H5 production machine, data exchange platform, data management of each module, feedback settings, etc., for the university to provide Internet-based mobile campus overall solution.',
-          url: ''
+          url: '',
+          style: {}
         },
         {
           title: 'Web front engineer resumes (2015)',
           des:
             'The first edition of this resume, on the line a month later, Baidu keyword `web front engineer resumes` ranked the top three, hundreds of millions of traffic, by the majority of front-end beginners praise and imitation, so far the search Baidu 10 pages are everywhere See the copy of the resume.',
-          url: 'http://www.flqin.com/2015/'
+          url: 'http://www.flqin.com/2015/',
+          style: {}
         },
         {
           title: '@korey/MVVM',
           des:
             'A simple MVVM framework that implements the functions of data-binding and view-refresh. Currently, it only serves this resume project. It is still optimized and updated. Welcome to learn communication.',
-          url: 'https://github.com/zhaoky/mvvm'
+          url: 'https://github.com/zhaoky/mvvm',
+          style: {}
         },
         {
           title: '@korey/Fullpage',
           des:
             'A simple Fullpage framework that implements full-screen page-turning with pull-up, scrolling, and anchor-pointing. Currently only serves this resume project, it is still optimized and updated. Welcome to learn communication.',
-          url: 'https://github.com/zhaoky/fullpage'
+          url: 'https://github.com/zhaoky/fullpage',
+          style: {}
         }
       ],
       viewMore: 'Go to github see more'

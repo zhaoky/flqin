@@ -2,13 +2,14 @@ import 'normalize.css';
 import './../less/index.less';
 import './../less/media.less';
 import res from './data.js';
+import { hasClass, addClass, removeClass } from './utils.js';
 import MVVM from '@fe_korey/mvvm';
 import { Fullpage } from '@fe_korey/fullpage';
 
+let fp;
 const model = {
-  selectedLang: 0,
-  isShowNav: false,
   isPc: false,
+  isShowNav: false,
   isEng: false,
   pageIndex: 0,
   expCur: {},
@@ -16,114 +17,100 @@ const model = {
   workIndex: 0
 };
 
-let fp;
-
-const data = {
+new MVVM({
   view: document.getElementById('app'),
   model: { ...res.cn, ...model },
   methods: {
     titleHandler() {
-      data.model.isShowNav = !data.model.isShowNav;
+      this.isShowNav = !this.isShowNav;
     },
     directToPage(index) {
-      data.model.pageIndex = index;
+      this.pageIndex = index;
       fp.directToPage(index);
-      data.model.isShowNav = false;
+      this.isShowNav = false;
     },
     switchLang(index) {
-      data.model.selectedLang = index;
-      data.model.isEng = index === 1;
-      const dataNames = ['header', 'footer', 'overview', 'skill', 'exp', 'works', 'contact'];
       const language = index === 1 ? 'en' : 'cn';
-      dataNames.forEach((i) => {
-        data.model[i] = res[language][i];
+      this.isEng = index === 1;
+
+      Object.keys(res.en).forEach((i) => {
+        this[i] = res[language][i];
       });
-      data.model.expCur = res[language].exp.expList[data.model.selectExpIndex];
-      data.model.workIndex = 0;
-      setWorkDraw();
+
+      this.expCur = res[language].exp.expList[this.selectExpIndex];
+      this.setWorkDraw((this.workIndex = 0));
     },
     switchExp($event, index) {
+      if (hasClass($event.target, '-selected')) {
+        return;
+      }
       $event.stopPropagation();
       const sliderDom = document.getElementsByClassName('slider-container')[0];
-      sliderDom.style.opacity = '0';
-      sliderDom.addEventListener('webkitTransitionEnd', transitionEndHandler);
-      /**
-       * transitionEndHandler
-       *
-       */
-      function transitionEndHandler() {
-        sliderDom.style.opacity = '1';
-        const language = !!data.model.isEng ? 'en' : 'cn';
-        data.model.expCur = res[language].exp.expList[index];
-        data.model.selectExpIndex = index;
-        sliderDom.removeEventListener('webkitTransitionEnd', transitionEndHandler);
+      if (hasClass(sliderDom, '-active')) {
+        return;
       }
+      addClass(sliderDom, '-active');
+      setTimeout(() => {
+        const language = this.isEng ? 'en' : 'cn';
+        this.expCur = res[language].exp.expList[index];
+        this.selectExpIndex = index;
+        setTimeout(() => {
+          removeClass(sliderDom, '-active');
+        }, 200);
+      }, 200);
     },
     switchWork($event) {
+      if ($event.target.nodeName !== 'I') {
+        return;
+      }
+
+      const tag = $event.target.className;
       const workDom = document.getElementsByClassName('work-list')[0];
       const children = workDom.children;
-      const tag = $event.target.className;
-      if (tag === 'left' && data.model.workIndex !== 0) {
-        --data.model.workIndex;
-      } else if (tag === 'right' && data.model.workIndex !== children.length - 1) {
-        ++data.model.workIndex;
-        children[data.model.workIndex - 1].style.transform = `translateX(-19rem)`;
+
+      if (tag === 'left' && this.workIndex !== 0) {
+        --this.workIndex;
+      } else if (tag === 'right' && this.workIndex !== children.length - 1) {
+        ++this.workIndex;
+        children[this.workIndex - 1].style.transform = `translateX(-8.1rem)`;
       }
-      for (let i = data.model.workIndex; i < children.length; i++) {
-        children[i].style.transform = `translateX(${1.5 * (i - data.model.workIndex)}rem) translateZ(${-1.5 * (i - data.model.workIndex)}rem) scale(${1 - (i - data.model.workIndex) * 0.05}, ${
-          1 - (i - data.model.workIndex) * 0.05
-        })`;
+      this.setWorkDraw(this.workIndex);
+    },
+    setWorkDraw(index) {
+      const workDom = document.getElementsByClassName('work-list')[0];
+      const children = workDom.children;
+      for (let i = index; i < children.length; i++) {
+        children[i].style.transform = `translateX(${0.8 * (i - index)}rem) translateZ(${-1.5 * (i - index)}rem) scale(${1 - (i - index) * 0.05}, ${1 - (i - index) * 0.05})`;
       }
     }
   },
   mounted() {
-    appInit();
-    setWorkDraw();
-    createFullpage();
-    if (isPC()) {
-      data.model.isPc = true;
+    initFullpage(this);
+    this.expCur = res.cn.exp.expList[0];
+    this.setWorkDraw(0);
+
+    if ((this.isPc = document.documentElement.getBoundingClientRect().width > 600)) {
       setExpTouch3D();
       consoleTip();
     }
+    document.querySelector('#app').style.display = 'block';
   }
-};
+});
 
 /**
- * 判断是否为PC
+ * 初始化 fullpage
  *
- * @return {Boolean}
+ * @param {object} scope
  */
-function isPC() {
-  const u = navigator.userAgent;
-  const Agents = ['Android', 'iPhone', 'webOS', 'BlackBerry', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
-  let flag = true;
-  for (let i = 0; i < Agents.length; i++) {
-    if (u.indexOf(Agents[i]) > 0) {
-      flag = false;
-      break;
+function initFullpage(scope) {
+  fp = new Fullpage({
+    root: '#fullpage',
+    hasArrow: true,
+    speedTime: 0.5,
+    slideCallback(index) {
+      scope.pageIndex = index;
     }
-  }
-  return flag;
-}
-/**
- * appInit
- *
- */
-function appInit() {
-  const appDom = document.getElementById('app');
-  appDom.style.display = 'block';
-  data.model.expCur = res.cn.exp.expList[0];
-}
-/**
- * setWorkDraw
- *
- */
-function setWorkDraw() {
-  const workDom = document.getElementsByClassName('work-list')[0];
-  const children = workDom.children;
-  for (let i = 0; i < children.length; i++) {
-    children[i].style.transform = `translateX(${1.5 * i}rem) translateZ(${-1.5 * i}rem) scale(${1 - i * 0.05}, ${1 - i * 0.05})`;
-  }
+  });
 }
 /**
  * setExpTouch3D
@@ -178,28 +165,11 @@ function setExpTouch3D() {
   }
 }
 /**
- * createFullpage
- *
- */
-function createFullpage() {
-  fp = new Fullpage({
-    root: '#fullpage',
-    hasArrow: true,
-    speedTime: 0.5,
-    slideCallback(index) {
-      data.model.pageIndex = index;
-    }
-  });
-}
-/**
  * consoleTip
  *
  */
 function consoleTip() {
-  console.log('Hi! 朋友，感谢您愿意调试简历代码。');
-  console.log('本简历采用%c简易版MVVM (https://www.npmjs.com/package/@fe_korey/mvvm )及Fullpage (https://www.npmjs.com/package/@fe_korey/fullpage )，webpack开发构建。', 'color:red');
-  console.log('源码已开源在（https://github.com/zhaoky/flqin )，任何问题请提issue,喜欢请点个star吧！');
-  console.log('如果您有什么建议或者想学习前端，欢迎您加入我们,我们互相学习，共同进步^_^  %cQQ小群(http://t.cn/RtlQbTq)', 'color:red');
+  console.info('·Hi! 朋友，感谢您愿意调试简历代码。');
+  console.info('·本简历采用 %cmini MVVM (https://www.npmjs.com/package/@fe_korey/mvvm )，Fullpage(https://github.com/zhaoky/fullpage )，webpack开发构建。', 'color:red');
+  console.info('·本源码及其mvvm版已开源在(https://github.com/zhaoky/flqin )，欢迎交流探讨。任何问题请提issue，%c喜欢的话请点个star吧！^_^', 'color:#da3c8c');
 }
-
-new MVVM(data);

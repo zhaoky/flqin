@@ -1,9 +1,9 @@
 {
   "name": "@fe_korey/resume",
-  "version": "1.0.3",
+  "version": "3.0.0",
   "description": "赵柯宇的web前端工程师简历",
   "main": "dist/index.html",
-  "homepage": "https://www.flqin.com",
+  "homepage": "https://resume.flqin.com",
   "keywords": [
     "web前端",
     "web",
@@ -22,7 +22,6 @@
   ],
   "dependencies": {
     "@fe_korey/fullpage": "^1.0.5",
-    "@fe_korey/mvvm": "^2.0.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
@@ -72,8 +71,7 @@
     "lint": "eslint src && stylelint 'src/**/*.less'",
     "fix": "eslint src --fix && stylelint 'src/**/*.less' --fix",
     "analyze": "cross-env NODE_ENV=production BUILD_TYPE=mvvm MODE=analysis webpack",
-    "analyze:seo": "cross-env NODE_ENV=production BUILD_TYPE=seo MODE=analysis webpack",
-    "debug": "node --inspect-brk=5858 ./node_modules/.bin/webpack"
+    "analyze:seo": "cross-env NODE_ENV=production BUILD_TYPE=seo MODE=analysis webpack"
   },
   "repository": {
     "type": "git",

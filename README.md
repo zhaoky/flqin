@@ -1,76 +1,76 @@
 <h2 align="center"><a href='https://www.flqin.com' target='_blank'>✏️✏️front-end engineer resume</a></h2>
 <p align="center">
-  <a href="https://www.travis-ci.com/zhaoky/flqin"><img src="https://travis-ci.com/zhaoky/flqin.svg?branch=master" alt="Travis CI Status"></a>
+  <a href='https://github.com/zhaoky/flqin'><img src='https://img.shields.io/github/last-commit/zhaoky/flqin' alt='GitHub last commit' /></a>
   <a href="https://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/dm/@fe_korey/resume.svg" alt="Downloads"></a>
-  <a href="hhttps://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/v/@fe_korey/resume.svg" alt="Version"></a>
-  <a href="https://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/l/@fe_korey/resume.svg" alt="License"></a>
+  <a href="https://github.com/zhaoky/flqin/actions"><img src="https://github.com/zhaoky/flqin/workflows/Action CI/badge.svg" alt="Actions Status"></a>
+  <a href='https://www.npmjs.com/package/@fe_korey/flqin'><img src='https://img.shields.io/npm/l/@fe_korey/flqin' alt='NPM' /></a>
+  <a href='https://www.npmjs.com/package/@fe_korey/flqin'><img src='https://img.shields.io/npm/v/@fe_korey/flqin' alt='npm (scoped)' /></a>
 </p>
 
 English | [中文](./README_CN.MD)
 
 #### Baidu search: [web Front-end engineer resume](https://www.baidu.com/s?ie=UTF-8&wd=web%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AE%80%E5%8E%86)
 
-![](https://raw.githubusercontent.com/zhaoky/flqin/master/src/assets/web.jpg)
+![web前端工程师简历截图](https://raw.githubusercontent.com/zhaoky/flqin/master/src/assets/web.jpg)
 
 ## MISC
 
 Many friends email me to learn how to make such a resume. In fact, you only need to fork the project and try to run the project!
 
-Because the MVVM framework is numerous and constantly updated, the previous version (angular1.6) has been deprecated, and finally chose to implement [an MVVM framework](https://github.com/zhaoky/mvvm) to serve this project.
+Because the MVVM framework is numerous and constantly updated, For the purpose of learning, and finally chose to implement [an MVVM framework](https://github.com/zhaoky/mvvm) to serve this project.
+
+In order to 'SEO' and beginner learning, a [pure static page](https://resume.flqin.com) and a [Chinese-English page](<(https://flqin.com/resume)) based on [MVVM].
 
 Please [click here](https://github.com/zhaoky/flqin/issues) if you have any questions or suggestions.Learn from each other and make progress together!
-
-Welcome friends to join QQ group：[Fe.d 小分队](http://t.cn/RtlQbTq), is the FE beginner's learning exchange platform, there are many future bossesand and learning resources.
 
 Please click star if you like, thank you! 💕💕
 
 ## Start
 
-1. install node.js/npm/yarn
+1. clone
 
-2. install git
-
-3. clone
-
-```
+```bash
 git clone https://github.com/zhaoky/flqin.git
 ```
 
-4. change directory
+2. change directory
 
-```
+```bash
 cd flqin
 ```
 
-5. install dependencies
+3. install dependencies
 
-```
-npm i // or yarn
-```
-
-6. serve with hot reload at localhost:8080
-
-```
-npm run dev //or yarn run dev
+```bash
+yarn
 ```
 
-7. build for production with minification
+4. serve with hot reload
 
-```
-npm run build //or yarn run build
-```
-
-8. build for production with analyze
-
-```
-npm run analyze //or yarn run analyze
+```bash
+yarn run dev:seo // seo 版纯静态页
+yarn run dev // mvvm 中英双版页
 ```
 
-9. check code and fix
+5. build for production with minification
 
+```bash
+yarn run build:seo // seo 版纯静态页
+yarn run build // mvvm 中英双版页
 ```
-npm run lint // or yarn run lint
-npm run fix // or yarn run fix
+
+6. build for production with analyze
+
+```bash
+yarn run analyze:seo // seo 版纯静态页
+yarn run analyze // mvvm 中英双版页
+```
+
+7. check code and fix
+
+```bash
+yarn run lint // 检查
+yarn run fix // 修复
 ```
 
 ## Technical support

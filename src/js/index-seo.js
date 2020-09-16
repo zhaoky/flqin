@@ -58,7 +58,7 @@ function initExp() {
   const expUl = $('.experience .shout-cut ul');
   let expSliderIndex = 0;
 
-  expSlider[1].style.display = expSlider[2].style.display = 'none';
+  expSlider[1].style.visibility = expSlider[2].style.visibility = 'hidden';
 
   addClass(expUl.children[0], '-selected');
 
@@ -69,16 +69,25 @@ function initExp() {
     if (hasClass(e.target, '-selected')) {
       return;
     }
-    const index = +e.target.dataset.index;
-    expSlider[expSliderIndex].style.opacity = '0';
-    expSlider[expSliderIndex].addEventListener('webkitTransitionEnd', () => {
-      expSlider[expSliderIndex].style.display = 'none';
-      expSlider[expSliderIndex].style.opacity = '1';
-      expSlider[index].style.display = isMobile ? 'block' : 'flex';
-      removeClass(expUl.children[expSliderIndex], '-selected');
-      addClass(expUl.children[index], '-selected');
-      expSliderIndex = index;
+    if (hasClass(expSlider[0], '-active')) {
+      return;
+    }
+    expSlider.forEach((item) => {
+      addClass(item, '-active');
     });
+    setTimeout(() => {
+      const index = +e.target.dataset.index;
+      expSlider[expSliderIndex].style.visibility = 'hidden';
+      expSlider[index].style.visibility = 'visible';
+      setTimeout(() => {
+        removeClass(expUl.children[expSliderIndex], '-selected');
+        addClass(expUl.children[index], '-selected');
+        expSlider.forEach((item) => {
+          removeClass(item, '-active');
+        });
+        expSliderIndex = index;
+      }, 200);
+    }, 200);
   });
 }
 /**
@@ -113,10 +122,8 @@ function initWork() {
   });
   setWorkStyle(curIndex);
 }
-
 /**
  * consoleTip
- *
  */
 function consoleTip() {
   console.info('·Hi! 朋友，感谢您愿意调试简历代码。');
