@@ -3,8 +3,8 @@
   <a href='https://github.com/zhaoky/flqin'><img src='https://img.shields.io/github/last-commit/zhaoky/flqin' alt='GitHub last commit' /></a>
   <a href="https://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/dm/@fe_korey/resume.svg" alt="Downloads"></a>
   <a href="https://github.com/zhaoky/flqin/actions"><img src="https://github.com/zhaoky/flqin/workflows/Action CI/badge.svg" alt="Actions Status"></a>
-  <a href='https://www.npmjs.com/package/@fe_korey/flqin'><img src='https://img.shields.io/npm/l/@fe_korey/flqin' alt='NPM' /></a>
-  <a href='https://www.npmjs.com/package/@fe_korey/flqin'><img src='https://img.shields.io/npm/v/@fe_korey/flqin' alt='npm (scoped)' /></a>
+  <a href='https://www.npmjs.com/package/@fe_korey/resume'><img src='https://img.shields.io/npm/l/@fe_korey/resume' alt='NPM' /></a>
+  <a href='https://www.npmjs.com/package/@fe_korey/resume'><img src='https://img.shields.io/npm/v/@fe_korey/resume' alt='npm (scoped)' /></a>
 </p>
 
 [English](./README.MD) | 中文
