@@ -52,6 +52,8 @@ yarn run dev:seo // seo 版纯静态页
 yarn run dev // mvvm 中英双版页
 ```
 
+调试地址： `http://0.0.0.0:8080/`
+
 5. 启动生成模式，打包产品级代码
 
 ```bash

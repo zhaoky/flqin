@@ -52,6 +52,8 @@ yarn run dev:seo // seo 版纯静态页
 yarn run dev // mvvm 中英双版页
 ```
 
+Debug address： `http://0.0.0.0:8080/`
+
 5. build for production with minification
 
 ```bash
