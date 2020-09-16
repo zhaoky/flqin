@@ -17,7 +17,7 @@
 
 很多前端的朋友给我发邮件学习怎么制作这样的简历，其实你只需要将本项目 fork，试着将项目跑起来就可以了！
 
-因 `MVVM` 框架众多且在不断更新，出于学习的目的，最终选择自己实现一个了[MVVM 框架](https://github.com/zhaoky/mvvm)服务于本项目。
+因 `MVVM` 框架众多且在不断更新，并出于学习的目的，最终选择自己实现一个了[MVVM 框架](https://github.com/zhaoky/mvvm)服务于本项目。
 
 出于 `SEO` 及初学者学习的考虑，本项目分别实现一个 [纯静态页](https://resume.flqin.com) 和一个基于[MVVM](<(https://github.com/zhaoky/mvvm)>)的 [中英双版页](https://flqin.com/resume)。
 
