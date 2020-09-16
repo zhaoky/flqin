@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "@fe_korey/fullpage": "^1.0.5",
+    "@fe_korey/mvvm": "^3.0.0-rc.3",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
