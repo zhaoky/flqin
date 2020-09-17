@@ -3,7 +3,6 @@ const WebpackBar = require('webpackbar');
 const WebpackStylish = require('webpack-stylish');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -17,7 +16,7 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: _DEV_ ? 'bundle.js' : 'js/[name].[chunkhash:8].js',
+    filename: _DEV_ ? 'bundle.js' : '[name].[chunkhash:8].js',
     publicPath: './'
   },
   module: {
@@ -38,8 +37,7 @@ const config = {
             loader: 'url-loader',
             options: {
               limit: 10000,
-              name: 'assets/[name].[ext]',
-              publicPath: '../'
+              name: 'assets/[name].[ext]'
             }
           }
         ]
@@ -53,8 +51,8 @@ const config = {
       favicon: 'src/assets/favicon.ico'
     }),
     new MiniCssExtractPlugin({
-      filename: _DEV_ ? 'css/[name].css' : 'css/[name].[contenthash:8].css',
-      chunkFilename: _DEV_ ? 'css/[name].css' : 'css/[name].[contenthash:8].css'
+      filename: _DEV_ ? 'css/[name].css' : '[name].[contenthash:8].css',
+      chunkFilename: _DEV_ ? 'css/[name].css' : '[name].[contenthash:8].css'
     }),
     new WebpackStylish(),
     new WebpackBar()
@@ -93,9 +91,6 @@ if (_DEV_) {
         chunks: 'initial',
         test: [/vendors\.[a-z0-9]{8}\.js$/, /main\.[a-z0-9]{8}\.js$/]
       }
-    }),
-    new StyleExtHtmlWebpackPlugin({
-      cssRegExp: /vendors\.[a-z0-9]{8}\.css$/
     })
   );
 }

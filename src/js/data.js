@@ -43,7 +43,7 @@ export default {
     },
     footer: ['Released under the MIT License', 'All Rights Reserved ', `Copyright © 2014-${new Date().getFullYear()} Korey Zhao`],
     overview: {
-      infoList: ['28岁', '本科', '成都', '在职'],
+      infoList: ['29岁', '本科', '成都', '在职'],
       quote: '生活是一种绵延不绝的渴望，渴望不断上升，变得更伟大而高贵。',
       desList: ['我叫赵柯宇，前端工程师', '聚美优品（成都）电商&增长团队前端负责人', 'keyu.zhao@foxmail.com']
     },
@@ -128,7 +128,7 @@ export default {
         '六年前端开发经验，两年管理经验',
         '实际主导开发过多平台项目（APP，PC，H5，小程序，快应用等），制定并规范团队协作模式',
         '前端技术栈均有尝试，擅长组件开发及构建优化',
-        '自我驱动力强，著有webpack、vue等源码分析系列文章'
+        '自我驱动力强，写有webpack、vue等源码分析系列文章'
       ]
     },
     exp: {
@@ -301,7 +301,7 @@ export default {
     },
     footer: ['Released under the MIT License', 'All Rights Reserved ', `Copyright © 2014-${new Date().getFullYear()} Korey Zhao`],
     overview: {
-      infoList: ['28years', 'B.S.', 'ChengDu', 'On Job'],
+      infoList: ['29years', 'B.S.', 'ChengDu', 'On Job'],
       quote: 'Life is a kind of endless yearning, eager to continue to rise, become more great and noble.',
       desList: ['I am Korey Zhao, FE engineer', 'Jumei（chengdu）E-commerce & growth team FE leader', 'keyu.zhao@foxmail.com']
     },
