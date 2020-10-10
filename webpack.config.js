@@ -17,7 +17,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: _DEV_ ? 'bundle.js' : '[name].[chunkhash:8].js',
-    publicPath: './'
+    publicPath: _DEV_ ? '/' : './'
   },
   module: {
     rules: [
@@ -78,8 +78,7 @@ if (_DEV_) {
     host: '0.0.0.0',
     port: 8080,
     stats: 'errors-only',
-    overlay: true,
-    contentBase: path.join(__dirname, 'dist')
+    overlay: true
   };
 } else {
   config.stats = 'none';
