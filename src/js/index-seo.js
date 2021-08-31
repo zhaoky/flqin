@@ -58,7 +58,7 @@ function initExp() {
   const expUl = $('.experience .shout-cut ul');
   let expSliderIndex = 0;
 
-  expSlider[1].style.visibility = expSlider[2].style.visibility = 'hidden';
+  expSlider[1].style.visibility = expSlider[2].style.visibility = expSlider[3].style.visibility = 'hidden';
 
   addClass(expUl.children[0], '-selected');
 
