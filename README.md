@@ -28,9 +28,7 @@ This project contains the technology stack:
 
 Small but complete. It is an introductory FE project with a complete functional structure that is worth learning for beginners.
 
-Because the MVVM framework is numerous and constantly updated, For the purpose of learning, and finally chose to implement [an MVVM framework](https://github.com/zhaoky/mvvm) to serve this project, welcome to exchange!
-
-In order to 'SEO' and beginner learning, a [pure static page](https://resume.flqin.com) and a [Chinese-English page](<(https://flqin.com/resume)) based on [MVVM].
+In order to 'SEO' and beginner learning, a [pure static page](https://resume.flqin.com) and a [Chinese-English page](https://flqin.com/resume) based on [MVVM](https://github.com/zhaoky/mvvm) developed by ourselves.
 
 Please [click here](https://github.com/zhaoky/flqin/issues) if you have any questions or suggestions.Learn from each other and make progress together!
 
@@ -59,8 +57,8 @@ yarn
 4. serve with hot reload
 
 ```bash
-yarn run dev:seo // seo 版纯静态页
-yarn run dev // mvvm 中英双版页
+yarn run dev:seo // seo page
+yarn run dev // mvvm page
 ```
 
 Debug address： `http://0.0.0.0:8080/`
@@ -68,33 +66,33 @@ Debug address： `http://0.0.0.0:8080/`
 5. build for production with minification
 
 ```bash
-yarn run build:seo // seo 版纯静态页
-yarn run build // mvvm 中英双版页
+yarn run build:seo // seo page
+yarn run build // mvvm page
 ```
 
 6. build for production with analyze
 
 ```bash
-yarn run analyze:seo // seo 版纯静态页
-yarn run analyze // mvvm 中英双版页
+yarn run analyze:seo // seo page
+yarn run analyze // mvvm page
 ```
 
 7. check code and fix
 
 ```bash
-yarn run lint // 检查
-yarn run fix // 修复
+yarn run lint // lint
+yarn run fix // fix
 ```
 
 ## Technical support
 
 ### [@korey/MVVM](https://github.com/zhaoky/mvvm)
 
-A simple MVVM framework that currently implements data-binding and view-refresh functionality, is constantly optimizing and updating, and welcomes learning exchanges.
+Because the MVVM framework is numerous and constantly updated, For the purpose of learning, and finally chose to implement an MVVM framework to serve this project, currently implements data-binding and view-refresh functionality, is constantly optimizing and updating.
 
 ### [@korey/Fullpage](https://github.com/zhaoky/fullpage)
 
-A simple Fullpage framework, which currently implements full-screen page-turning with pull-up, scrolling, and anchor-pointing, is still being optimized and updated. Welcome to learn and communicate.
+A simple Fullpage framework, which currently implements full-screen page-turning with pull-up, scrolling, and anchor-pointing, is still being optimized and updated.
 
 ## License
 
