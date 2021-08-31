@@ -15,9 +15,20 @@ English | [中文](./README_CN.MD)
 
 ## MISC
 
-Many friends email me to learn how to make such a resume. In fact, you only need to fork the project and try to run the project!
+Many friends email me to learn how to make such a resume. In fact, you only need to fork the project, just follow README and try to run the project!
 
-Because the MVVM framework is numerous and constantly updated, For the purpose of learning, and finally chose to implement [an MVVM framework](https://github.com/zhaoky/mvvm) to serve this project.
+This project contains the technology stack:
+
+- `html`
+- `es6`
+- `less`
+- `eslint/stylelint/prettier`
+- `webpack/babel/postcss`
+- `husky/actions/lint-staged`
+
+Small but complete. It is an introductory FE project with a complete functional structure that is worth learning for beginners.
+
+Because the MVVM framework is numerous and constantly updated, For the purpose of learning, and finally chose to implement [an MVVM framework](https://github.com/zhaoky/mvvm) to serve this project, welcome to exchange!
 
 In order to 'SEO' and beginner learning, a [pure static page](https://resume.flqin.com) and a [Chinese-English page](<(https://flqin.com/resume)) based on [MVVM].
 

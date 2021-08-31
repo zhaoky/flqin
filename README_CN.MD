@@ -15,9 +15,20 @@
 
 ## MISC
 
-很多前端的朋友给我发邮件学习怎么制作这样的简历，其实你只需要将本项目 fork，试着将项目跑起来就可以了！
+很多前端的朋友给我发邮件学习怎么制作这样的简历，其实你只需要将本项目 fork，按照本README试着将项目跑起来就可以了！
 
-因 `MVVM` 框架众多且在不断更新，并出于学习的目的，最终选择自己实现一个了[MVVM 框架](https://github.com/zhaoky/mvvm)服务于本项目。
+本项目包含技术栈：
+
+- `html`
+- `es6`
+- `less`
+- `eslint/stylelint/prettier`
+- `webpack/babel/postcss`
+- `husky/actions/lint-staged`
+
+麻雀虽小，五脏俱全。是一个值得初学者学习的功能架构完善的入门前端项目。
+
+因 `MVVM` 框架众多且在不断更新，并出于学习的目的，最终选择自己实现一个了[MVVM 框架](https://github.com/zhaoky/mvvm)服务于本项目，欢迎交流学习！
 
 出于 `SEO` 及初学者学习的考虑，本项目分别实现一个 [纯静态页](https://resume.flqin.com) 和一个基于[MVVM](<(https://github.com/zhaoky/mvvm)>)的 [中英双版页](https://flqin.com/resume)。
 

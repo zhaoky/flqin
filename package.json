@@ -87,9 +87,15 @@
     }
   },
   "lint-staged": {
-    "src/less/*.less": "stylelint --syntax less",
-    "src/js/*.js": "eslint --fix",
-    "src/**/*": "prettier --write"
+    "*.{html,wxml,md,json}": [
+      "prettier --write"
+    ],
+    "*.{css,less,scss,wxss}": [
+      "stylelint --fix"
+    ],
+    "*.{js?(x),ts?(x)}": [
+      "eslint --fix"
+    ]
   },
   "engines": {
     "node": ">=10.0.0"

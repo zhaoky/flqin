@@ -1,3 +1,4 @@
+import eTx from './../assets/logo_tx.png';
 import eJm from './../assets/logo_jm.png';
 import eLt from './../assets/logo_lt.png';
 import eZh from './../assets/logo_zh.png';
@@ -43,9 +44,9 @@ export default {
     },
     footer: ['Released under the MIT License', 'All Rights Reserved ', `Copyright © 2014-${new Date().getFullYear()} Korey Zhao`],
     overview: {
-      infoList: ['29岁', '本科', '成都', '在职'],
+      infoList: ['30岁', '本科', '成都', '在职'],
       quote: '生活是一种绵延不绝的渴望，渴望不断上升，变得更伟大而高贵。',
-      desList: ['我叫赵柯宇，前端工程师', '聚美优品（成都）电商&增长团队前端负责人', 'keyu.zhao@foxmail.com']
+      desList: ['我叫赵柯宇，腾讯资深前端工程师', '曾聚美优品电商&增长团队前端负责人', 'keyu.zhao@foxmail.com']
     },
     skill: {
       outCircleList: [
@@ -125,7 +126,7 @@ export default {
         }
       ],
       desList: [
-        '六年前端开发经验，两年管理经验',
+        '七年前端开发经验，两年管理经验',
         '实际主导开发过多平台项目（APP，PC，H5，小程序，快应用等），制定并规范团队协作模式',
         '前端技术栈均有尝试，擅长组件开发及构建优化',
         '自我驱动力强，写有webpack、vue等源码分析系列文章'
@@ -134,13 +135,22 @@ export default {
     exp: {
       expList: [
         {
-          title: '聚美优品（成都）',
-          time: '2017年4月~至今',
+          title: '腾讯',
+          time: '2021年4月~至今',
+          post: '资深前端工程师',
+          img: {
+            backgroundImage: `url(${eTx})`
+          },
+          contentList: ['负责腾讯优码项目的开发工作', '参与制定团队协作规范', '参与一些优码客户小程序、B端开发', '参与开源社区贡献']
+        },
+        {
+          title: '聚美优品',
+          time: '2017年4月~2021年4月',
           post: '资深前端工程师/前端负责人',
           img: {
             backgroundImage: `url(${eJm})`
           },
-          contentList: ['负责聚美优品电商及增长FE团队的日常工作', '参与街电CRM开发，美点无人货架C/S开发等', '主导开发聚美等若干小程序/快应用及增长活动', '优化重构聚美底层若干库如jumei-sdk等']
+          contentList: ['负责聚美优品电商及增长FE团队(10+)的日常工作', '参与街电CRM开发，美点无人货架C/S开发等', '主导开发聚美等若干小程序/快应用及增长活动', '优化重构聚美底层若干库如jumei-sdk等']
         },
         {
           title: '兰途科技',
@@ -301,9 +311,9 @@ export default {
     },
     footer: ['Released under the MIT License', 'All Rights Reserved ', `Copyright © 2014-${new Date().getFullYear()} Korey Zhao`],
     overview: {
-      infoList: ['29years', 'B.S.', 'ChengDu', 'On Job'],
+      infoList: ['30years', 'B.S.', 'ChengDu', 'On Job'],
       quote: 'Life is a kind of endless yearning, eager to continue to rise, become more great and noble.',
-      desList: ['I am Korey Zhao, FE engineer', 'Jumei（chengdu）E-commerce & growth team FE leader', 'keyu.zhao@foxmail.com']
+      desList: ['I am Korey Zhao, Tencent Senior FE engineer', 'Used to be Jumei E-commerce & growth team FE leader', 'keyu.zhao@foxmail.com']
     },
     skill: {
       outCircleList: [
@@ -383,7 +393,7 @@ export default {
         }
       ],
       desList: [
-        '6 years FE development experience,2 years management experience',
+        '7 years FE development experience,2 years management experience',
         'Actually lead the development of many platform projects (APP, PC, H5, miniprogram, quickapp, etc.), formulated and standardized the team workflow',
         'Try different FE technology stacks, Good at component development and construction optimization',
         'Self-driven, Author of webpack, vue and other source code analysis series articles'
@@ -392,14 +402,28 @@ export default {
     exp: {
       expList: [
         {
-          title: 'Jumei(chengdu)',
+          title: 'Tencent',
           time: '2017.04-now',
+          post: 'Senior FE engineer',
+          img: {
+            backgroundImage: `url(${eTx})`
+          },
+          contentList: [
+            'Responsible for the development of Tencent UMA',
+            'Participate in the formulation of team collaboration standards',
+            'Participate in the development of UMA client miniP and SaaS',
+            'Participate in the source community contribution'
+          ]
+        },
+        {
+          title: 'Jumei',
+          time: '2017.04-2021.04',
           post: 'Senior FE engineer/leader',
           img: {
             backgroundImage: `url(${eJm})`
           },
           contentList: [
-            'Responsible for daily work of jumei e-commerce and growth FE team',
+            'Responsible for daily work of jumei e-commerce and growth FE team(10+)',
             'Participated in CRM development of jiedian, C/S development of unmanned shelves of meidian, etc',
             'Lead the development of jumei and other miniprogram/quickapp and growth',
             'Optimize and reconstruct some basic libraries of jumei, such as jumei-sdk'
