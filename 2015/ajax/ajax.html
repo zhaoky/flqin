@@ -1,0 +1,42 @@
+<!--
+    Ajax的核心是XMLHttpRequest对象
+    HTTP头部信息：
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>111</div>
+<button>点我</button>
+<div id = "a">本来的</div>
+<div id = "head">本来的</div>
+<script>
+    var bt = document.querySelector("button");
+    var xhr = new XMLHttpRequest();  //创建XHR对象
+    console.log(1,xhr);
+    bt.addEventListener("click",function(){
+        ajax();
+    });
+    function ajax(){
+        xhr.onreadystatechange = function(){
+            //请求成功后，响应的数据会自动填充xhr对象的属性,有responseText responseXML status statusText
+            if(xhr.readyState == 4 && xhr.status == 200){
+                //xhr的readyState属性：取值01234
+                console.log(2,xhr);
+                document.querySelector("#a").innerHTML = xhr.responseText;
+                document.querySelector("#head").innerHTML = xhr.getAllResponseHeaders();
+            }
+        };
+        xhr.open("post","get.txt",true);  //3参数，请求类型，请求URL，是否异步（默认true） open不会发出请求
+        xhr.setRequestHeader("aaa","bbb"); //自定义头信息
+        xhr.send("offset=1");
+        //在得到响应之前可以取消请求：xhr.abort();
+    }
+
+</script>
+</body>
+</html>

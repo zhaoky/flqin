@@ -1,4 +1,4 @@
-<h2 align="center"><a href='https://www.flqin.com' target='_blank'>✏️✏️front-end engineer resume</a></h2>
+<h2 align="center"><a href='https://korey.cc/resume' target='_blank'>✏️✏️front-end engineer resume</a></h2>
 <p align="center">
   <a href='https://github.com/zhaoky/flqin'><img src='https://img.shields.io/github/last-commit/zhaoky/flqin' alt='GitHub last commit' /></a>
   <a href="https://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/dm/@fe_korey/resume.svg" alt="Downloads"></a>
@@ -12,6 +12,10 @@ English | [中文](./README_CN.MD)
 #### Baidu search: [web Front-end engineer resume](https://www.baidu.com/s?ie=UTF-8&wd=web%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AE%80%E5%8E%86)
 
 ![web前端工程师简历截图](https://raw.githubusercontent.com/zhaoky/flqin/master/src/assets/web.jpg)
+
+## UPDATES
+
+flqin.com was moved to [korey.cc](https://korey.cc) and resume items were moved to [korey.cc/resume](https://korey.cc/resume).
 
 ## MISC
 
@@ -28,7 +32,7 @@ This project contains the technology stack:
 
 Small but complete. It is an introductory FE project with a complete functional structure that is worth learning for beginners.
 
-In order to 'SEO' and beginner learning, a [pure static page](https://resume.flqin.com) and a [Chinese-English page](https://flqin.com/resume) based on [MVVM](https://github.com/zhaoky/mvvm) developed by ourselves.
+In order to 'SEO' and beginner learning, a [pure static page](https://korey.cc/resume) and [a Chinese-English page](https://korey.cc/resume/mvvm) based on [MVVM](https://github.com/zhaoky/mvvm) developed by ourselves.
 
 Please [click here](https://github.com/zhaoky/flqin/issues) if you have any questions or suggestions.Learn from each other and make progress together!
 

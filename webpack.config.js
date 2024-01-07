@@ -15,7 +15,7 @@ const config = {
     main: path.resolve(__dirname, `./src/js/${_SEO_ ? 'index-seo.js' : 'index.js'}`)
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, _SEO_?'./static':'./mvvm'),
     filename: _DEV_ ? 'bundle.js' : '[name].[chunkhash:8].js',
     publicPath: _DEV_ ? '/' : './'
   },

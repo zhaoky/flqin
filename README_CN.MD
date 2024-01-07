@@ -1,4 +1,4 @@
-<h2 align="center"><a href='https://resume.flqin.com' target='_blank'>前端工程师简历</a></h2>
+<h2 align="center"><a href='https://korey.cc/resume' target='_blank'>前端工程师简历</a></h2>
 <p align="center">
   <a href='https://github.com/zhaoky/flqin'><img src='https://img.shields.io/github/last-commit/zhaoky/flqin' alt='GitHub last commit' /></a>
   <a href="https://www.npmjs.com/package/@fe_korey/resume"><img src="https://img.shields.io/npm/dm/@fe_korey/resume.svg" alt="Downloads"></a>
@@ -12,6 +12,10 @@
 #### 百度搜索: [web 前端工程师简历](https://www.baidu.com/s?ie=UTF-8&wd=web%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AE%80%E5%8E%86)
 
 ![web前端工程师简历截图](https://raw.githubusercontent.com/zhaoky/flqin/master/src/assets/web.jpg)
+
+## UPDATES
+
+flqin.com 已迁移至 [korey.cc](https://korey.cc)，简历项目移动至[korey.cc/resume](https://korey.cc/resume)。
 
 ## MISC
 
@@ -28,7 +32,7 @@
 
 麻雀虽小，五脏俱全。是一个值得初学者学习的功能架构完善的入门前端项目。
 
-出于 `SEO` 及初学者学习的考虑，本项目分别实现一个 [纯静态页](https://resume.flqin.com) 和一个基于自研[MVVM](https://github.com/zhaoky/mvvm) 的 [中英双版页](https://flqin.com/resume)。
+出于 `SEO` 及初学者学习的考虑，本项目分别实现一个 [纯静态页](https://korey.cc/resume) 和一个基于自研[MVVM](https://github.com/zhaoky/mvvm) 的[中英双版页](https://korey.cc/resume/mvvm)。
 
 有任何疑问和建议请[点击此处](https://github.com/zhaoky/flqin/issues)，互相学习，共同进步！
 

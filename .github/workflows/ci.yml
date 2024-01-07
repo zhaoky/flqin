@@ -24,3 +24,13 @@ jobs:
         run: yarn build:seo
       - name: Build
         run: yarn build
+      - name: Deploy to Tencent Cloud
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
+          ARGS: -avzr --delete
+          SOURCE: ./static ./mvvm ./2015
+          REMOTE_HOST: ${{ secrets.HOST_IP_ADDR }}
+          REMOTE_USER: ${{ secrets.HOST_DEPLOY_USER }}
+          TARGET: ${{ secrets.HOST_DEPLOY_PATH }}
+          EXCLUDE: /node_modules/

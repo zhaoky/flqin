@@ -226,7 +226,7 @@ export default {
         {
           title: 'web前端工程师简历（2015年版）',
           des: '本简历初版，上线一个月后，百度关键词“web前端工程师简历”排名前三，点击量数百万，深受广大前端初学者的好评及模仿，至今搜该关键词百度前10页都处处能见该简历的仿版。',
-          url: 'http://www.flqin.com/2015/',
+          url: 'http://korey.cc/resume/2015/',
           style: {}
         },
         {
@@ -270,7 +270,7 @@ export default {
         },
         {
           icon: sBlog,
-          url: 'https://blog.flqin.com'
+          url: 'https://korey.cc'
         },
         {
           icon: sZh,
@@ -520,7 +520,7 @@ export default {
           title: 'Web front engineer resumes (2015)',
           des:
             'The first edition of this resume, on the line a month later, Baidu keyword `web front engineer resumes` ranked the top three, hundreds of millions of traffic, by the majority of front-end beginners praise and imitation, so far the search Baidu 10 pages are everywhere See the copy of the resume.',
-          url: 'http://www.flqin.com/2015/',
+          url: 'http://korey.cc/resume/2015/',
           style: {}
         },
         {
@@ -572,7 +572,7 @@ export default {
         },
         {
           icon: sBlog,
-          url: 'https://blog.flqin.com'
+          url: 'https://korey.cc'
         },
         {
           icon: sZh,

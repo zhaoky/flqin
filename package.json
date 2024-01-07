@@ -2,8 +2,8 @@
   "name": "@fe_korey/resume",
   "version": "4.0.0",
   "description": "赵柯宇的web前端工程师简历",
-  "main": "dist/index.html",
-  "homepage": "https://resume.flqin.com",
+  "main": "static/index.html",
+  "homepage": "https://korey.cc/resume",
   "keywords": [
     "web前端",
     "web",
@@ -65,8 +65,8 @@
     "webpackbar": "^4.0.0"
   },
   "scripts": {
-    "build": "rm -rf dist && cross-env NODE_ENV=production BUILD_TYPE=mvvm webpack",
-    "build:seo": "rm -rf dist && cross-env NODE_ENV=production BUILD_TYPE=seo webpack",
+    "build": "rm -rf mvvm && cross-env NODE_ENV=production BUILD_TYPE=mvvm webpack",
+    "build:seo": "rm -rf static && cross-env NODE_ENV=production BUILD_TYPE=seo webpack",
     "dev": "cross-env NODE_ENV=development BUILD_TYPE=mvvm webpack-dev-server",
     "dev:seo": "cross-env NODE_ENV=development BUILD_TYPE=seo webpack-dev-server",
     "lint": "eslint src && stylelint 'src/**/*.less'",

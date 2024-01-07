@@ -20,4 +20,6 @@ jspm_packages
 .build
 node_modules
 package-lock.json
-dist
+static
+mvvm
+
