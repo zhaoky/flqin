@@ -1,3 +1,7 @@
+## UPDATES
+
+flqin.com 已迁移至 [korey.cc](https://korey.cc)，简历项目移动至[korey.cc/resume](https://korey.cc/resume)。
+
 <h2 align="center"><a href='https://korey.cc/resume' target='_blank'>前端工程师简历</a></h2>
 <p align="center">
   <a href='https://github.com/zhaoky/flqin'><img src='https://img.shields.io/github/last-commit/zhaoky/flqin' alt='GitHub last commit' /></a>
@@ -12,10 +16,6 @@
 #### 百度搜索: [web 前端工程师简历](https://www.baidu.com/s?ie=UTF-8&wd=web%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AE%80%E5%8E%86)
 
 ![web前端工程师简历截图](https://raw.githubusercontent.com/zhaoky/flqin/master/src/assets/web.jpg)
-
-## UPDATES
-
-flqin.com 已迁移至 [korey.cc](https://korey.cc)，简历项目移动至[korey.cc/resume](https://korey.cc/resume)。
 
 ## MISC
 
