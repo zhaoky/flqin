@@ -17,13 +17,13 @@ jobs:
         with:
           node-version: '12'
       - name: Install
-        run: yarn
+        run: npm i
       - name: Lint
-        run: yarn lint
+        run: npm run lint
       - name: Build-seo
-        run: yarn build:seo
+        run: npm run build:seo
       - name: Build
-        run: yarn build
+        run: npm run build
       - name: Deploy to Tencent Cloud
         uses: easingthemes/ssh-deploy@main
         env:
